@@ -1,0 +1,2165 @@
+{
+  "_legend": {
+    "client_industry": [
+      "Financial Services",
+      "Tech",
+      "Healthcare",
+      "Public Sector",
+      "Industrials",
+      "Consumer",
+      "Energy",
+      "Education",
+      "Cross-industry"
+    ],
+    "client_type": [
+      "Public sector",
+      "Private F500",
+      "Private mid-market",
+      "Government agency",
+      "Non-profit",
+      "Internal/thought-leadership"
+    ],
+    "engagement_stage": [
+      "RFP response",
+      "Pitch / opportunity dev",
+      "Kickoff",
+      "Mid-project readout",
+      "Weekly update",
+      "Final delivery",
+      "POV / thought leadership"
+    ],
+    "content_area": [
+      "Strategy",
+      "Digital transformation",
+      "SDLC",
+      "AI/ML",
+      "ERP",
+      "M&A",
+      "Operational excellence",
+      "Org design",
+      "Cost reduction",
+      "Risk",
+      "Market analysis",
+      "ESG",
+      "Workforce",
+      "Financial reporting",
+      "Other"
+    ],
+    "audience_level": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public"
+    ],
+    "deliverable_format": [
+      "PowerPoint",
+      "PDF",
+      "Hybrid",
+      "Online interactive"
+    ],
+    "geography": [
+      "US",
+      "UK",
+      "EMEA",
+      "APAC",
+      "Global",
+      "Regional (specify)"
+    ],
+    "confidentiality_tier": [
+      "Public",
+      "Internal",
+      "Client-confidential",
+      "Restricted"
+    ],
+    "slide_purpose": [
+      "Title",
+      "Section divider",
+      "Agenda / Contents",
+      "Exec summary",
+      "Context-setting",
+      "Current state",
+      "Finding",
+      "Insight",
+      "Recommendation",
+      "Framework",
+      "Roadmap",
+      "Timeline",
+      "Comparison",
+      "Decision matrix",
+      "Data presentation",
+      "Case study",
+      "Team intro",
+      "Methodology",
+      "Pricing",
+      "Q&A",
+      "Appendix / reference",
+      "Closing / contacts"
+    ],
+    "message_type": [
+      "Assertion",
+      "Comparison",
+      "Sequence / timeline",
+      "Decomposition (parts of whole)",
+      "Causation",
+      "Trend over time",
+      "Trade-off",
+      "Process flow",
+      "Listing / enumeration",
+      "Single statistic / hero number",
+      "No clear message"
+    ],
+    "audience_level_slide": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public",
+      "Same as deck"
+    ],
+    "slide_position_role": [
+      "Hero / headline",
+      "Build / setup",
+      "Evidence / backup",
+      "Synthesis / takeaway",
+      "Transition / divider"
+    ],
+    "dominant_visual_element": [
+      "Chart",
+      "Diagram",
+      "Table",
+      "Image",
+      "Icon-based",
+      "Framework graphic",
+      "Pure text",
+      "Mixed"
+    ],
+    "chart_type": [
+      "Line",
+      "Bar",
+      "Stacked bar",
+      "Pie",
+      "Waterfall",
+      "Scatter",
+      "Bubble",
+      "Treemap",
+      "Heat map",
+      "Sankey",
+      "Other",
+      "N/A"
+    ],
+    "placeholder_compliance": [
+      "Pristine",
+      "Reusable",
+      "Bespoke",
+      "Broken"
+    ],
+    "slot_types_present": [
+      "title",
+      "subtitle",
+      "body-text",
+      "bullet-list",
+      "chart",
+      "image",
+      "table",
+      "callout-box",
+      "citation",
+      "footer",
+      "page-number"
+    ],
+    "reusability_score_qualitative": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "tier_match_difficulty": [
+      "Likely Tier 1 candidate",
+      "Likely Tier 2",
+      "Likely Tier 3",
+      "Likely Tier 4"
+    ],
+    "inferred_rules.title.uses_action_titles": [
+      "always",
+      "sometimes",
+      "rarely"
+    ],
+    "inferred_rules.chart_styling.uses_consistent_palette": [
+      "true",
+      "false",
+      "n/a"
+    ],
+    "inferred_rules.layout_conventions.uses_master_template": [
+      "true",
+      "false",
+      "mixed"
+    ],
+    "design_system.grid": [
+      "12-column",
+      "6-column",
+      "free"
+    ],
+    "design_system.recurring_elements[].type": [
+      "logo",
+      "page_number",
+      "footer",
+      "watermark"
+    ]
+  },
+  "source_filename": "digital-auto-report-2023.pdf",
+  "source_format": "pdf",
+  "slide_count": 40,
+  "client_industry": "Industrials",
+  "client_sub_industry": "Automotive / Mobility / Digital",
+  "client_type": "Internal/thought-leadership",
+  "engagement_stage": "POV / thought leadership",
+  "content_area": [
+    "Market analysis",
+    "Strategy",
+    "Digital transformation",
+    "ESG"
+  ],
+  "audience_level": "C-suite / board",
+  "deliverable_format": "PDF",
+  "geography": "Global",
+  "deck_length": 40,
+  "confidentiality_tier": "Public",
+  "inferred_publisher": "PwC Strategy& (global automotive practice)",
+  "deck_summary_one_sentence": "11th annual Strategy& Digital Auto Report (Volume 1) presenting consumer survey insights (n=3,000 across US/EU/China) on connected/electric/autonomous mobility preferences plus strategic implications for OEMs on user interfaces, subscription models, and battery/charging ecosystems.",
+  "design_system": {
+    "title_style": {
+      "font_family": null,
+      "size_pt": null,
+      "weight": "bold",
+      "color_hex": "#000000",
+      "alignment": "left"
+    },
+    "body_style": {
+      "font_family": null,
+      "size_pt": null,
+      "weight": "regular",
+      "color_hex": "#0D0D0D",
+      "alignment": "left"
+    },
+    "color_palette": {
+      "primary": "#C00000",
+      "accent": "#D93953",
+      "neutrals": [
+        "#000000",
+        "#585858",
+        "#FFFFFF"
+      ]
+    },
+    "default_text_alignment": "left",
+    "grid": "free",
+    "recurring_elements": [
+      {
+        "type": "footer",
+        "value": "Strategy&"
+      },
+      {
+        "type": "footer",
+        "value": "Digital Auto Report 2023"
+      },
+      {
+        "type": "page_number"
+      }
+    ]
+  },
+  "inferred_rules": {
+    "title": {
+      "font_family_observed": [],
+      "size_pt_range": null,
+      "size_pt_most_common": null,
+      "weight_observed": [
+        "bold"
+      ],
+      "color_hex_observed": [
+        "#000000"
+      ],
+      "position_most_common": "top-center",
+      "alignment_most_common": "left",
+      "uses_action_titles": "always",
+      "max_chars_observed": 130,
+      "scope_tag": "inferred"
+    },
+    "body_text": {
+      "font_family_observed": [],
+      "size_pt_range": null,
+      "size_pt_most_common": null,
+      "color_hex_observed": [
+        "#0D0D0D"
+      ],
+      "alignment_most_common": "left",
+      "scope_tag": "inferred"
+    },
+    "color_palette": {
+      "primary_observed": "#C00000",
+      "accent_observed": "#D93953",
+      "neutrals_observed": [
+        "#000000",
+        "#585858",
+        "#FFFFFF"
+      ],
+      "notes": "Classic Strategy& red palette; matches EV Sales Review template — likely shared brand asset library across Strategy& automotive practice.",
+      "scope_tag": "inferred"
+    },
+    "chart_styling": {
+      "uses_consistent_palette": "true",
+      "notes": "Charts use red for primary and gray/black for comparison; consistent 'Source: PwC Strategy&...' citation pattern.",
+      "scope_tag": "inferred"
+    },
+    "layout_conventions": {
+      "uses_master_template": "mixed",
+      "no_fly_zones_observed": "Top-band for action titles. Bottom-band for Strategy& brand + 'Digital Auto Report 2023' + page number. Many bespoke framework/diagram slides for the 'implications for auto players' section.",
+      "scope_tag": "inferred"
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title_text": "Digital Auto Report 2023 — What consumers really want (Volume 1)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 15,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Title",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Hero / headline",
+      "main_message": "Cover slide: Digital Auto Report 2023 — What consumers really want, Volume 1",
+      "dominant_visual_element": "Image",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Pristine",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "subtitle"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 1,
+      "title_text": "Digital Auto Report 2023 — methodology overview",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 130,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Methodology",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Eleventh annual Digital Auto Report by Strategy& and PwC; consumer survey n=3,000 across US/EU/China; quantitative market outlook to 2035; executive interviews; Volume 1 covers consumer view and implications, Volume 2 covers market outlook/technology/regulation",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 2,
+      "title_text": "Executive summary — Volume 1",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 350,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Exec summary",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Exec summary: consumer preferences (connected services WTP €20-40/mo; BEV openness varies sharply DE 35% / US 50% / CN 90%+; low L4 trust DE/US); auto implications: get UI right, rethink vehicle sales (subscription gain), go beyond vehicle (battery/charging)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 3,
+      "title_text": "Contents — Volume 1",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 30,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Agenda / Contents",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Two-part contents: 1. Consumer preferences (connected, electric, automated, smart); 2. Implications for auto players (interface, subscription, charging)",
+      "dominant_visual_element": "Image",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 4,
+      "title_text": "Overview of consumer survey — 3 regions, 3,000 respondents, 50 experts",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Methodology",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Survey overview: n=3,000 across Germany/US/China + 50 experts; balanced gender splits; age 18-34/35-54/55+ roughly equal; income brackets; expert mix 63% OEM / 16% supplier / 21% operator",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 5,
+      "title_text": "Safety and navigation remain as most important connected services features — on-demand car functions on the rise",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Connected service priorities: Safety, Navigation, Infotainment top across regions; smartphone mirroring up 27% in Germany; China shows much higher engagement across all features (76-96%)",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 6,
+      "title_text": "Experts rate infotainment higher than consumers do — in China, they underestimate relevance of on-demand functions",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Comparison",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Expert vs consumer view on connected services importance: experts rate infotainment higher but in China underestimate on-demand functions (-48%) and lifestyle (+130% from consumer to expert) — gap between expert and consumer perception",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 7,
+      "title_text": "Smartphone mirroring to the car has highest rating; Auto OEM apps for service access are less popular",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 110,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Connected services delivery preference: smartphone mirroring tops in all 3 regions (53-69%); auto OEM apps least popular (32-37%); strong preference for known mobile experience over OEM-specific apps",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 8,
+      "title_text": "Willingness to pay for connected services around €20/month in Germany and the US but twice as much in China (€40)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 120,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Median WTP for full connected services bundle: Germany/US ~€20/mo, China ~€40/mo; high spread in China indicating luxury vs budget polarization; experts estimate lower than consumers",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 9,
+      "title_text": "Among on-demand functions, automated driving features such as traffic jam pilot / parking pilot are attracting more interest",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 140,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "On-demand function importance: AC activation remains top (87-95%); traffic jam pilot up to 77% (significant growth from 60% in 2021); parking pilot, engine power, battery range extension all rising",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 10,
+      "title_text": "Experts in Germany/US attach even more importance than consumers to automated driving function attractiveness",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 140,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Comparison",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Expert vs consumer on on-demand function importance: experts bullish on engine power (+94%) and traffic jam pilot (+129% from consumer baseline); air conditioning activation surprisingly lower for experts in US/China",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 11,
+      "title_text": "Looking at powertrain preferences, German and US consumers stick with gasoline, while Chinese prefer BEV",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Powertrain preferences: US/Germany still favor gasoline (~80%) > PHEV > BEV; China inverted with BEV 93% > Hybrid > ICE; gasoline surprisingly more attractive for younger consumers",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 12,
+      "title_text": "Consumer acceptance of automated driving remains low in Germany and the US — more openness in China",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 140,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Comfort with autonomous Level 4/5: GER/US 60-70% uncomfortable, China only 15%; recovery from 2020 low but still hesitation; Level 5 (fully autonomous) more concerning than Level 4",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 13,
+      "title_text": "On a robo-ride, people want to be entertained or relax — in GER/US they also want to work, but in China prefer to socialize",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 130,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Preferred activities during autonomous rides: Relaxation and Media/Entertainment top in all regions; Work/productivity higher in GER/US; Social exchange notably higher in China; intention to use time gained went down vs 2021",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 14,
+      "title_text": "~60% of US citizens want to pay less for a robo-taxi vs a driver-driven taxi; only ~5% want to pay more vs ~30% in Germany",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 160,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "WTP for autonomous vs driver taxi: 60% in US want to pay less, 30% in Germany willing to pay more; younger Germans more willing to pay premium; 40-50% price cut from driver-driven taxis is the norm for cost-sensitive consumers",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 15,
+      "title_text": "Majority of respondents prefer to purchase a new or used car; but car subscription models are attracting interest",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 140,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Vehicle acquisition preference: purchase of new/used car still preferred (70-87%); subscription growing strongly especially in China; Germany subscription preference up to 27% from 14% in 2021",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 16,
+      "title_text": "Readiness for online car purchases very high in China, while rather low in Germany — the US falls in between",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 120,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Online car purchase willingness: China 36% comfortable with all-digital; US 22%; Germany only 10%; majority in Germany feel more comfortable with store processes",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 17,
+      "title_text": "Even as immediate COVID-19 risks decline, using one's own car remains popular; increasing use of shared modes in China",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 140,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Mobility patterns post-COVID: own car remains most convenient with highest increase in DE/US; shared modes growing in China; public transport intention increased across all regions",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 18,
+      "title_text": "Price and availability are by far the top drivers for encouraging consumers to use sustainable transport",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 130,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Drivers for sustainable transport adoption: cheaper price (45-60%), better availability (29-40%); user-friendly access strong in China; employer incentives lower priority",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 19,
+      "title_text": "Every country has different priorities to reduce CO2: In GER more walking, in the US switch to BEV, in CN public transport",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "CO2 reduction behavior change: 79-98% willing to change; Germany prefers walking + cutting flights; US prefers BEV switch; China prefers public transport — different cultural priorities",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Pie",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 20,
+      "title_text": "Contents — Section 2: Implications for auto players",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 20,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: transitioning to implications for auto players — interface, subscription, and charging",
+      "dominant_visual_element": "Image",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 21,
+      "title_text": "Getting the user interface right — section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 10,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section header: Getting the user interface right",
+      "dominant_visual_element": "Image",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 22,
+      "title_text": "The relevant market for automotive players is expanding beyond the car itself — maintaining user access is crucial",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Ecosystem framework: mobility demand grouped into 10 life areas (Recreation, New Work, Personalized Pleasure, Holistic Wellbeing, Smart Environment, Rest/Relaxation, Belief, Relationships, Mobility, Demand Fulfillment, Personal Wealth); roles split into Orchestrator/Realizer/Enabler",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 23,
+      "title_text": "Getting the digital interface right means creating a differentiated experience for diverse customer needs",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Differentiated experience examples spanning Luxury (Bentley bespoke services, Rolls Royce digital opulence, NIO EP House, BMW 7 Series welcome lighting) vs Convenience (Mercedes me app, FINN, Uber, Sixt, Genesis pickup service)",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 24,
+      "title_text": "A value-creating digital service portfolio requires automotive players to balance multiple trade-offs",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 350,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Trade-off",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Digital portfolio scope across four categories (Vehicle Function-as-a-Service, Consumer onboard services, Consumer offboard services, B2B/data services) with examples mapped to Mobility/Entertainment/Work/Health; portfolio trade-offs framework",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 25,
+      "title_text": "Along the value chain and vehicle life cycle, digital services unlock value beyond direct user monetization",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 280,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Value levers of digital services: Top-line (services monetization, brand loyalty, post-purchase activation, platform/data sales) and Bottom-line (R&D optimization, recall prevention, variant management, parts inventory); 30-40% additional revenue potential",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 26,
+      "title_text": "OEMs are forced to partner with technology players to deliver compelling digital services — risking a loss of control",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Trade-off",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "5-stage spectrum of OEM-tech partnership: I) No tech involvement (full OEM control), II) OS supply, III) Content mirroring, IV) Tech player content using vehicle data, V) External development; trade-off between OEM control and customer UX",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 27,
+      "title_text": "Rethinking vehicle sales — section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 10,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section header: Rethinking vehicle sales",
+      "dominant_visual_element": "Image",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 28,
+      "title_text": "Subscription fills the gap between leasing and rental offerings — resulting overall in four major vehicle ownership archetypes",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 320,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Comparison",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Four vehicle ownership archetypes compared (Leasing, Subscription, Rental, Sharing) across duration, services included, relative price; subscription occupies middle ground with high convenience",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 29,
+      "title_text": "As alternative ownership models such as subscription emerge, OEMs need to sharpen their vehicle lifecycle mgmt skills",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 280,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Sequence / timeline",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Subscription customer + asset journey example showing 5 lifecycle phases over 9 years: New car leasing → Subscription → New subscription → Used car leasing → Car sharing/rental, with maintenance, refurbishment, and contract events",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 30,
+      "title_text": "Holistic vehicle lifecycle management aims to increase revenue and utilization, especially during 2nd and 3rd phase",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Trade-off",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Subscription '3x3' asset lifecycle: 1st phase (yrs 1-3) regular maintenance; 2nd phase (yrs 4-6) sporadic refurbishment; 3rd phase (yrs 7-9) lower residual; ownership models suitable per phase with revenue and utilization potential",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 31,
+      "title_text": "Alternative ownership models are on the rise and offer profit potential for OEMs — if the asset life cycle is managed well",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": true,
+      "density": {
+        "word_count": 300,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Europe ownership model split 2023: Purchase 42%, Leasing 45%, Sharing 10%, Subscription 2%, Rental 1%; subscription projected to grow to 2-4m units by 2035; leasing to 7-8m units; profitability 5-7% purchase vs 10-15% leasing/subscription/rental",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 32,
+      "title_text": "More flexible ownership models offer benefits and risks for OEMs and customers — a win-win solution is required",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 240,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Insight",
+      "message_type": "Trade-off",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Subscription benefit/risk analysis from OEM and customer perspectives: customer flexibility/peace of mind vs admin pricing opacity; OEM existing network advantage vs residual value risk requiring strong operational excellence",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 33,
+      "title_text": "Going beyond the vehicle — section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 10,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section header: Going beyond the vehicle",
+      "dominant_visual_element": "Image",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 34,
+      "title_text": "Rise of e-mobility provides ample opportunities to capture value beyond the vehicle — e.g. with batteries and charging",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Value pools beyond the vehicle in e-mobility: Battery value chain (production, in-car assembly, exchange, second life, recycling), Charging value chain (equipment manufacturing, site/asset ownership, CPO, energy provisioning), Adjacent services (fleet mgmt, last mile, location commerce)",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 35,
+      "title_text": "Infrastructure and vehicle penetration are key requirements for successful realization of bi-directional charging use cases",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Germany bi-directional charging market simulation: 2.7M bi-directional sockets by 2030 (parking 1.8M, home/apartments 0.7M, hubs 0.16M, office 0.03M); 5M bi-directional vehicles by 2030 — share of total EV fleet growing 11%→63% by 2035",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 36,
+      "title_text": "Front-of-meter prosumer use cases depend on a multitude of external factors that limit mainstream adoption in short term",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 300,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Comparison",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Bi-directional charging business model comparison (V2L, V2H/B, V2G/VGI): customer demand, energy tech, regulation, economics, use cases each rated for behind-the-meter vs front-of-meter; software enabler revenue potential €160-220M behind / €470-550M front by 2030",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 37,
+      "title_text": "Realization and scale-up of prosumer use cases require efficient charging and battery stakeholder coordination",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 240,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Process flow",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Charging & battery ecosystem stakeholder activation diagram: end users, parking providers, CPOs, battery manufacturers, vehicle manufacturers, utility sector, service providers, software suppliers; main scale-up challenges include stakeholder fear of losing control, high transaction costs, conflicting priorities",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 38,
+      "title_text": "Implication for automotive players: Holistic ecosystem approach beyond core business is key to future success",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Recommendation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Four success factors for ecosystem approach: be clear about own role (orchestrator/realizer/enabler), build offering portfolio with resource allocation, maintain holistic iterative selection approach, actively manage portfolio with multi-layered ecosystem logic — balanced with lock-in benefits and management complexity",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 39,
+      "title_text": "Network contacts",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Closing / contacts",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Network contacts: Jörg Krings (Automotive Europe), Jörn Neuhausen (Alternative Powertrains), Jonas Seyfferth (Connected Smart Mobility), Andreas Gissler (Digital Transformation), Hartmut Güthner (Automated Driving), regional leaders for Japan/US/China, plus contributors",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    }
+  ],
+  "provenance": {
+    "tagged_by": "Claude (Opus, 2026-05-23)",
+    "input_json_source": "PDF text extraction via web_fetch (no structural script run)",
+    "fields_filled_by_ai": [
+      "all semantic and structural fields"
+    ],
+    "confidence_notes": "HIGH confidence on slide_purpose, message_type, main_message — full PDF text extracted. MEDIUM confidence on density/word counts (estimated). Structural fields unknown (no .pptx). Slide count is ~40 based on visible page markers. This is a flagship Strategy& annual report — heavy on bespoke framework graphics (sections II-III) which means many slides marked Tier 3 for retrieval matching. The 'Implications for auto players' section (slides 22-38) is dominated by Strategy&-typical framework graphics like ecosystem maps, value chains, and trade-off matrices — these are high-value for inspiration retrieval but hard to swap content into via Mechanism B."
+  }
+}

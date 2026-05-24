@@ -1,0 +1,15 @@
+# Render Blueprint — deploys the lean PoC MCP server on the FREE tier.
+# Render builds the Dockerfile, injects $PORT (the server honors it), and serves
+# HTTPS automatically. After deploy, the MCP endpoint is https://<service>.onrender.com/mcp
+#
+# Note: Render is git-based, so corpus/ must be committed (it's gitignored by
+# default) — use `git add -f corpus/*.json`. Free instances sleep after ~15 min
+# idle (cold start ~30-60s); see docs/POC.md for the keep-warm tip.
+services:
+  - type: web
+    name: slide-corpus-poc
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health

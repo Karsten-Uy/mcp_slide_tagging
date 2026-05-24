@@ -1,0 +1,1842 @@
+{
+  "_legend": {
+    "client_industry": [
+      "Financial Services",
+      "Tech",
+      "Healthcare",
+      "Public Sector",
+      "Industrials",
+      "Consumer",
+      "Energy",
+      "Education",
+      "Cross-industry"
+    ],
+    "client_type": [
+      "Public sector",
+      "Private F500",
+      "Private mid-market",
+      "Government agency",
+      "Non-profit",
+      "Internal/thought-leadership"
+    ],
+    "engagement_stage": [
+      "RFP response",
+      "Pitch / opportunity dev",
+      "Kickoff",
+      "Mid-project readout",
+      "Weekly update",
+      "Final delivery",
+      "POV / thought leadership"
+    ],
+    "content_area": [
+      "Strategy",
+      "Digital transformation",
+      "SDLC",
+      "AI/ML",
+      "ERP",
+      "M&A",
+      "Operational excellence",
+      "Org design",
+      "Cost reduction",
+      "Risk",
+      "Market analysis",
+      "ESG",
+      "Workforce",
+      "Financial reporting",
+      "Other"
+    ],
+    "audience_level": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public"
+    ],
+    "deliverable_format": [
+      "PowerPoint",
+      "PDF",
+      "Hybrid",
+      "Online interactive"
+    ],
+    "geography": [
+      "US",
+      "UK",
+      "EMEA",
+      "APAC",
+      "Global",
+      "Regional (specify)"
+    ],
+    "confidentiality_tier": [
+      "Public",
+      "Internal",
+      "Client-confidential",
+      "Restricted"
+    ],
+    "slide_purpose": [
+      "Title",
+      "Section divider",
+      "Agenda / Contents",
+      "Exec summary",
+      "Context-setting",
+      "Current state",
+      "Finding",
+      "Insight",
+      "Recommendation",
+      "Framework",
+      "Roadmap",
+      "Timeline",
+      "Comparison",
+      "Decision matrix",
+      "Data presentation",
+      "Case study",
+      "Team intro",
+      "Methodology",
+      "Pricing",
+      "Q&A",
+      "Appendix / reference",
+      "Closing / contacts"
+    ],
+    "message_type": [
+      "Assertion",
+      "Comparison",
+      "Sequence / timeline",
+      "Decomposition (parts of whole)",
+      "Causation",
+      "Trend over time",
+      "Trade-off",
+      "Process flow",
+      "Listing / enumeration",
+      "Single statistic / hero number",
+      "No clear message"
+    ],
+    "audience_level_slide": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public",
+      "Same as deck"
+    ],
+    "slide_position_role": [
+      "Hero / headline",
+      "Build / setup",
+      "Evidence / backup",
+      "Synthesis / takeaway",
+      "Transition / divider"
+    ],
+    "dominant_visual_element": [
+      "Chart",
+      "Diagram",
+      "Table",
+      "Image",
+      "Icon-based",
+      "Framework graphic",
+      "Pure text",
+      "Mixed"
+    ],
+    "chart_type": [
+      "Line",
+      "Bar",
+      "Stacked bar",
+      "Pie",
+      "Waterfall",
+      "Scatter",
+      "Bubble",
+      "Treemap",
+      "Heat map",
+      "Sankey",
+      "Other",
+      "N/A"
+    ],
+    "placeholder_compliance": [
+      "Pristine",
+      "Reusable",
+      "Bespoke",
+      "Broken"
+    ],
+    "slot_types_present": [
+      "title",
+      "subtitle",
+      "body-text",
+      "bullet-list",
+      "chart",
+      "image",
+      "table",
+      "callout-box",
+      "citation",
+      "footer",
+      "page-number"
+    ],
+    "reusability_score_qualitative": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "tier_match_difficulty": [
+      "Likely Tier 1 candidate",
+      "Likely Tier 2",
+      "Likely Tier 3",
+      "Likely Tier 4"
+    ],
+    "inferred_rules.title.uses_action_titles": [
+      "always",
+      "sometimes",
+      "rarely"
+    ],
+    "inferred_rules.chart_styling.uses_consistent_palette": [
+      "true",
+      "false",
+      "n/a"
+    ],
+    "inferred_rules.layout_conventions.uses_master_template": [
+      "true",
+      "false",
+      "mixed"
+    ],
+    "design_system.grid": [
+      "12-column",
+      "6-column",
+      "free"
+    ],
+    "design_system.recurring_elements[].type": [
+      "logo",
+      "page_number",
+      "footer",
+      "watermark"
+    ]
+  },
+  "source_filename": "ereadiness-study-2023.pdf",
+  "source_format": "pdf",
+  "slide_count": 81,
+  "client_industry": "Industrials",
+  "client_sub_industry": "Automotive / Electric Mobility",
+  "client_type": "Internal/thought-leadership",
+  "engagement_stage": "POV / thought leadership",
+  "content_area": [
+    "Market analysis",
+    "Strategy",
+    "ESG"
+  ],
+  "audience_level": "Senior executives",
+  "deliverable_format": "PDF",
+  "geography": "Global",
+  "deck_length": 81,
+  "confidentiality_tier": "Public",
+  "inferred_publisher": "PwC Strategy& (Italy \u2014 Automotive)",
+  "deck_summary_one_sentence": "4th edition of Strategy& eReadiness Survey covering 18 countries and 12,500+ consumer interviews, segmenting consumers into EV Owners/Prospects/Sceptics, ranking countries on an eReadiness Index, and recommending actions for e-mobility players.",
+  "design_system": {
+    "title_style": {
+      "font_family": null,
+      "size_pt": null,
+      "weight": "bold",
+      "color_hex": "#000000",
+      "alignment": "left"
+    },
+    "body_style": {
+      "font_family": null,
+      "size_pt": null,
+      "weight": "regular",
+      "color_hex": "#0D0D0D",
+      "alignment": "left"
+    },
+    "color_palette": {
+      "primary": "#C00000",
+      "accent": "#D93953",
+      "neutrals": [
+        "#000000",
+        "#585858",
+        "#FFFFFF"
+      ]
+    },
+    "default_text_alignment": "left",
+    "grid": "free",
+    "recurring_elements": [
+      {
+        "type": "footer",
+        "value": "eReadiness Report 2023"
+      },
+      {
+        "type": "footer",
+        "value": "Source: Strategy&"
+      },
+      {
+        "type": "page_number"
+      }
+    ]
+  },
+  "inferred_rules": {
+    "title": {
+      "font_family_observed": [],
+      "size_pt_range": null,
+      "size_pt_most_common": null,
+      "weight_observed": [
+        "bold"
+      ],
+      "color_hex_observed": [
+        "#000000"
+      ],
+      "position_most_common": "top-center",
+      "alignment_most_common": "left",
+      "uses_action_titles": "always",
+      "max_chars_observed": 140,
+      "scope_tag": "inferred"
+    },
+    "body_text": {
+      "font_family_observed": [],
+      "size_pt_range": null,
+      "size_pt_most_common": null,
+      "color_hex_observed": [
+        "#0D0D0D"
+      ],
+      "alignment_most_common": "left",
+      "scope_tag": "inferred"
+    },
+    "color_palette": {
+      "primary_observed": "#C00000",
+      "accent_observed": "#D93953",
+      "neutrals_observed": [
+        "#000000",
+        "#585858",
+        "#FFFFFF"
+      ],
+      "notes": "Same Strategy& red palette as EV Sales Review and Digital Auto Report \u2014 strongly suggests shared brand template across automotive practice.",
+      "scope_tag": "inferred"
+    },
+    "chart_styling": {
+      "uses_consistent_palette": "true",
+      "notes": "Consumer survey charts show consistent treatment across cluster comparisons (Owners/Prospects/Sceptics); use color encoding for cluster, gray for baseline.",
+      "scope_tag": "inferred"
+    },
+    "layout_conventions": {
+      "uses_master_template": "mixed",
+      "no_fly_zones_observed": "Top-band for action titles. Bottom-band for 'eReadiness Report 2023' footer + page number. Survey methodology slides use standard 3-column comparison layout for cluster profiles.",
+      "scope_tag": "inferred"
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title_text": "eReadiness 2023 Survey Report \u2014 Customer needs and recommended actions for e-mobility players",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 20,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Title",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Hero / headline",
+      "main_message": "Cover slide: eReadiness 2023 Survey Report \u2014 Customer needs and recommended actions for e-mobility players (4th edition, September 2023)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Pristine",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "subtitle"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 1,
+      "title_text": "Agenda",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 50,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Agenda / Contents",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Agenda: 01 Exec Summary, 02 Consumer viewpoints (EV Owners/Prospects/Sceptics), 03 eReadiness Index, 04 Recommendations on the way forward",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 2,
+      "title_text": "The 4th edition of the study provides updated perspectives on the short-term development of the e-mobility business in 18 markets",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Methodology",
+      "message_type": "Sequence / timeline",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "About the study: 1st edition 4 countries, 4th edition 18 countries (2020-2023); private passenger car customers; BEV+PHEV; 12,500+ CAWI interviews Jan-May 2023",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 3,
+      "title_text": "eReadiness 2023 \u2014 Countries in scope (18 countries across the globe)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 120,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Methodology",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "18 countries across 3 regions: NA (USA, Canada), EMEA (France, Germany, Italy, Norway, Poland, Spain, Switzerland, UK, UAE), APAC (Australia, China, Hong Kong, India, Japan, Singapore, Thailand)",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 4,
+      "title_text": "Executive Summary \u2014 section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 10,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: Executive Summary",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 5,
+      "title_text": "Key insights from the consumer research sample",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 350,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Exec summary",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Exec summary: 30% intend to buy EV in next 2 years; EV Owners 6% (high-income middle-aged males urban); EV Prospects 61% (~20% lower income, 6 personas); Sceptics 31% (women, lower income, older); 20% online vehicle sales for premium; 60% interest in used EV but battery SoH uncertainty",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 6,
+      "title_text": "Consumer viewpoints \u2014 section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 10,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: Consumer viewpoints",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 7,
+      "title_text": "Consumers have been grouped into 3 main clusters within 3 regions: EV owners, EV prospects and EV sceptics",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Methodology",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Cluster methodology: EV owners (current), EV prospects (will buy in 5 years), EV sceptics (won't); n=12,816; each cluster has focus areas, outcomes, and descriptions",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 8,
+      "title_text": "EV owners are younger, wealthier and with greater access to private parking spaces compared to prospects and sceptics",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Cluster demographics: Owners \u20ac91k income / 43yrs / 53% male / 82% urban / 63% private parking; Prospects \u20ac74k / 42yrs / 51% male / 92% urban / 68% private parking; Sceptics \u20ac49k / 49yrs / 44% male / 94% urban / 60% private parking",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 9,
+      "title_text": "Current EV owners tend to use their car more often for commuting, and are more likely to combine it with other means of transportation",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Commuting profile by cluster: Owners 86% commute by car / 4.4 days / 23km / 60% multi-modal; Prospects 78% / 4.2 days / 28km / 52% multi-modal; Sceptics 60% / 3.2 days / 20km / 31% multi-modal",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 10,
+      "title_text": "EV owners commute primarily with their car and adopt more multi-modal solutions compared to sceptics",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Commuting modes detail and parking switch behavior across EV owner / prospect / sceptic clusters",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 11,
+      "title_text": "Mobility needs \u2014 Free time usage patterns",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 130,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Free time mobility patterns across clusters showing different usage of cars and alternative modes",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 12,
+      "title_text": "02. Consumer viewpoints \u2014 EV Owners deep dive",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 20,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: deep dive into EV Owners (~40 slides covering owner journey, usage, charging, satisfaction)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 13,
+      "title_text": "EV Owners \u2014 customer journey and usage habits (multiple slides aggregated)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": true,
+      "density": {
+        "word_count": 300,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Insight",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "EV owner journey: trigger, research, purchase, ownership; usage habits \u2014 daily/weekly patterns, charging routines, satisfaction drivers",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 14,
+      "title_text": "EV Owners \u2014 Charging solutions and preferences",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Charging analysis: home AC charging dominant; public DC for long trips; willingness to pay for charging speed",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 15,
+      "title_text": "Charging location and availability are key areas of dissatisfaction for EV owners",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Charging point dissatisfaction: location availability, reliability, payment friction are top complaints; cross-country comparison",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 16,
+      "title_text": "EV Owners \u2014 Additional charging analyses (multiple slides aggregated)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Charging cost analysis, public vs home preferences, charging time tolerance",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 17,
+      "title_text": "02. Consumer viewpoints \u2014 EV Prospects deep dive",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 20,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: deep dive into EV Prospects (intention to buy in 5 years)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 18,
+      "title_text": "EV Prospects \u2014 Key personas with distinctive traits",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Insight",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "6 EV prospect personas identified; Tech Enthusiasts, Dreamers and Pragmatic drive ~70% of next 2 years demand \u2014 market shifting toward mass-market",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 19,
+      "title_text": "EV Prospects \u2014 Key reasons to buy (multiple slides aggregated)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Top reasons for prospects to buy EV: cost of fuel/charging, environmental concerns, tech features, government incentives, range increase",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 20,
+      "title_text": "Charging duration, range and battery lifetime are the key barriers stopping EV prospects from purchasing",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Top barriers for EV prospects: charging duration, driving range, battery lifetime; charging time and range expectations charted",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 21,
+      "title_text": "02. Consumer viewpoints \u2014 EV Sceptics deep dive",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 20,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: deep dive into EV Sceptics (reject EVs in next 5 years)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 22,
+      "title_text": "EV Sceptics \u2014 Distinctive traits and main reasons for rejecting EVs",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Sceptic traits: predominantly women, lower income, 6 years older than prospects; main rejection reasons centered on price, charging infrastructure concerns, range anxiety",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 23,
+      "title_text": "03. eReadiness Index \u2014 section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 15,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: eReadiness Index (Index methodology + country rankings)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 24,
+      "title_text": "eReadiness Index \u2014 Methodology and weights",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Methodology",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Index methodology covering consumer demand, charging infrastructure, EV supply, government support; weighting and country scoring approach",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 25,
+      "title_text": "Europe eReadiness \u2014 Norway, Switzerland, Germany are most e-ready; Italy and Spain lag despite incentives",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 200,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Europe ranking: Norway / Switzerland / Germany top driven by mature charging infrastructure and high consumer demand; Italy and Spain lag despite generous government incentives",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 26,
+      "title_text": "APAC eReadiness \u2014 Hong Kong, China, Singapore lead; Australia ranks last",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "APAC ranking: Hong Kong / China / Singapore lead with high demand + infrastructure; Australia is least e-ready across the entire 18-country panel",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 27,
+      "title_text": "North America eReadiness \u2014 USA and Canada profiles",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 160,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "NA ranking and profile comparing USA and Canada across consumer demand, charging infrastructure, and supply dimensions",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 28,
+      "title_text": "Charging points growth by country \u2014 comparative analysis",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 160,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Charging point counts across 18 countries; comparative bar chart showing infrastructure maturity",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 29,
+      "title_text": "04. Recommendations \u2014 section header",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 15,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Section divider",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Section divider: Recommendations on the way forward",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 30,
+      "title_text": "Recommendations for e-mobility players (1/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 240,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Recommendation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "First half of recommendations covering customer-facing improvements: simplify purchase journey including online, address used-EV battery SoH transparency, improve charging UX",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 31,
+      "title_text": "Recommendations for e-mobility players (2/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 240,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Recommendation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Second half of recommendations covering infrastructure and product: invest in charging point reliability, target 6 EV prospect personas (Tech Enthusiasts, Dreamers, Pragmatic etc.), differentiated regional strategy",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 32,
+      "title_text": "Network contacts and closing",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 80,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Closing / contacts",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Contacts and authors for the eReadiness 2023 Survey Report",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    }
+  ],
+  "provenance": {
+    "tagged_by": "Claude (Opus, 2026-05-23)",
+    "input_json_source": "PDF text extraction via web_fetch (no structural script run)",
+    "fields_filled_by_ai": [
+      "all semantic and structural fields"
+    ],
+    "confidence_notes": "AGGREGATED tagging \u2014 the actual report is ~81 pages but many are detail/data pages within section deep-dives. I aggregated logical units (e.g., 'EV Owners charging analyses' covers multiple actual pages). For production use, the full pptx version with the slide-tagger script would produce one entry per real slide. Structural fields unknown (no .pptx). HIGH confidence on deck-level tags and section structure. MEDIUM confidence on per-slide aggregation accuracy \u2014 actual report has more granular slides per topic than represented here. The 6-persona EV Prospects framework is a key consulting-style framework worth using as a Tier-3 template reference."
+  }
+}

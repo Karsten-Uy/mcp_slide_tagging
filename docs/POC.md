@@ -124,11 +124,28 @@ Give your tester **`https://<app>.up.railway.app/mcp`**. (GitHub flow also works
 connect the repo in the Railway dashboard — but then commit the snapshot first:
 `git add -f corpus/`.)
 
-### Option D — Render (Docker)
+### Option D — Render (free tier, via Blueprint)
 
-New **Web Service** → Docker runtime → health check path `/health`. Render is
-git-based, so you must commit the snapshot: `git add -f corpus/` (it's gitignored).
-Returns `https://<svc>.onrender.com`; give your tester **`https://<svc>.onrender.com/mcp`**.
+A [`render.yaml`](../render.yaml) Blueprint is included (Docker, free plan,
+`/health` check). Render is **git-based**, so the repo must be on GitHub and the
+`corpus/` snapshot must be committed (it's gitignored):
+
+```bash
+git add -f corpus/*.json render.yaml          # force-add the gitignored snapshot
+git commit -m "Add Render blueprint + corpus snapshot"
+git remote add origin https://github.com/<you>/<repo>.git   # create the repo on github.com first
+git push -u origin master
+```
+
+Then in Render: **New → Blueprint** → pick the repo → it reads `render.yaml` and
+creates the service. (Or **New → Web Service → Docker** pointed at the repo.)
+You get `https://<service>.onrender.com`; give your tester
+**`https://<service>.onrender.com/mcp`**, Auth = None.
+
+**Free-tier caveat:** the instance sleeps after ~15 min idle (cold start ~30–60s),
+so claude.ai's *first* connect after a nap may time out — just retry, or keep it
+warm by pinging `https://<service>.onrender.com/health` every ~10 min (free, e.g.
+cron-job.org) during your tester's window.
 
 ### Your tester adds it in claude.ai
 Settings → Connectors → Add custom connector → URL = **`https://<deploy-host>/mcp`**,

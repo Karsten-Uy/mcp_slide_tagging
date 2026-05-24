@@ -1,0 +1,1471 @@
+{
+  "_legend": {
+    "client_industry": [
+      "Financial Services",
+      "Tech",
+      "Healthcare",
+      "Public Sector",
+      "Industrials",
+      "Consumer",
+      "Energy",
+      "Education",
+      "Cross-industry"
+    ],
+    "client_type": [
+      "Public sector",
+      "Private F500",
+      "Private mid-market",
+      "Government agency",
+      "Non-profit",
+      "Internal/thought-leadership"
+    ],
+    "engagement_stage": [
+      "RFP response",
+      "Pitch / opportunity dev",
+      "Kickoff",
+      "Mid-project readout",
+      "Weekly update",
+      "Final delivery",
+      "POV / thought leadership"
+    ],
+    "content_area": [
+      "Strategy",
+      "Digital transformation",
+      "SDLC",
+      "AI/ML",
+      "ERP",
+      "M&A",
+      "Operational excellence",
+      "Org design",
+      "Cost reduction",
+      "Risk",
+      "Market analysis",
+      "ESG",
+      "Workforce",
+      "Financial reporting",
+      "Other"
+    ],
+    "audience_level": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public"
+    ],
+    "deliverable_format": [
+      "PowerPoint",
+      "PDF",
+      "Hybrid",
+      "Online interactive"
+    ],
+    "geography": [
+      "US",
+      "UK",
+      "EMEA",
+      "APAC",
+      "Global",
+      "Regional (specify)"
+    ],
+    "confidentiality_tier": [
+      "Public",
+      "Internal",
+      "Client-confidential",
+      "Restricted"
+    ],
+    "slide_purpose": [
+      "Title",
+      "Section divider",
+      "Agenda / Contents",
+      "Exec summary",
+      "Context-setting",
+      "Current state",
+      "Finding",
+      "Insight",
+      "Recommendation",
+      "Framework",
+      "Roadmap",
+      "Timeline",
+      "Comparison",
+      "Decision matrix",
+      "Data presentation",
+      "Case study",
+      "Team intro",
+      "Methodology",
+      "Pricing",
+      "Q&A",
+      "Appendix / reference",
+      "Closing / contacts"
+    ],
+    "message_type": [
+      "Assertion",
+      "Comparison",
+      "Sequence / timeline",
+      "Decomposition (parts of whole)",
+      "Causation",
+      "Trend over time",
+      "Trade-off",
+      "Process flow",
+      "Listing / enumeration",
+      "Single statistic / hero number",
+      "No clear message"
+    ],
+    "audience_level_slide": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public",
+      "Same as deck"
+    ],
+    "slide_position_role": [
+      "Hero / headline",
+      "Build / setup",
+      "Evidence / backup",
+      "Synthesis / takeaway",
+      "Transition / divider"
+    ],
+    "dominant_visual_element": [
+      "Chart",
+      "Diagram",
+      "Table",
+      "Image",
+      "Icon-based",
+      "Framework graphic",
+      "Pure text",
+      "Mixed"
+    ],
+    "chart_type": [
+      "Line",
+      "Bar",
+      "Stacked bar",
+      "Pie",
+      "Waterfall",
+      "Scatter",
+      "Bubble",
+      "Treemap",
+      "Heat map",
+      "Sankey",
+      "Other",
+      "N/A"
+    ],
+    "placeholder_compliance": [
+      "Pristine",
+      "Reusable",
+      "Bespoke",
+      "Broken"
+    ],
+    "slot_types_present": [
+      "title",
+      "subtitle",
+      "body-text",
+      "bullet-list",
+      "chart",
+      "image",
+      "table",
+      "callout-box",
+      "citation",
+      "footer",
+      "page-number"
+    ],
+    "reusability_score_qualitative": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "tier_match_difficulty": [
+      "Likely Tier 1 candidate",
+      "Likely Tier 2",
+      "Likely Tier 3",
+      "Likely Tier 4"
+    ],
+    "inferred_rules.title.uses_action_titles": [
+      "always",
+      "sometimes",
+      "rarely"
+    ],
+    "inferred_rules.chart_styling.uses_consistent_palette": [
+      "true",
+      "false",
+      "n/a"
+    ],
+    "inferred_rules.layout_conventions.uses_master_template": [
+      "true",
+      "false",
+      "mixed"
+    ],
+    "design_system.grid": [
+      "12-column",
+      "6-column",
+      "free"
+    ],
+    "design_system.recurring_elements[].type": [
+      "logo",
+      "page_number",
+      "footer",
+      "watermark"
+    ]
+  },
+  "source_filename": "electric-vehicle-sales-review-q4-2022.pdf",
+  "source_format": "pdf",
+  "slide_count": 25,
+  "client_industry": "Industrials",
+  "client_sub_industry": "Automotive / Electric Vehicles",
+  "client_type": "Internal/thought-leadership",
+  "engagement_stage": "POV / thought leadership",
+  "content_area": [
+    "Market analysis",
+    "Strategy",
+    "ESG"
+  ],
+  "audience_level": "Senior executives",
+  "deliverable_format": "PDF",
+  "geography": "Global",
+  "deck_length": 25,
+  "confidentiality_tier": "Public",
+  "inferred_publisher": "PwC Strategy& (Germany \u2014 Autofacts)",
+  "deck_summary_one_sentence": "Strategy& and PwC Autofacts quarterly review of global electric vehicle sales (Q4 2022) covering BEV/PHEV/Hybrid market dynamics across 15 countries, OEM competition, charging infrastructure, and EV TCO outlook as incentives wane.",
+  "design_system": {
+    "title_style": {
+      "font_family": null,
+      "size_pt": null,
+      "weight": "bold",
+      "color_hex": "#000000",
+      "alignment": "left"
+    },
+    "body_style": {
+      "font_family": null,
+      "size_pt": null,
+      "weight": "regular",
+      "color_hex": "#0D0D0D",
+      "alignment": "left"
+    },
+    "color_palette": {
+      "primary": "#C00000",
+      "accent": "#D93953",
+      "neutrals": [
+        "#000000",
+        "#585858",
+        "#FFFFFF"
+      ]
+    },
+    "default_text_alignment": "left",
+    "grid": "free",
+    "recurring_elements": [
+      {
+        "type": "footer",
+        "value": "Strategy&"
+      },
+      {
+        "type": "page_number"
+      }
+    ]
+  },
+  "inferred_rules": {
+    "title": {
+      "font_family_observed": [],
+      "size_pt_range": null,
+      "size_pt_most_common": null,
+      "weight_observed": [
+        "bold"
+      ],
+      "color_hex_observed": [
+        "#000000",
+        "#FFFFFF"
+      ],
+      "position_most_common": "top-center",
+      "alignment_most_common": "left",
+      "uses_action_titles": "always",
+      "max_chars_observed": 110,
+      "scope_tag": "inferred"
+    },
+    "body_text": {
+      "font_family_observed": [],
+      "size_pt_range": null,
+      "size_pt_most_common": null,
+      "color_hex_observed": [
+        "#0D0D0D"
+      ],
+      "alignment_most_common": "left",
+      "scope_tag": "inferred"
+    },
+    "color_palette": {
+      "primary_observed": "#C00000",
+      "accent_observed": "#D93953",
+      "neutrals_observed": [
+        "#000000",
+        "#585858",
+        "#FFFFFF"
+      ],
+      "notes": "Classic Strategy& red palette; data tables use red highlights with black/gray text; chart palette is consistently red/gray.",
+      "scope_tag": "inferred"
+    },
+    "chart_styling": {
+      "uses_consistent_palette": "true",
+      "notes": "Bar/line charts use red for primary series, gray for comparison. Source citation appears below each chart ('Source: PwC Autofacts Analysis...').",
+      "scope_tag": "inferred"
+    },
+    "layout_conventions": {
+      "uses_master_template": "mixed",
+      "no_fly_zones_observed": "Top-band for action titles. Bottom-band for 'Strategy&' brand mark + page number. Most chart slides have insights/text on left, chart on right (or vice versa).",
+      "scope_tag": "inferred"
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title_text": "Electric Vehicle Sales Review Q4 2022 \u2014 Foresight to drive the industry",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 15,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "sparse"
+      },
+      "slide_purpose": "Title",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Hero / headline",
+      "main_message": "Cover slide: Electric Vehicle Sales Review Q4 2022 \u2014 Foresight to drive the industry (February 2023)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Pristine",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "subtitle"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 1,
+      "title_text": "About this report",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 70,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Context-setting",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "About: collaboration between Strategy&, PwC's global strategy consulting business, and PwC Autofacts automotive experts",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 2,
+      "title_text": "United States finally arrives at BEV party \u2014 Executive summary",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 400,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Exec summary",
+      "message_type": "Assertion",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Hero / headline",
+      "main_message": "US BEV sales grew 88% in 2022 (highest growth of all analyzed markets); China BEV grew 85%; top 5 European markets grew 28%; overall analyzed-market BEV sales rose 70%",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 3,
+      "title_text": "Multiple OEMs slash BEV prices as market competition intensifies",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 450,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Assertion",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "OEMs are slashing BEV prices: Mercedes-Benz and Tesla cut up to 20%; Ford and Xpeng cut up to 10%; competitive launches include VW ID.7, BMW i Vision Dee; cheaper sodium/sulfur batteries on horizon",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3"
+    },
+    {
+      "index": 4,
+      "title_text": "United States bucks global trend of EV incentive reductions",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 380,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Major markets cutting EV incentives: France -\u20ac1,000, Germany BEV cut from \u20ac6,000 to \u20ac4,500, China cancelled fully; US going opposite direction with Inflation Reduction Act $7,500 tax credit",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 5,
+      "title_text": "Electric TCO advantage under threat in Germany as incentives wane",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 350,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "TCO analysis of Opel Corsa ICE vs BEV: 2022 BEV TCO \u20ac27.9k vs ICE \u20ac13.9k (BEV favorable with incentives); by 2025 BEV becomes more expensive than ICE without incentives \u2014 projected reversal of EV TCO advantage",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Line",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 6,
+      "title_text": "Competition in the BEV market is getting fiercer \u2014 Top BEV models in 2022",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 300,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Top BEV models 2022: USA Tesla Model Y 251,974; Europe Top 4 Tesla Model 3 54,835; China Wuling Hongguang Mini 404,823 / Tesla Model Y 315,314 / BYD Dolphin 204,226",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 7,
+      "title_text": "New BEV launches drive market growth \u2014 2023 launch calendar",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 150,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Timeline",
+      "message_type": "Sequence / timeline",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "2023 BEV launch calendar by quarter: Q1 BYD Seagull, Chevrolet Silverado EV, Lexus RZ, NIO EC7; Q2 Volkswagen ID.7, Volvo EX30; Q3 BMW i5, Chevrolet Equinox EV, Fiat 600; Q4 Audi Q6 e-tron, Peugeot 3008, Tesla Cybertruck, Toyota bZ1X",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 8,
+      "title_text": "EV sales continue growth this year \u2014 All Electric Vehicles",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 80,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "December 21 vs December 22 EV sales: 1,147\u21921,608k units globally; YTD 9,451\u219213,860k units across WE 5+5, China, USA",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 9,
+      "title_text": "US and China growth momentum on par \u2014 BEVs only",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 80,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "BEV sales Dec 21 vs Dec 22: 653\u2192959k units; YTD 4,395\u21927,488k units; US and China driving most growth",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 10,
+      "title_text": "Plug-in sales in China thrive \u2014 PHEVs",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 80,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "PHEV sales: Dec 21 vs Dec 22 183\u2192326k units; YTD 1,650\u21922,551k units; China dominates with 150% growth",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 11,
+      "title_text": "Western Europe 5+5 \u2014 Q4 2022 results",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 420,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "WE 5+5 Q4 2022: BEV 524,000 (+38%), PHEV 283,000 (+25%), Hybrid 576,000 (+29%); Germany highest growth +66%; UK +40%; Italy -34%; Sweden/Norway lead 'other 5' with +84%/+76%; Turkey BEV +172% YoY",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 12,
+      "title_text": "United States \u2014 Q4 2022 results",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 230,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "US Q4 2022: BEV 215,000 (+92%), PHEV 50,000 (+6%), Hybrid 206,000 (+3%); BEV sales doubled vs 2021; US BEV market share still only 5%; full 2022 saw highest BEV growth (+88%) of all analyzed markets",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 13,
+      "title_text": "China and other Asian countries \u2014 Q4 2022 results",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 240,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "China Q4 2022: BEV 1,780,000 (+58%), PHEV 531,000 (+123%); Japan EV market dominated by hybrids (1M+ vs 32k BEVs in 2022); South Korea BEV +62% YoY",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 14,
+      "title_text": "Rankings \u2014 Shares of EV registrations across regions",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 120,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Comparison",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "EV registrations share: WE 5+5 ICE 51.4% / Hybrid 23.9% / BEV 15.4% / PHEV 9.3%; USA ICE 87.4% / Hybrid 6.0%; China ICE 71.4% / BEV 19.9%",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 15,
+      "title_text": "Electrified vehicle assembly forecast by region \u2014 2023 vs 2028",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 100,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "EV assembly forecast 2023 vs 2028 by region (millions): W+C Europe 14.0\u219225.1; China 29.8\u219264.9; NAFTA 11.8\u219233.8; APAC 4.1\u21925.9",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 16,
+      "title_text": "Global EV assembly by powertrain type \u2014 2019 to 2028F",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": true,
+      "has_table": false,
+      "density": {
+        "word_count": 80,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Global EV assembly 2019-2028F by powertrain type (BEV, PHEV, Hybrid) with year-over-year growth percentages \u2014 showing continued expansion across all three categories",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 17,
+      "title_text": "Overview: BEV model launches 2023 (not exhaustive)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 100,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "BEV model launches 2023 by quarter: 15 listed including Audi Q6 e-tron, BMW i5, BrightDrop Zevo 400, BYD Seagull, Chevrolet Equinox EV/Silverado EV, Fiat 600, Tesla Cybertruck, Volkswagen ID.7",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 18,
+      "title_text": "Overview: BEV model launches 2024-2027 (not exhaustive) (1/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 120,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "BEV launches 2024-2027 (first half): Alfa Romeo B-CUV/Giulia, Audi A3/A4 e-tron, BMW i1/iX4/iX7, Chevrolet Malibu EV, Ferrari E-CUV, Fisker PEAR, Hyundai Ioniq 3/8, Infiniti QX80, Jeep Recon, Kia EV4",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 19,
+      "title_text": "Overview: BEV model launches 2024-2027 (not exhaustive) (2/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 120,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "BEV launches 2024-2027 (second half): Kia EV8, Lancia Ypsilon, Lincoln Corsair EV, Mercedes-Benz EQG, Mini Aceman, Nissan Maxima EV, Polestar 6, Renault 5, Sony D-Sedan EV, Volkswagen ID.1/ID.2/Trinity, Volvo EX40/EX60, Wuling Sunshine",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 20,
+      "title_text": "Electric vehicle sales data \u2014 Germany, UK, France, Italy, Spain, WE-5",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 400,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Detailed BEV/PHEV/Hybrid sales data table for top 5 European markets with YTD, market share, YoY, Q4 and monthly figures",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 21,
+      "title_text": "Electric vehicle sales data \u2014 Sweden, Norway, Netherlands, Switzerland, Austria, WE 5+5",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 400,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Detailed BEV/PHEV/Hybrid sales data table for Nordics + Benelux/Alpine markets with same metric structure; Norway BEV share 79.3%",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 22,
+      "title_text": "Electric vehicle sales data \u2014 China, Japan, USA, South Korea, Analyzed Markets",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 400,
+        "text_blocks": 10,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Detailed BEV/PHEV/Hybrid sales data table for major non-European markets + total analyzed-market aggregates; China BEV +84.5% YoY",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2"
+    },
+    {
+      "index": 23,
+      "title_text": "Authors and PR contact",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 80,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Team intro",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Authors: J\u00f6rn Neuhausen (Strategy& Germany Director), Annabelle Kliesing (Sr Comms Lead), Steven van Arsdale (Mgr PwC Autofacts), Felix Kuhnert (Automotive Industry Leader PwC Germany)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    },
+    {
+      "index": 24,
+      "title_text": "Automotive contacts",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 160,
+        "text_blocks": 10,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Closing / contacts",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Automotive contacts by geography: Harald Wimmer (Global), J\u00f6rg Krings (Strategy& Germany), Jun Jin (China), Eiichi Yamanaka (Japan), Akshay Singh (US), Cara Haffey (UK), plus France/Maghreb, Spain, Italy, South Korea leaders",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "center"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate"
+    }
+  ],
+  "provenance": {
+    "tagged_by": "Claude (Opus, 2026-05-23)",
+    "input_json_source": "PDF text extraction via web_fetch (no structural script run)",
+    "fields_filled_by_ai": [
+      "all semantic and structural fields"
+    ],
+    "confidence_notes": "HIGH confidence on slide_purpose, message_type, main_message \u2014 extracted from full PDF text. MEDIUM confidence on density buckets and word counts \u2014 estimated, not parsed from .pptx. STRUCTURAL fields (font sizes, exact element placements) are unknown because no structural extraction script was run on this PDF. Recommend re-running the slide-tagger script if .pptx version becomes available. Slide count is approximate (~25 based on visible page markers). This is Strategy& Germany's Autofacts quarterly EV review \u2014 recurring publication (Q4 2022 edition)."
+  }
+}

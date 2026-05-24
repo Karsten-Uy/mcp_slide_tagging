@@ -1,0 +1,1978 @@
+{
+  "_legend": {
+    "client_industry": [
+      "Financial Services",
+      "Tech",
+      "Healthcare",
+      "Public Sector",
+      "Industrials",
+      "Consumer",
+      "Energy",
+      "Education",
+      "Cross-industry"
+    ],
+    "client_type": [
+      "Public sector",
+      "Private F500",
+      "Private mid-market",
+      "Government agency",
+      "Non-profit",
+      "Internal/thought-leadership"
+    ],
+    "engagement_stage": [
+      "RFP response",
+      "Pitch / opportunity dev",
+      "Kickoff",
+      "Mid-project readout",
+      "Weekly update",
+      "Final delivery",
+      "POV / thought leadership"
+    ],
+    "content_area": [
+      "Strategy",
+      "Digital transformation",
+      "SDLC",
+      "AI/ML",
+      "ERP",
+      "M&A",
+      "Operational excellence",
+      "Org design",
+      "Cost reduction",
+      "Risk",
+      "Market analysis",
+      "ESG",
+      "Workforce",
+      "Financial reporting",
+      "Other"
+    ],
+    "audience_level": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public"
+    ],
+    "deliverable_format": [
+      "PowerPoint",
+      "PDF",
+      "Hybrid",
+      "Online interactive"
+    ],
+    "geography": [
+      "US",
+      "UK",
+      "EMEA",
+      "APAC",
+      "Global",
+      "Regional (specify)"
+    ],
+    "confidentiality_tier": [
+      "Public",
+      "Internal",
+      "Client-confidential",
+      "Restricted"
+    ],
+    "slide_purpose": [
+      "Title",
+      "Section divider",
+      "Agenda / Contents",
+      "Exec summary",
+      "Context-setting",
+      "Current state",
+      "Finding",
+      "Insight",
+      "Recommendation",
+      "Framework",
+      "Roadmap",
+      "Timeline",
+      "Comparison",
+      "Decision matrix",
+      "Data presentation",
+      "Case study",
+      "Team intro",
+      "Methodology",
+      "Pricing",
+      "Q&A",
+      "Appendix / reference",
+      "Closing / contacts"
+    ],
+    "message_type": [
+      "Assertion",
+      "Comparison",
+      "Sequence / timeline",
+      "Decomposition (parts of whole)",
+      "Causation",
+      "Trend over time",
+      "Trade-off",
+      "Process flow",
+      "Listing / enumeration",
+      "Single statistic / hero number",
+      "No clear message"
+    ],
+    "audience_level_slide": [
+      "C-suite / board",
+      "Senior executives",
+      "Operating committee",
+      "Working team",
+      "External / public",
+      "Same as deck"
+    ],
+    "slide_position_role": [
+      "Hero / headline",
+      "Build / setup",
+      "Evidence / backup",
+      "Synthesis / takeaway",
+      "Transition / divider"
+    ],
+    "dominant_visual_element": [
+      "Chart",
+      "Diagram",
+      "Table",
+      "Image",
+      "Icon-based",
+      "Framework graphic",
+      "Pure text",
+      "Mixed"
+    ],
+    "chart_type": [
+      "Line",
+      "Bar",
+      "Stacked bar",
+      "Pie",
+      "Waterfall",
+      "Scatter",
+      "Bubble",
+      "Treemap",
+      "Heat map",
+      "Sankey",
+      "Other",
+      "N/A"
+    ],
+    "placeholder_compliance": [
+      "Pristine",
+      "Reusable",
+      "Bespoke",
+      "Broken"
+    ],
+    "slot_types_present": [
+      "title",
+      "subtitle",
+      "body-text",
+      "bullet-list",
+      "chart",
+      "image",
+      "table",
+      "callout-box",
+      "citation",
+      "footer",
+      "page-number"
+    ],
+    "reusability_score_qualitative": [
+      "High",
+      "Medium",
+      "Low"
+    ],
+    "tier_match_difficulty": [
+      "Likely Tier 1 candidate",
+      "Likely Tier 2",
+      "Likely Tier 3",
+      "Likely Tier 4"
+    ],
+    "inferred_rules.title.uses_action_titles": [
+      "always",
+      "sometimes",
+      "rarely"
+    ],
+    "inferred_rules.chart_styling.uses_consistent_palette": [
+      "true",
+      "false",
+      "n/a"
+    ],
+    "inferred_rules.layout_conventions.uses_master_template": [
+      "true",
+      "false",
+      "mixed"
+    ],
+    "design_system.grid": [
+      "12-column",
+      "6-column",
+      "free"
+    ],
+    "design_system.recurring_elements[].type": [
+      "logo",
+      "page_number",
+      "footer",
+      "watermark"
+    ]
+  },
+  "source_filename": "nigeria-economic-outlook-october-2023-v1.pptx",
+  "source_format": "pptx",
+  "slide_count": 29,
+  "client_industry": "Cross-industry",
+  "client_sub_industry": "Macroeconomics / Public Finance",
+  "client_type": "Internal/thought-leadership",
+  "engagement_stage": "POV / thought leadership",
+  "content_area": [
+    "Market analysis",
+    "Strategy",
+    "Risk"
+  ],
+  "audience_level": "C-suite / board",
+  "deliverable_format": "PowerPoint",
+  "geography": "Regional (specify)",
+  "deck_length": 29,
+  "confidentiality_tier": "Internal",
+  "inferred_publisher": "PwC (Strategy& Nigeria — Economics team)",
+  "deck_summary_one_sentence": "Bi-monthly PwC Strategy& Nigeria economic outlook analyzing how global economic trends (monetary tightening, debt, geopolitics, trade, GDP slowdown) are impacting Nigeria's foreign exchange market and recommending a sequenced policy response.",
+  "design_system": {
+    "title_style": {
+      "font_family": "Arial MT",
+      "size_pt": 15.0,
+      "weight": "regular",
+      "color_hex": "#FFFFFF",
+      "alignment": null
+    },
+    "body_style": {
+      "font_family": "Arial MT",
+      "size_pt": 7.0,
+      "weight": "regular",
+      "color_hex": "#0D0D0D",
+      "alignment": "center"
+    },
+    "color_palette": {
+      "primary": "#C00000",
+      "accent": "#D93953",
+      "neutrals": [
+        "#0D0D0D",
+        "#585858",
+        "#FFFFFF"
+      ]
+    },
+    "default_text_alignment": "center",
+    "grid": "free",
+    "recurring_elements": [
+      {
+        "type": "footer",
+        "value": "Impact of Global Economic Trends on Nigeria's Foreign Exchange Market"
+      },
+      {
+        "type": "footer",
+        "value": "October 2023"
+      },
+      {
+        "type": "page_number"
+      }
+    ]
+  },
+  "inferred_rules": {
+    "title": {
+      "font_family_observed": [
+        "Arial MT"
+      ],
+      "size_pt_range": [
+        15.0,
+        24.0
+      ],
+      "size_pt_most_common": 15.0,
+      "weight_observed": [
+        "regular"
+      ],
+      "color_hex_observed": [
+        "#000000",
+        "#0D0D0D",
+        "#FFFFFF"
+      ],
+      "position_most_common": "top-center",
+      "alignment_most_common": "left",
+      "uses_action_titles": "always",
+      "max_chars_observed": 154,
+      "scope_tag": "inferred"
+    },
+    "body_text": {
+      "font_family_observed": [
+        "Arial MT"
+      ],
+      "size_pt_range": [
+        7.0,
+        10.0
+      ],
+      "size_pt_most_common": 7.0,
+      "color_hex_observed": [
+        "#0D0D0D",
+        "#585858"
+      ],
+      "alignment_most_common": "center",
+      "scope_tag": "inferred"
+    },
+    "color_palette": {
+      "primary_observed": "#C00000",
+      "accent_observed": "#D93953",
+      "neutrals_observed": [
+        "#0D0D0D",
+        "#585858",
+        "#FFFFFF"
+      ],
+      "notes": "Strong red-and-black palette typical of PwC Strategy& branding. Primary red used for chart highlights and section markers; accent for secondary emphasis; neutrals dominate body content. No green/blue used.",
+      "scope_tag": "inferred"
+    },
+    "chart_styling": {
+      "uses_consistent_palette": "true",
+      "notes": "Charts consistently use red primary with gray/black supporting colors. Most charts include an 'Insights' side callout. Source attribution citation appears as small text near chart base ('Source: NBS, CBN, PwC Analysis' pattern recurs).",
+      "scope_tag": "inferred"
+    },
+    "layout_conventions": {
+      "uses_master_template": "mixed",
+      "no_fly_zones_observed": "Consistent top-band for titles (action-title style, ~1-2 lines). Consistent bottom-band for footer ('Impact of Global Economic Trends...' + 'October 2023' + page number). Right-side or side-callout consistently used for 'Insights' panels on data slides. Many bespoke layouts for content slides — multi-column matrices, framework diagrams, dashboards.",
+      "scope_tag": "inferred"
+    }
+  },
+  "slides": [
+    {
+      "index": 0,
+      "title_text": "Nigeria (Bi-monthly) Economic Outlook",
+      "title_position": "middle-left",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 20,
+        "text_blocks": 4,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.87,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Title",
+      "message_type": "No clear message",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Hero / headline",
+      "main_message": "Cover slide: Nigeria (Bi-monthly) Economic Outlook — Impact of global economic trends on Nigeria's foreign exchange and the way forward (October 2023)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Pristine",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "logo",
+          "region": "top-left"
+        },
+        {
+          "name": "title",
+          "region": "middle-left"
+        },
+        {
+          "name": "subtitle",
+          "region": "middle-left"
+        },
+        {
+          "name": "date",
+          "region": "middle-left"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "subtitle"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_000.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_000.png"
+    },
+    {
+      "index": 1,
+      "title_text": "Content",
+      "title_position": "top-left",
+      "image_count": 2,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 26,
+        "text_blocks": 10,
+        "visual_elements": 2,
+        "whitespace_ratio_est": 0.42,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Agenda / Contents",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Contents: 1) Macroeconomic Context, 2) Economic Outlook, 3) Impact of Global Economic Trends on Nigeria FX Market and Way Forward, 4) PwC Economics Services",
+      "dominant_visual_element": "Icon-based",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-left"
+        },
+        {
+          "name": "main-content",
+          "region": "center-grid"
+        },
+        {
+          "name": "watermark",
+          "region": "background"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "bullet-list",
+        "image"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_001.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_001.png"
+    },
+    {
+      "index": 2,
+      "title_text": null,
+      "title_position": null,
+      "image_count": 2,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 119,
+        "text_blocks": 40,
+        "visual_elements": 2,
+        "whitespace_ratio_est": 0.74,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Data presentation",
+      "message_type": "Single statistic / hero number",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Hero / headline",
+      "main_message": "Macroeconomic dashboard for Nigeria as of Sept 29 2023: GDP growth 2.5% (Q2), official FX rate ₦769/$, parallel FX ₦1,008/$, inflation 25.8%, MPR 18.75%, oil production 1.4mbpd, reserves $33.2bn, market cap ₦36.3tn",
+      "dominant_visual_element": "Mixed",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Bespoke",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "main-content",
+          "region": "8-tile-grid"
+        },
+        {
+          "name": "section-marker",
+          "region": "left-band"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "body-text",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_002.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_002.png"
+    },
+    {
+      "index": 3,
+      "title_text": "Setting the context (1/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 516,
+        "text_blocks": 12,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.25,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Context-setting",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Setting the context (Part 1/2): macroeconomic situation across Consumer & Demand, Macro Dynamics, Prices & Markets Development, and Regulatory & Policy Development — covering GDP growth, inflation, FX, fiscal measures, and tax reforms",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "4-column-grid"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "callout-box",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_003.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_003.png"
+    },
+    {
+      "index": 4,
+      "title_text": "Setting the context (2/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 495,
+        "text_blocks": 11,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.27,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Context-setting",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Setting the context (Part 2/2): monetary dynamics ($7B FX backlog), fiscal dynamics (public debt to $113bn), and continued regulatory policy development (Tertiary Education Tax raised to 3%, repealed tax benefits, 0.5% import levy)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "4-column-grid"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_004.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_004.png"
+    },
+    {
+      "index": 5,
+      "title_text": "The rise in Nigeria’s public debt to N87.4trillion in Q2 2023 could be attributed to the impact of securitisation of ways & means, and the naira devaluation",
+      "title_position": "top-center",
+      "image_count": 1,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 180,
+        "text_blocks": 14,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.4,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Causation",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "The rise in Nigeria's public debt to N87.4 trillion in Q2 2023 is attributed to securitisation of ways & means (59.1% of the rise) and the impact of naira devaluation (34.9% of the rise)",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Waterfall",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_005.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_005.png"
+    },
+    {
+      "index": 6,
+      "title_text": "The rise in all energy pressure points may further squeeze consumer’s purchasing power",
+      "title_position": "top-center",
+      "image_count": 1,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 237,
+        "text_blocks": 17,
+        "visual_elements": 2,
+        "whitespace_ratio_est": 0.24,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "All energy pressure points (kerosene, PMS, diesel, LPG) have been deregulated and now track international oil prices; fuel subsidy removal drove PMS prices up >200%, further squeezing consumer purchasing power",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Line",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "table",
+          "region": "left-secondary"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "table",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_006.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_006.png"
+    },
+    {
+      "index": 7,
+      "title_text": "Slowdown of GDP growth in Q2 2023 to 2.5% was attributed to continued effect of naira redesign policy",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 270,
+        "text_blocks": 22,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.46,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Q2 2023 GDP grew marginally to 2.5% (from 2.3% in Q1) due to lingering cash crunch effects and emerging effects of subsidy removal and FX liberalisation; PwC projects 2.8% growth in 2023 and 3% in 2024",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "main"
+        },
+        {
+          "name": "annotations",
+          "region": "chart-overlay"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_007.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_007.png"
+    },
+    {
+      "index": 8,
+      "title_text": "Information & communication sector is the only fast growing dominant sector",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 263,
+        "text_blocks": 20,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Insight",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Of Nigeria's economic sectors, Information & Communication is the only dominant sector that's fast growing (8.6%); Financial & Insurance grew 26.8% but is smaller; Transportation & Storage contracted -50.6% from PMS subsidy removal",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Bespoke",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "matrix",
+          "region": "left-main"
+        },
+        {
+          "name": "key-insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "assumptions",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "callout-box",
+        "body-text",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_008.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_008.png"
+    },
+    {
+      "index": 9,
+      "title_text": "Economic context and outlook",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 475,
+        "text_blocks": 29,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.45,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Insight",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Synthesized economic outlook: key assumption drivers (consumer/demand, macro dynamics, prices/markets, fiscal, monetary) mapped to likely impacts on Growth (2.8% PwC projection), Investment (capital reallocation continues), Consumer Demand (slowing), Production (FX-pressured), Government Spending (debt-constrained), Net Exports (FX-constrained)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Bespoke",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "drivers-column",
+          "region": "left-3-column"
+        },
+        {
+          "name": "impacts-column",
+          "region": "right-3-column"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 3",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_009.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_009.png"
+    },
+    {
+      "index": 10,
+      "title_text": "Framing the relationships between global trends and Nigeria FX market",
+      "title_position": "top-center",
+      "image_count": 3,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 113,
+        "text_blocks": 21,
+        "visual_elements": 4,
+        "whitespace_ratio_est": 0.5,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Causation",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Conceptual framework: how five global trends (monetary tightening, debt sustainability, geopolitical risk, weakening trade, slowing GDP growth) flow through local trends → FX market mechanisms → FX outcomes (stability, price evolution, flexibility to shocks)",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Bespoke",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "diagram",
+          "region": "center-main"
+        },
+        {
+          "name": "global-trends-list",
+          "region": "left-side"
+        },
+        {
+          "name": "outcomes",
+          "region": "right-side"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "image",
+        "callout-box",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_010.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_010.png"
+    },
+    {
+      "index": 11,
+      "title_text": "Key global trends",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 367,
+        "text_blocks": 13,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.38,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Context-setting",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Five key global trends summarized: 1) Monetary tightening (Fed/ECB rate hikes), 2) Debt sustainability concerns ($92T global public debt), 3) Heightened geopolitical risk (Russia-Ukraine, fragmentation), 4) Weakening global trade (China exports -8.8%), 5) Slowing GDP growth (US/EU/UK declining)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "5-column-grid"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_011.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_011.png"
+    },
+    {
+      "index": 12,
+      "title_text": "The impact of the global transmission mechanisms on price discovery, liquidity, and friction in forex access in Nigeria",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 31,
+        "text_blocks": 4,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.19,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Comparison",
+      "message_type": "Comparison",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "Matrix mapping global transmission mechanisms to their specific impact on price discovery, liquidity, and friction in Nigeria's FX access",
+      "dominant_visual_element": "Table",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "table",
+          "region": "main"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "table",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_012.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_012.png"
+    },
+    {
+      "index": 13,
+      "title_text": "The global financial landscape is more challenging (1/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 93,
+        "text_blocks": 11,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.77,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Global financial landscape more challenging (1/2): since US tightening started 18 months ago, EM dollar bond yields rose ~200bps, foreign currency bond issuance fell, and portfolio flows to major EMs sharply declined",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_013.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_013.png"
+    },
+    {
+      "index": 14,
+      "title_text": "The global financial landscape is more challenging (2/2)",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 141,
+        "text_blocks": 17,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.7,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Global financial landscape more challenging (2/2): nominal yields on 10-year US Treasury bonds have risen above 4%, reaching their highest point since the Global Financial Crisis",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Line",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_014.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_014.png"
+    },
+    {
+      "index": 15,
+      "title_text": "Increase in interest rates may lead to reallocation of capital from frontier markets",
+      "title_position": "top-center",
+      "image_count": 1,
+      "has_chart": false,
+      "has_table": true,
+      "density": {
+        "word_count": 233,
+        "text_blocks": 28,
+        "visual_elements": 2,
+        "whitespace_ratio_est": 0.56,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Causation",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Higher interest rates (Fed funds 5.25-5.5%) drive capital reallocation from frontier to developed markets; Nigeria MSCI index outperformed frontier index 23.5% vs 1.4% but declined sharply 2020-2022 (-113% to -3.02%)",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Line",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "table",
+          "region": "right-secondary"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "table",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_015.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_015.png"
+    },
+    {
+      "index": 16,
+      "title_text": "Rising debt service to revenue ratio has led to the reallocation of capital away from the economy",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 157,
+        "text_blocks": 17,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.72,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Nigeria's debt service to revenue ratio rose to 96% in 2022, triggering low credit ratings (Moody's, Fitch) and driving capital importation from $24B in 2018 down to $5.3B in 2022",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_016.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_016.png"
+    },
+    {
+      "index": 17,
+      "title_text": "The prevalence of geoeconomic disintegration is on the rise",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 179,
+        "text_blocks": 22,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.65,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Geoeconomic disintegration rising: ~3,000 trade restrictions imposed last year (3x 2019 levels) due to pandemic and Russia-Ukraine war; Nigeria highly exposed via wheat imports ($2.1B in 2022 = 4% of total imports)",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_017.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_017.png"
+    },
+    {
+      "index": 18,
+      "title_text": "Decline in global trade growth may adversely affect Nigeria’s trade balance and FX inflows",
+      "title_position": "top-center",
+      "image_count": 1,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 281,
+        "text_blocks": 34,
+        "visual_elements": 1,
+        "whitespace_ratio_est": 0.62,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Causation",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Global trade improved Q1 2023 ~2% YoY from China reopening, but UNCTAD predicts weak Q2 from inflation and Ukraine conflict; Nigeria's trade balance directly correlates with global trade growth and FX inflows are pressured",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_018.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_018.png"
+    },
+    {
+      "index": 19,
+      "title_text": "Weakening global growth may decelerate remittance flows to the country",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 267,
+        "text_blocks": 40,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.63,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Causation",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Weakening global growth may decelerate remittance flows to Nigeria; global remittances to LMICs growing just 1.4% in 2023 (vs 8% in 2022); historical pattern shows -28% remittance drop during COVID and -5% in 2009 financial crisis",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "annotations",
+          "region": "chart-overlay"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_019.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_019.png"
+    },
+    {
+      "index": 20,
+      "title_text": "WDAS/RDAS utilisation and FX intervention accounted for 70% of FX outflows between 2004 and 2021",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 157,
+        "text_blocks": 29,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.73,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "WDAS/RDAS utilisation and FX intervention accounted for 70% of all FX outflows 2004-2021; other official payments accounted for 15%; external debt service rose from 1% in 2015 to 37% in 2021",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_020.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_020.png"
+    },
+    {
+      "index": 21,
+      "title_text": "59% of annual FX inflows were from autonomous sources in 2022",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 162,
+        "text_blocks": 48,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.73,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Decomposition (parts of whole)",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "59% of annual FX inflows came from autonomous (non-CBN) sources in 2022; since 2007 FX from autonomous sources exceeded CBN inflows, meaning official interventions don't reflect true market demand/supply",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Stacked bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_021.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_021.png"
+    },
+    {
+      "index": 22,
+      "title_text": "Parallel market premium widened in 2023 with the rise in import bills and the decline in crude oil exports",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 239,
+        "text_blocks": 50,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.62,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Parallel market premium widened to 28% in 2023 driven by import bill rises and crude oil export declines; CBN historically maintained official rate via sanctions but artificial strength caused non-tradable services to grow in import basket",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_022.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_022.png"
+    },
+    {
+      "index": 23,
+      "title_text": "Total net flows through the CBN and autonomous sources has been declining",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 152,
+        "text_blocks": 26,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.73,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Finding",
+      "message_type": "Trend over time",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Evidence / backup",
+      "main_message": "Net flows through CBN are now negative, indicating declines in oil sector receipts and non-oil autonomous inflows; autonomous USD inflows peaked at $103B in 2013 and gap between official/parallel rates widened sharply in 2016 from $35/bbl oil price",
+      "dominant_visual_element": "Chart",
+      "chart_type": "Bar",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": true,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "chart",
+          "region": "left-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "chart",
+        "callout-box",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_023.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_023.png"
+    },
+    {
+      "index": 24,
+      "title_text": "Trade-offs in exchange rate policy trilemma",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 117,
+        "text_blocks": 13,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.71,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Trade-off",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Build / setup",
+      "main_message": "The exchange rate policy trilemma: a country can only choose two of three corners — capital mobility, pegged exchange rate, financial/monetary autonomy; capital controls and exchange flexibility trade off against each other",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Bespoke",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "diagram",
+          "region": "center-main"
+        },
+        {
+          "name": "insights",
+          "region": "right-callout"
+        },
+        {
+          "name": "citation",
+          "region": "bottom-band"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "callout-box",
+        "citation",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_024.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_024.png"
+    },
+    {
+      "index": 25,
+      "title_text": "Framing the relationships between global trends and Nigeria FX market",
+      "title_position": "top-center",
+      "image_count": 2,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 133,
+        "text_blocks": 34,
+        "visual_elements": 2,
+        "whitespace_ratio_est": 0.58,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Framework",
+      "message_type": "Causation",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Synthesis (same framework as slide 10) — relationships between global trends and Nigeria FX market with key analyses numbered 1-5, mapping supply dynamics, demand dynamics, and net flows back to the five global trends",
+      "dominant_visual_element": "Framework graphic",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Bespoke",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "diagram",
+          "region": "center-main"
+        },
+        {
+          "name": "global-trends-list",
+          "region": "left-side"
+        },
+        {
+          "name": "outcomes",
+          "region": "right-side"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "image",
+        "callout-box",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Low",
+      "tier_match_difficulty": "Likely Tier 3",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_025.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_025.png"
+    },
+    {
+      "index": 26,
+      "title_text": "Manage for flexibility and shocks – withstand external shocks with a\npocket of sequenced policy execution",
+      "title_position": "top-right",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 69,
+        "text_blocks": 14,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.81,
+        "bucket": "dense"
+      },
+      "slide_purpose": "Recommendation",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Synthesis / takeaway",
+      "main_message": "Way forward — five-step recommendation: manage for flexibility and shocks through sequenced policy execution covering short-term FX liquidity fix, deepening financial markets, boosting investor confidence with clear FX management story, and longer-term sectoral policy to maximize exports or deepen domestic consumption",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-right"
+        },
+        {
+          "name": "main-content",
+          "region": "5-step-flow"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "callout-box",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "Medium",
+      "tier_match_difficulty": "Likely Tier 2",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_026.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_026.png"
+    },
+    {
+      "index": 27,
+      "title_text": "PwC Economics team proposition",
+      "title_position": "top-center",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 99,
+        "text_blocks": 13,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.39,
+        "bucket": "very_dense"
+      },
+      "slide_purpose": "Team intro",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "PwC Economics team service offering: (1) measure client impact on economy/competition/markets via EIA/SEIA/RIA/policy analysis, (2) help clients make investment/risk decisions via macroeconomic research and country/industry risk assessments, (3) help clients plan future macroeconomic and sustainability scenarios",
+      "dominant_visual_element": "Icon-based",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-band"
+        },
+        {
+          "name": "main-content",
+          "region": "3-column-grid"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "callout-box",
+        "page-number",
+        "footer"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_027.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_027.png"
+    },
+    {
+      "index": 28,
+      "title_text": "Contact Us",
+      "title_position": "top-left",
+      "image_count": 0,
+      "has_chart": false,
+      "has_table": false,
+      "density": {
+        "word_count": 45,
+        "text_blocks": 6,
+        "visual_elements": 0,
+        "whitespace_ratio_est": 0.91,
+        "bucket": "balanced"
+      },
+      "slide_purpose": "Closing / contacts",
+      "message_type": "Listing / enumeration",
+      "audience_level_slide": "Same as deck",
+      "slide_position_role": "Transition / divider",
+      "main_message": "Contact information for PwC Strategy& Nigeria Economics team: Olusegun Zacchaeus (Partner and West Africa Lead), Omomia Omosomi (Lead Economist & Researcher), Adesola Borokini (Senior Economist & Researcher)",
+      "dominant_visual_element": "Pure text",
+      "chart_type": "N/A",
+      "placeholder_compliance": "Reusable",
+      "embedded_data_present": false,
+      "zones": [
+        {
+          "name": "title",
+          "region": "top-left"
+        },
+        {
+          "name": "main-content",
+          "region": "3-column-bottom"
+        },
+        {
+          "name": "page-marker",
+          "region": "top-right"
+        },
+        {
+          "name": "footer",
+          "region": "bottom-band"
+        }
+      ],
+      "slot_types_present": [
+        "title",
+        "body-text",
+        "footer",
+        "page-number"
+      ],
+      "reusability_score_qualitative": "High",
+      "tier_match_difficulty": "Likely Tier 1 candidate",
+      "render_path": "nigeria-economic-outlook-october-2023-v1/slide_028.png",
+      "thumbnail_path": "nigeria-economic-outlook-october-2023-v1/thumb/slide_028.png"
+    }
+  ],
+  "provenance": {
+    "tagged_by": "Claude (Opus, 2026-05-23)",
+    "input_json_source": "automated structural extraction",
+    "fields_filled_by_ai": [
+      "client_industry",
+      "client_sub_industry",
+      "client_type",
+      "engagement_stage",
+      "content_area",
+      "audience_level",
+      "deliverable_format",
+      "geography",
+      "confidentiality_tier",
+      "inferred_publisher",
+      "deck_summary_one_sentence",
+      "design_system.grid",
+      "design_system.recurring_elements",
+      "all slides[].slide_purpose",
+      "all slides[].message_type",
+      "all slides[].audience_level_slide",
+      "all slides[].slide_position_role",
+      "all slides[].main_message",
+      "all slides[].dominant_visual_element",
+      "all slides[].chart_type",
+      "all slides[].placeholder_compliance",
+      "all slides[].embedded_data_present",
+      "all slides[].zones",
+      "all slides[].slot_types_present",
+      "all slides[].reusability_score_qualitative",
+      "all slides[].tier_match_difficulty",
+      "inferred_rules (all sub-fields)"
+    ],
+    "confidence_notes": "HIGH confidence on slide_purpose, message_type, main_message — action titles are explicit throughout, making content tagging straightforward. The deck is a textbook example of consulting action-title style. HIGH confidence on chart_type per slide based on context (most are bar/line/stacked bar; slide 5 inferred as waterfall from text describing debt buildup components). MEDIUM confidence on zones — inferred from text-block patterns; production system should parse actual shape positions. MEDIUM confidence on placeholder_compliance — most content slides marked 'Reusable' because they follow consistent title-band + main-chart + side-callout-insights pattern but use custom shapes not master placeholders. Slides 8, 9, 10, 24, 25 marked 'Bespoke' as they use unique conceptual diagrams. The design_system.title_style.size_pt of 15.0 from input extraction seems low for a primary title — likely captured a smaller text element; titles in body of deck appear larger. The body_style size of 7pt likely captured citation/footer text, not body paragraphs. Recommend humans audit these element-level rules. This is a Strategy& Nigeria publication (PwC's strategy practice), so reusability_score values reflect Strategy&-specific patterns, not general PwC. Deck shows clear 3-act structure: Context (1-9) → Analysis (10-25) → Recommendation + Capabilities (26-28)."
+  }
+}
