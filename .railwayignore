@@ -1,0 +1,12 @@
+# `railway up` uploads the project respecting THIS file (so corpus/ ships even
+# though it's in .gitignore). Keep src/, corpus/, Dockerfile, pyproject, uv.lock.
+.venv/
+.git/
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+*.pyc
+.env
+*.log
+tests/

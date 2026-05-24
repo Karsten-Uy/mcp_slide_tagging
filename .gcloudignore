@@ -1,0 +1,13 @@
+# Cloud Run `gcloud run deploy --source` uses THIS file (not .gitignore), so the
+# corpus/ snapshot is uploaded. Without it, gcloud falls back to .gitignore, which
+# excludes corpus/ and the deploy would ship with an empty corpus.
+.venv/
+.git/
+.mypy_cache/
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+*.pyc
+.env
+*.log
+tests/
