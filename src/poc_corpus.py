@@ -8,8 +8,10 @@ Swap this for the pgvector path once the corpus is large enough to need it.
 
 from __future__ import annotations
 
+import base64
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -27,8 +29,10 @@ def _ieq(a: Any, b: str | None) -> bool:
 class Corpus:
     """All tagged decks held in memory, keyed by deck id (filename stem)."""
 
-    def __init__(self, path: Path) -> None:
+    def __init__(self, path: Path, assets_path: Path | None = None) -> None:
         self.path = Path(path)
+        # Where recurring-element image_paths ("assets/<slug>/x.png") resolve to disk.
+        self.assets_path = Path(assets_path) if assets_path else self.path / "assets"
         self.decks: dict[str, dict] = {}
         self.load()
 
@@ -136,6 +140,11 @@ class Corpus:
             "deck_summary": d.get("deck_summary_one_sentence"),
             "design_system": d.get("design_system"),
             "inferred_rules": d.get("inferred_rules"),
+            # True if any recurring element has an extracted image; call get_deck_assets to fetch bytes.
+            "recurring_assets_available": any(
+                r.get("image_path")
+                for r in (d.get("design_system", {}) or {}).get("recurring_elements", [])
+            ),
             "slides": [
                 {
                     "index": s.get("index"),
@@ -148,6 +157,38 @@ class Corpus:
                 for s in d.get("slides", [])
             ],
         }
+
+    def get_deck_assets(self, deck: str) -> list[dict] | None:
+        """A deck's extracted recurring branding images (logos/watermarks) as base64
+        PNGs. None if the deck is unknown; [] if none extracted. Missing files are
+        skipped (a stale snapshot degrades gracefully)."""
+        d = self.decks.get(deck)
+        if d is None:
+            return None
+        out: list[dict] = []
+        for r in (d.get("design_system", {}) or {}).get("recurring_elements", []):
+            ip = r.get("image_path")
+            if not ip:
+                continue
+            rel = ip[len("assets/"):] if ip.startswith("assets/") else ip
+            fpath = self.assets_path / rel
+            if not fpath.exists():
+                print(f"# get_deck_assets: missing asset {fpath}", file=sys.stderr)
+                continue
+            out.append(
+                {
+                    "type": r.get("type"),
+                    "value": r.get("value"),
+                    "source": r.get("source"),
+                    "position": r.get("position"),
+                    "appears_on_slides": r.get("appears_on_slides", []),
+                    "image_path": ip,
+                    "filename": fpath.name,
+                    "mime_type": "image/png",
+                    "base64": base64.b64encode(fpath.read_bytes()).decode(),
+                }
+            )
+        return out
 
     def get_slide(self, deck: str, index: int) -> dict | None:
         d = self.decks.get(deck)

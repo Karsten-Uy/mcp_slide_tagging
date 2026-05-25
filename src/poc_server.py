@@ -25,7 +25,7 @@ from src.poc_corpus import Corpus
 
 logger = get_logger(__name__)
 
-corpus = Corpus(settings.corpus_path)
+corpus = Corpus(settings.corpus_path, settings.assets_path)
 
 # Cloud hosts (Cloud Run, Render, …) inject the port to bind via $PORT; fall back
 # to the configured port for local runs.
@@ -98,6 +98,18 @@ def get_deck(deck: str) -> dict | None:
     one-line outline of every slide. Call this to match a reference deck's look and
     structure when generating a new deck. Null if not found."""
     return corpus.get_deck(deck)
+
+
+@mcp.tool()
+def get_deck_assets(deck: str) -> list[dict] | None:
+    """Return a deck's recurring branding images (logos, watermarks) as base64 PNGs.
+    Each item: {type, value, source, position, appears_on_slides, image_path,
+    filename, mime_type, base64}. To embed the firm's logo when building a deck:
+    pick the item with type=="logo", decode its base64, write it to a file, and
+    insert it as a picture (e.g. python-pptx add_picture) at the reported position.
+    Returns [] if none were extracted; null if the deck id is unknown. (Use
+    get_deck first to see which decks have recurring_assets_available.)"""
+    return corpus.get_deck_assets(deck)
 
 
 @mcp.tool()

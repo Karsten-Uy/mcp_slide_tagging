@@ -222,7 +222,7 @@
   "geography": "Global",
   "deck_length": 81,
   "confidentiality_tier": "Public",
-  "inferred_publisher": "PwC Strategy& (Italy \u2014 Automotive)",
+  "inferred_publisher": "PwC Strategy& (Italy — Automotive)",
   "deck_summary_one_sentence": "4th edition of Strategy& eReadiness Survey covering 18 countries and 12,500+ consumer interviews, segmenting consumers into EV Owners/Prospects/Sceptics, ranking countries on an eReadiness Index, and recommending actions for e-mobility players.",
   "design_system": {
     "title_style": {
@@ -261,6 +261,42 @@
       },
       {
         "type": "page_number"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "8000000000000000",
+        "position": "middle-right",
+        "appears_on_slides": [
+          0,
+          5,
+          9,
+          14,
+          16,
+          18,
+          22,
+          23,
+          27,
+          39,
+          42,
+          45,
+          46,
+          47,
+          48,
+          58,
+          66,
+          67,
+          69,
+          70,
+          72,
+          73,
+          74,
+          75,
+          76,
+          82
+        ],
+        "image_path": "assets/strategyand-ereadiness-study-2023/recurring_00.png",
+        "source": "slide"
       }
     ]
   },
@@ -299,7 +335,7 @@
         "#585858",
         "#FFFFFF"
       ],
-      "notes": "Same Strategy& red palette as EV Sales Review and Digital Auto Report \u2014 strongly suggests shared brand template across automotive practice.",
+      "notes": "Same Strategy& red palette as EV Sales Review and Digital Auto Report — strongly suggests shared brand template across automotive practice.",
       "scope_tag": "inferred"
     },
     "chart_styling": {
@@ -316,7 +352,7 @@
   "slides": [
     {
       "index": 0,
-      "title_text": "eReadiness 2023 Survey Report \u2014 Customer needs and recommended actions for e-mobility players",
+      "title_text": "eReadiness 2023 Survey Report — Customer needs and recommended actions for e-mobility players",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -332,7 +368,7 @@
       "message_type": "No clear message",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Hero / headline",
-      "main_message": "Cover slide: eReadiness 2023 Survey Report \u2014 Customer needs and recommended actions for e-mobility players (4th edition, September 2023)",
+      "main_message": "Cover slide: eReadiness 2023 Survey Report — Customer needs and recommended actions for e-mobility players (4th edition, September 2023)",
       "dominant_visual_element": "Pure text",
       "chart_type": "N/A",
       "placeholder_compliance": "Pristine",
@@ -452,7 +488,7 @@
     },
     {
       "index": 3,
-      "title_text": "eReadiness 2023 \u2014 Countries in scope (18 countries across the globe)",
+      "title_text": "eReadiness 2023 — Countries in scope (18 countries across the globe)",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -498,7 +534,7 @@
     },
     {
       "index": 4,
-      "title_text": "Executive Summary \u2014 section header",
+      "title_text": "Executive Summary — section header",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -590,7 +626,7 @@
     },
     {
       "index": 6,
-      "title_text": "Consumer viewpoints \u2014 section header",
+      "title_text": "Consumer viewpoints — section header",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -698,7 +734,7 @@
       "message_type": "Comparison",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "Cluster demographics: Owners \u20ac91k income / 43yrs / 53% male / 82% urban / 63% private parking; Prospects \u20ac74k / 42yrs / 51% male / 92% urban / 68% private parking; Sceptics \u20ac49k / 49yrs / 44% male / 94% urban / 60% private parking",
+      "main_message": "Cluster demographics: Owners €91k income / 43yrs / 53% male / 82% urban / 63% private parking; Prospects €74k / 42yrs / 51% male / 92% urban / 68% private parking; Sceptics €49k / 49yrs / 44% male / 94% urban / 60% private parking",
       "dominant_visual_element": "Table",
       "chart_type": "N/A",
       "placeholder_compliance": "Reusable",
@@ -820,7 +856,7 @@
     },
     {
       "index": 11,
-      "title_text": "Mobility needs \u2014 Free time usage patterns",
+      "title_text": "Mobility needs — Free time usage patterns",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -866,7 +902,7 @@
     },
     {
       "index": 12,
-      "title_text": "02. Consumer viewpoints \u2014 EV Owners deep dive",
+      "title_text": "02. Consumer viewpoints — EV Owners deep dive",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -912,7 +948,7 @@
     },
     {
       "index": 13,
-      "title_text": "EV Owners \u2014 customer journey and usage habits (multiple slides aggregated)",
+      "title_text": "EV Owners — customer journey and usage habits (multiple slides aggregated)",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -928,7 +964,7 @@
       "message_type": "Decomposition (parts of whole)",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "EV owner journey: trigger, research, purchase, ownership; usage habits \u2014 daily/weekly patterns, charging routines, satisfaction drivers",
+      "main_message": "EV owner journey: trigger, research, purchase, ownership; usage habits — daily/weekly patterns, charging routines, satisfaction drivers",
       "dominant_visual_element": "Mixed",
       "chart_type": "N/A",
       "placeholder_compliance": "Reusable",
@@ -958,7 +994,7 @@
     },
     {
       "index": 14,
-      "title_text": "EV Owners \u2014 Charging solutions and preferences",
+      "title_text": "EV Owners — Charging solutions and preferences",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1050,7 +1086,7 @@
     },
     {
       "index": 16,
-      "title_text": "EV Owners \u2014 Additional charging analyses (multiple slides aggregated)",
+      "title_text": "EV Owners — Additional charging analyses (multiple slides aggregated)",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1096,7 +1132,7 @@
     },
     {
       "index": 17,
-      "title_text": "02. Consumer viewpoints \u2014 EV Prospects deep dive",
+      "title_text": "02. Consumer viewpoints — EV Prospects deep dive",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1142,7 +1178,7 @@
     },
     {
       "index": 18,
-      "title_text": "EV Prospects \u2014 Key personas with distinctive traits",
+      "title_text": "EV Prospects — Key personas with distinctive traits",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1158,7 +1194,7 @@
       "message_type": "Decomposition (parts of whole)",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "6 EV prospect personas identified; Tech Enthusiasts, Dreamers and Pragmatic drive ~70% of next 2 years demand \u2014 market shifting toward mass-market",
+      "main_message": "6 EV prospect personas identified; Tech Enthusiasts, Dreamers and Pragmatic drive ~70% of next 2 years demand — market shifting toward mass-market",
       "dominant_visual_element": "Framework graphic",
       "chart_type": "N/A",
       "placeholder_compliance": "Reusable",
@@ -1188,7 +1224,7 @@
     },
     {
       "index": 19,
-      "title_text": "EV Prospects \u2014 Key reasons to buy (multiple slides aggregated)",
+      "title_text": "EV Prospects — Key reasons to buy (multiple slides aggregated)",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1280,7 +1316,7 @@
     },
     {
       "index": 21,
-      "title_text": "02. Consumer viewpoints \u2014 EV Sceptics deep dive",
+      "title_text": "02. Consumer viewpoints — EV Sceptics deep dive",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1326,7 +1362,7 @@
     },
     {
       "index": 22,
-      "title_text": "EV Sceptics \u2014 Distinctive traits and main reasons for rejecting EVs",
+      "title_text": "EV Sceptics — Distinctive traits and main reasons for rejecting EVs",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1372,7 +1408,7 @@
     },
     {
       "index": 23,
-      "title_text": "03. eReadiness Index \u2014 section header",
+      "title_text": "03. eReadiness Index — section header",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1418,7 +1454,7 @@
     },
     {
       "index": 24,
-      "title_text": "eReadiness Index \u2014 Methodology and weights",
+      "title_text": "eReadiness Index — Methodology and weights",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1464,7 +1500,7 @@
     },
     {
       "index": 25,
-      "title_text": "Europe eReadiness \u2014 Norway, Switzerland, Germany are most e-ready; Italy and Spain lag despite incentives",
+      "title_text": "Europe eReadiness — Norway, Switzerland, Germany are most e-ready; Italy and Spain lag despite incentives",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1510,7 +1546,7 @@
     },
     {
       "index": 26,
-      "title_text": "APAC eReadiness \u2014 Hong Kong, China, Singapore lead; Australia ranks last",
+      "title_text": "APAC eReadiness — Hong Kong, China, Singapore lead; Australia ranks last",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1556,7 +1592,7 @@
     },
     {
       "index": 27,
-      "title_text": "North America eReadiness \u2014 USA and Canada profiles",
+      "title_text": "North America eReadiness — USA and Canada profiles",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1602,7 +1638,7 @@
     },
     {
       "index": 28,
-      "title_text": "Charging points growth by country \u2014 comparative analysis",
+      "title_text": "Charging points growth by country — comparative analysis",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1648,7 +1684,7 @@
     },
     {
       "index": 29,
-      "title_text": "04. Recommendations \u2014 section header",
+      "title_text": "04. Recommendations — section header",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1837,6 +1873,6 @@
     "fields_filled_by_ai": [
       "all semantic and structural fields"
     ],
-    "confidence_notes": "AGGREGATED tagging \u2014 the actual report is ~81 pages but many are detail/data pages within section deep-dives. I aggregated logical units (e.g., 'EV Owners charging analyses' covers multiple actual pages). For production use, the full pptx version with the slide-tagger script would produce one entry per real slide. Structural fields unknown (no .pptx). HIGH confidence on deck-level tags and section structure. MEDIUM confidence on per-slide aggregation accuracy \u2014 actual report has more granular slides per topic than represented here. The 6-persona EV Prospects framework is a key consulting-style framework worth using as a Tier-3 template reference."
+    "confidence_notes": "AGGREGATED tagging — the actual report is ~81 pages but many are detail/data pages within section deep-dives. I aggregated logical units (e.g., 'EV Owners charging analyses' covers multiple actual pages). For production use, the full pptx version with the slide-tagger script would produce one entry per real slide. Structural fields unknown (no .pptx). HIGH confidence on deck-level tags and section structure. MEDIUM confidence on per-slide aggregation accuracy — actual report has more granular slides per topic than represented here. The 6-persona EV Prospects framework is a key consulting-style framework worth using as a Tier-3 template reference."
   }
 }

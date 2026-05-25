@@ -262,6 +262,86 @@
       },
       {
         "type": "page_number"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "9c63d82f6d8437c8",
+        "position": "top-left",
+        "appears_on_slides": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          35,
+          36
+        ],
+        "image_path": "assets/digital-auto-report-2023/recurring_00.png",
+        "source": "slide"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "9e0ef1ce2d49e40e",
+        "position": "top-center",
+        "appears_on_slides": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "image_path": "assets/digital-auto-report-2023/recurring_01.png",
+        "source": "slide"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "fee6010303fcfc31",
+        "position": "top-center",
+        "appears_on_slides": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19
+        ],
+        "image_path": "assets/digital-auto-report-2023/recurring_02.png",
+        "source": "slide"
       }
     ]
   },

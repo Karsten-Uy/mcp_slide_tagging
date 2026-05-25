@@ -15,7 +15,7 @@ This skill's own design suggestions are a **fallback only**, used when the corpu
 has no close match.
 
 > **Prerequisite:** the `slide-corpus` MCP connector must be enabled (tools:
-> `list_decks`, `get_deck`, `search_slides`, `get_slide`, `find_similar_slides`).
+> `list_decks`, `get_deck`, `get_deck_assets`, `search_slides`, `get_slide`, `find_similar_slides`).
 > If those tools aren't available, tell the user to add the connector (see the
 > server's `docs/POC.md`) before proceeding.
 
@@ -38,7 +38,9 @@ Do this before writing any slide code. Skipping it defeats the point of the skil
      values, not the fallback palettes below.
    - `default_text_alignment` and `grid` → layout structure.
    - `recurring_elements` → reproduce logos / footers / page numbers / watermarks
-     (use each element's `type` and text `value`).
+     (use each element's `type` and text `value`). If `recurring_assets_available`
+     is true (i.e. an element has an `image_path`), call **`get_deck_assets(<deck>)`**
+     to fetch the actual logo/branding images as base64 — you'll embed them in Step 2.
    - `inferred_rules` → observed conventions (e.g. `title.uses_action_titles`,
      `chart_styling.uses_consistent_palette`, `layout_conventions.uses_master_template`).
      Follow them (e.g. if titles are "always" action titles, write action titles).
@@ -64,7 +66,12 @@ Generate the `.pptx` applying the corpus design, not defaults:
   sizes, and `color_palette` (primary 60–70% weight, accent for emphasis, neutrals
   for body) onto your slide master / theme.
 - **Reproduce `recurring_elements`** on every slide (footer text, page numbers,
-  logo placement) so the deck reads as part of the same series.
+  logo placement) so the deck reads as part of the same series. **To embed the
+  firm's logo:** from `get_deck_assets(<deck>)`, pick the item with `type == "logo"`,
+  `base64.b64decode(item["base64"])`, write it to a file, and place it with
+  `slide.shapes.add_picture(path, left, top, height=…)` at the reported `position`
+  (e.g. top-right); reuse the same file across slides and don't distort the aspect
+  ratio. If no logo asset is returned, fall back to the footer text `value`.
 - **Match each slide to its reference** — same `slide_purpose` and
   `dominant_visual_element` (a "Finding" with a chart → chart + action title + side
   callout; a "Framework" → the diagram; etc.).
@@ -80,6 +87,7 @@ skill is also loaded, follow its `editing.md` / `pptxgenjs.md`. This skill gover
 
 Render to images and verify (see [QA](#qa-required) below) **plus**:
 - Fonts, palette, and footer/logo match the reference deck's `design_system`.
+- The logo (if any) is present, correctly placed, and not stretched/distorted.
 - Each slide's structure matches the reference slide it was modeled on.
 - Titles follow the corpus convention (e.g. action titles if `uses_action_titles`
   is "always").

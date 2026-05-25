@@ -18,6 +18,10 @@ class Settings(BaseSettings):
     openai_api_key: str = ""
     corpus_path: Path = Path("../slide_tagging/reference_data/hand_labels")
     thumbnail_base_path: Path | None = None
+    # Where recurring-element image_paths ("assets/<slug>/x.png") resolve on disk.
+    # Defaults to the deployed layout (corpus/assets); for local dev against the
+    # sibling repo set ASSETS_PATH=../slide_tagging/reference_data/assets
+    assets_path: Path = Path("corpus/assets")
     mcp_server_host: str = "0.0.0.0"
     mcp_server_port: int = 8000
     log_level: str = "INFO"

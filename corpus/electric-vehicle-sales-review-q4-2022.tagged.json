@@ -222,7 +222,7 @@
   "geography": "Global",
   "deck_length": 25,
   "confidentiality_tier": "Public",
-  "inferred_publisher": "PwC Strategy& (Germany \u2014 Autofacts)",
+  "inferred_publisher": "PwC Strategy& (Germany — Autofacts)",
   "deck_summary_one_sentence": "Strategy& and PwC Autofacts quarterly review of global electric vehicle sales (Q4 2022) covering BEV/PHEV/Hybrid market dynamics across 15 countries, OEM competition, charging infrastructure, and EV TCO outlook as incentives wane.",
   "design_system": {
     "title_style": {
@@ -257,6 +257,72 @@
       },
       {
         "type": "page_number"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "8000000000000000",
+        "position": "top-left",
+        "appears_on_slides": [
+          1,
+          11,
+          12,
+          13,
+          25
+        ],
+        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_00.png",
+        "source": "layout"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "aa2a2a2a2ad5d5af",
+        "position": "top-left",
+        "appears_on_slides": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_01.png",
+        "source": "slide"
+      },
+      {
+        "type": null,
+        "value": null,
+        "phash": "f1978e9c590a6e52",
+        "position": "center",
+        "appears_on_slides": [],
+        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_02.png",
+        "source": "layout"
+      },
+      {
+        "type": "logo",
+        "value": "Strategy&",
+        "phash": "9156adadd254a696",
+        "position": "center",
+        "appears_on_slides": [],
+        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_03.png",
+        "source": "layout"
       }
     ]
   },
@@ -313,7 +379,7 @@
   "slides": [
     {
       "index": 0,
-      "title_text": "Electric Vehicle Sales Review Q4 2022 \u2014 Foresight to drive the industry",
+      "title_text": "Electric Vehicle Sales Review Q4 2022 — Foresight to drive the industry",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -329,7 +395,7 @@
       "message_type": "No clear message",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Hero / headline",
-      "main_message": "Cover slide: Electric Vehicle Sales Review Q4 2022 \u2014 Foresight to drive the industry (February 2023)",
+      "main_message": "Cover slide: Electric Vehicle Sales Review Q4 2022 — Foresight to drive the industry (February 2023)",
       "dominant_visual_element": "Pure text",
       "chart_type": "N/A",
       "placeholder_compliance": "Pristine",
@@ -403,7 +469,7 @@
     },
     {
       "index": 2,
-      "title_text": "United States finally arrives at BEV party \u2014 Executive summary",
+      "title_text": "United States finally arrives at BEV party — Executive summary",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -511,7 +577,7 @@
       "message_type": "Comparison",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "Major markets cutting EV incentives: France -\u20ac1,000, Germany BEV cut from \u20ac6,000 to \u20ac4,500, China cancelled fully; US going opposite direction with Inflation Reduction Act $7,500 tax credit",
+      "main_message": "Major markets cutting EV incentives: France -€1,000, Germany BEV cut from €6,000 to €4,500, China cancelled fully; US going opposite direction with Inflation Reduction Act $7,500 tax credit",
       "dominant_visual_element": "Pure text",
       "chart_type": "N/A",
       "placeholder_compliance": "Reusable",
@@ -557,7 +623,7 @@
       "message_type": "Trend over time",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "TCO analysis of Opel Corsa ICE vs BEV: 2022 BEV TCO \u20ac27.9k vs ICE \u20ac13.9k (BEV favorable with incentives); by 2025 BEV becomes more expensive than ICE without incentives \u2014 projected reversal of EV TCO advantage",
+      "main_message": "TCO analysis of Opel Corsa ICE vs BEV: 2022 BEV TCO €27.9k vs ICE €13.9k (BEV favorable with incentives); by 2025 BEV becomes more expensive than ICE without incentives — projected reversal of EV TCO advantage",
       "dominant_visual_element": "Chart",
       "chart_type": "Line",
       "placeholder_compliance": "Reusable",
@@ -587,7 +653,7 @@
     },
     {
       "index": 6,
-      "title_text": "Competition in the BEV market is getting fiercer \u2014 Top BEV models in 2022",
+      "title_text": "Competition in the BEV market is getting fiercer — Top BEV models in 2022",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -633,7 +699,7 @@
     },
     {
       "index": 7,
-      "title_text": "New BEV launches drive market growth \u2014 2023 launch calendar",
+      "title_text": "New BEV launches drive market growth — 2023 launch calendar",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -679,7 +745,7 @@
     },
     {
       "index": 8,
-      "title_text": "EV sales continue growth this year \u2014 All Electric Vehicles",
+      "title_text": "EV sales continue growth this year — All Electric Vehicles",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -695,7 +761,7 @@
       "message_type": "Trend over time",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "December 21 vs December 22 EV sales: 1,147\u21921,608k units globally; YTD 9,451\u219213,860k units across WE 5+5, China, USA",
+      "main_message": "December 21 vs December 22 EV sales: 1,147→1,608k units globally; YTD 9,451→13,860k units across WE 5+5, China, USA",
       "dominant_visual_element": "Chart",
       "chart_type": "Bar",
       "placeholder_compliance": "Reusable",
@@ -725,7 +791,7 @@
     },
     {
       "index": 9,
-      "title_text": "US and China growth momentum on par \u2014 BEVs only",
+      "title_text": "US and China growth momentum on par — BEVs only",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -741,7 +807,7 @@
       "message_type": "Comparison",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "BEV sales Dec 21 vs Dec 22: 653\u2192959k units; YTD 4,395\u21927,488k units; US and China driving most growth",
+      "main_message": "BEV sales Dec 21 vs Dec 22: 653→959k units; YTD 4,395→7,488k units; US and China driving most growth",
       "dominant_visual_element": "Chart",
       "chart_type": "Bar",
       "placeholder_compliance": "Reusable",
@@ -771,7 +837,7 @@
     },
     {
       "index": 10,
-      "title_text": "Plug-in sales in China thrive \u2014 PHEVs",
+      "title_text": "Plug-in sales in China thrive — PHEVs",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -787,7 +853,7 @@
       "message_type": "Trend over time",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "PHEV sales: Dec 21 vs Dec 22 183\u2192326k units; YTD 1,650\u21922,551k units; China dominates with 150% growth",
+      "main_message": "PHEV sales: Dec 21 vs Dec 22 183→326k units; YTD 1,650→2,551k units; China dominates with 150% growth",
       "dominant_visual_element": "Chart",
       "chart_type": "Bar",
       "placeholder_compliance": "Reusable",
@@ -817,7 +883,7 @@
     },
     {
       "index": 11,
-      "title_text": "Western Europe 5+5 \u2014 Q4 2022 results",
+      "title_text": "Western Europe 5+5 — Q4 2022 results",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -863,7 +929,7 @@
     },
     {
       "index": 12,
-      "title_text": "United States \u2014 Q4 2022 results",
+      "title_text": "United States — Q4 2022 results",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -909,7 +975,7 @@
     },
     {
       "index": 13,
-      "title_text": "China and other Asian countries \u2014 Q4 2022 results",
+      "title_text": "China and other Asian countries — Q4 2022 results",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -955,7 +1021,7 @@
     },
     {
       "index": 14,
-      "title_text": "Rankings \u2014 Shares of EV registrations across regions",
+      "title_text": "Rankings — Shares of EV registrations across regions",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1001,7 +1067,7 @@
     },
     {
       "index": 15,
-      "title_text": "Electrified vehicle assembly forecast by region \u2014 2023 vs 2028",
+      "title_text": "Electrified vehicle assembly forecast by region — 2023 vs 2028",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1017,7 +1083,7 @@
       "message_type": "Trend over time",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "EV assembly forecast 2023 vs 2028 by region (millions): W+C Europe 14.0\u219225.1; China 29.8\u219264.9; NAFTA 11.8\u219233.8; APAC 4.1\u21925.9",
+      "main_message": "EV assembly forecast 2023 vs 2028 by region (millions): W+C Europe 14.0→25.1; China 29.8→64.9; NAFTA 11.8→33.8; APAC 4.1→5.9",
       "dominant_visual_element": "Chart",
       "chart_type": "Bar",
       "placeholder_compliance": "Reusable",
@@ -1047,7 +1113,7 @@
     },
     {
       "index": 16,
-      "title_text": "Global EV assembly by powertrain type \u2014 2019 to 2028F",
+      "title_text": "Global EV assembly by powertrain type — 2019 to 2028F",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": true,
@@ -1063,7 +1129,7 @@
       "message_type": "Trend over time",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Evidence / backup",
-      "main_message": "Global EV assembly 2019-2028F by powertrain type (BEV, PHEV, Hybrid) with year-over-year growth percentages \u2014 showing continued expansion across all three categories",
+      "main_message": "Global EV assembly 2019-2028F by powertrain type (BEV, PHEV, Hybrid) with year-over-year growth percentages — showing continued expansion across all three categories",
       "dominant_visual_element": "Chart",
       "chart_type": "Stacked bar",
       "placeholder_compliance": "Reusable",
@@ -1231,7 +1297,7 @@
     },
     {
       "index": 20,
-      "title_text": "Electric vehicle sales data \u2014 Germany, UK, France, Italy, Spain, WE-5",
+      "title_text": "Electric vehicle sales data — Germany, UK, France, Italy, Spain, WE-5",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1277,7 +1343,7 @@
     },
     {
       "index": 21,
-      "title_text": "Electric vehicle sales data \u2014 Sweden, Norway, Netherlands, Switzerland, Austria, WE 5+5",
+      "title_text": "Electric vehicle sales data — Sweden, Norway, Netherlands, Switzerland, Austria, WE 5+5",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1323,7 +1389,7 @@
     },
     {
       "index": 22,
-      "title_text": "Electric vehicle sales data \u2014 China, Japan, USA, South Korea, Analyzed Markets",
+      "title_text": "Electric vehicle sales data — China, Japan, USA, South Korea, Analyzed Markets",
       "title_position": "top-center",
       "image_count": 0,
       "has_chart": false,
@@ -1385,7 +1451,7 @@
       "message_type": "Listing / enumeration",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Transition / divider",
-      "main_message": "Authors: J\u00f6rn Neuhausen (Strategy& Germany Director), Annabelle Kliesing (Sr Comms Lead), Steven van Arsdale (Mgr PwC Autofacts), Felix Kuhnert (Automotive Industry Leader PwC Germany)",
+      "main_message": "Authors: Jörn Neuhausen (Strategy& Germany Director), Annabelle Kliesing (Sr Comms Lead), Steven van Arsdale (Mgr PwC Autofacts), Felix Kuhnert (Automotive Industry Leader PwC Germany)",
       "dominant_visual_element": "Pure text",
       "chart_type": "N/A",
       "placeholder_compliance": "Reusable",
@@ -1431,7 +1497,7 @@
       "message_type": "Listing / enumeration",
       "audience_level_slide": "Same as deck",
       "slide_position_role": "Transition / divider",
-      "main_message": "Automotive contacts by geography: Harald Wimmer (Global), J\u00f6rg Krings (Strategy& Germany), Jun Jin (China), Eiichi Yamanaka (Japan), Akshay Singh (US), Cara Haffey (UK), plus France/Maghreb, Spain, Italy, South Korea leaders",
+      "main_message": "Automotive contacts by geography: Harald Wimmer (Global), Jörg Krings (Strategy& Germany), Jun Jin (China), Eiichi Yamanaka (Japan), Akshay Singh (US), Cara Haffey (UK), plus France/Maghreb, Spain, Italy, South Korea leaders",
       "dominant_visual_element": "Pure text",
       "chart_type": "N/A",
       "placeholder_compliance": "Reusable",
@@ -1466,6 +1532,6 @@
     "fields_filled_by_ai": [
       "all semantic and structural fields"
     ],
-    "confidence_notes": "HIGH confidence on slide_purpose, message_type, main_message \u2014 extracted from full PDF text. MEDIUM confidence on density buckets and word counts \u2014 estimated, not parsed from .pptx. STRUCTURAL fields (font sizes, exact element placements) are unknown because no structural extraction script was run on this PDF. Recommend re-running the slide-tagger script if .pptx version becomes available. Slide count is approximate (~25 based on visible page markers). This is Strategy& Germany's Autofacts quarterly EV review \u2014 recurring publication (Q4 2022 edition)."
+    "confidence_notes": "HIGH confidence on slide_purpose, message_type, main_message — extracted from full PDF text. MEDIUM confidence on density buckets and word counts — estimated, not parsed from .pptx. STRUCTURAL fields (font sizes, exact element placements) are unknown because no structural extraction script was run on this PDF. Recommend re-running the slide-tagger script if .pptx version becomes available. Slide count is approximate (~25 based on visible page markers). This is Strategy& Germany's Autofacts quarterly EV review — recurring publication (Q4 2022 edition)."
   }
 }
