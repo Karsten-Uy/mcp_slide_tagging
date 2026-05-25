@@ -13,12 +13,13 @@ the corpus is large enough to need vector search.
 ## What it serves
 
 `src/poc_server.py` — FastMCP over Streamable HTTP at `/mcp`, plus `GET /health`.
-Four tools over the corpus (currently 4 decks / 127 slides):
+Six tools over the corpus (currently 4 decks / 127 slides):
 
 | Tool | What it does |
 |---|---|
 | `list_decks()` | Every deck + its deck-level tags (industry, type, content_area, audience, summary, slide_count). |
-| `get_deck(deck)` | Design source-of-truth: deck tags + `design_system` (fonts, colors, palette, grid, recurring elements) + `inferred_rules` + a one-line outline of every slide. Use it to match a deck's look when generating. |
+| `get_deck(deck)` | Design source-of-truth: deck tags + `design_system` (normalized fonts, colors, palette, grid, recurring elements) + `inferred_rules` + a one-line outline of every slide + `recurring_assets_available`. Use it to match a deck's look when generating. |
+| `get_deck_assets(deck)` | The deck's recurring **branding images (logos)** as base64 PNGs (type/source/position/image_path/base64), so a generated deck can carry real branding. Returns `[]` when a deck's logo is vector-only (no extractable raster). |
 | `search_slides(...)` | Filter slides by `slide_purpose` / `message_type` / `dominant_visual_element` + deck-level `client_industry` / `content_area` / `audience_level`, and/or a `text` keyword over title + main_message. |
 | `get_slide(deck, index)` | Full tag set for one slide. |
 | `find_similar_slides(text)` | Keyword-overlap ranking over main_message (cheap stand-in for embeddings). |
@@ -26,10 +27,11 @@ Four tools over the corpus (currently 4 decks / 127 slides):
 ### Generating decks with the corpus
 
 To have claude.ai *build* decks grounded in this corpus (not just query it), load
-the [`skills/skill_v1.md`](../skills/skill_v1.md) skill alongside the connector. It
-drives the tools above — `list_decks` → `get_deck` (design system) → `search_slides`
-/ `find_similar_slides` (reference slides) — then builds the `.pptx` in the firm's
-real fonts/palette/structure.
+the [`skills/skill_v1.md`](../skills/skill_v1.md) skill alongside the connector
+(the skill is **client-owned** and being rewritten). It drives the tools above —
+`list_decks` → `get_deck` (design system) → `get_deck_assets` (logos) →
+`search_slides` / `find_similar_slides` (reference slides) — then builds the `.pptx`
+in the firm's real fonts/palette/structure.
 
 Sanity-check the data with no server/tokens: `uv run python scripts/poc_demo.py`.
 
@@ -62,7 +64,7 @@ claude.ai → **Settings → Connectors → Add custom connector** →
 - **URL:** `https://<your-tunnel>.trycloudflare.com/mcp`  ← note the `/mcp` path
 - **Auth:** None
 
-claude.ai will connect and list the four tools.
+claude.ai will connect and list the six tools.
 
 ## 4. Try it
 
@@ -81,10 +83,12 @@ The tunnel above is tied to your machine. To give a tester a durable URL, deploy
 `Dockerfile` (lean PoC server + bundled corpus, no Postgres/OpenAI). It binds to
 `$PORT` and serves `/mcp` + `/health`.
 
-**Refresh the corpus snapshot first** (it's a point-in-time copy, gitignored):
+**Refresh the corpus snapshot first** (it's a point-in-time copy, gitignored) —
+copy both the tagged JSON **and** the extracted logo assets:
 
 ```bash
 cp ../slide_tagging/reference_data/hand_labels/*.tagged.json corpus/
+cp -r ../slide_tagging/reference_data/assets/* corpus/assets/   # logo PNGs served by get_deck_assets
 ```
 
 ### Option A — Google Cloud Run (one command, scale-to-zero, public HTTPS)
@@ -149,7 +153,7 @@ cron-job.org) during your tester's window.
 
 ### Your tester adds it in claude.ai
 Settings → Connectors → Add custom connector → URL = **`https://<deploy-host>/mcp`**,
-Auth = **None**. They'll see the 5 tools.
+Auth = **None**. They'll see the six tools.
 
 > Docker isn't installed here, so the image wasn't build-tested locally — but the
 > exact runtime it runs (`CORPUS_PATH=corpus` + `$PORT`) is verified. If `docker`
@@ -166,5 +170,7 @@ Auth = **None**. They'll see the 5 tools.
   down when testing is over**, or add a shared-secret header gate if you want
   minimal protection. The deployed corpus is a **snapshot**; re-copy into `corpus/`
   and redeploy when you update the labels.
-- **No images/embeddings** — retrieval is over text tags only (visual search is the
-  production path's job).
+- **Logos yes, embeddings no** — `get_deck_assets` serves recurring branding images
+  (logo PNGs) as base64, but *retrieval* is still keyword/tag-only; vector/visual
+  search over slide thumbnails is the production path's job. Decks whose logo is
+  vector-only return no asset.
