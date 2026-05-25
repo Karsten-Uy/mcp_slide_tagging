@@ -2,14 +2,15 @@
 
 A read-only MCP server over the tagged slide-deck corpus produced by the
 `slide_tagging` service. It serves the existing corpus (it does not tag, ingest
-new decks, or render) through six retrieval tools that AI agents call when
-generating new decks — deck tags, the design system (normalized fonts, palette,
-grid), per-slide metadata, and branding **logo images** as base64 PNGs.
+new decks, or render) through retrieval tools that AI agents call when generating
+new decks — deck tags, the design system (normalized fonts, palette, grid),
+per-slide metadata, narrative outlines, reusable layout templates, the firm's
+aggregated house style, and branding **logo images** as base64 PNGs.
 
 There are **two server paths**, and the lean one is what runs today:
 
 - **Lean PoC server [built].** In-memory, no database, no API keys — loads the
-  Gen-2 tagged JSON from disk and exposes the six tools over Streamable HTTP. This
+  Gen-2 tagged JSON from disk and exposes the tools below over Streamable HTTP. This
   is what claude.ai connects to as a custom connector. Start here.
 - **Production pgvector server [skeleton].** Postgres + pgvector + OpenAI/CLIP
   embeddings for semantic retrieval at scale. Schema, config, and `/health` exist;
@@ -36,7 +37,7 @@ It binds `$PORT` if set (Cloud Run/Render) else `8000`. Health check:
 `curl http://localhost:8000/health` → `{status, decks, slides}` once the corpus
 loads (no external deps).
 
-### The six tools
+### The tools
 
 | Tool | Returns |
 |---|---|
@@ -46,6 +47,12 @@ loads (no external deps).
 | `search_slides(...)` | slides by tag filters (slide_purpose/message_type/dominant_visual_element + deck-level industry/content_area/audience) and/or a keyword |
 | `get_slide(deck, index)` | full tag set for one slide |
 | `find_similar_slides(text)` | slides ranked by keyword overlap on `main_message` (embedding stand-in) |
+| `list_vocabulary()` | the valid filter values actually present in the corpus, per field (so `search_slides` strings hit) |
+| `get_deck_outline(deck)` | the deck's narrative flow — `slide_position_role` + purpose + title, in order |
+| `find_slide_templates(...)` | reusable layout skeletons for a slide kind, ranked by reusability, with `zones`/`slot_types_present` |
+| `get_house_style()` | the firm's style aggregated across all decks (dominant fonts/sizes, common palette, all logos) |
+| `start_deck(deck)` | one-call kit to model a new deck: design_system + inferred_rules + logos (base64) + outline + reference slides |
+| `corpus_stats()` | coverage: deck/slide counts, decks-with-logos, and counts by industry/content_area/slide_purpose |
 
 ### Connect it to claude.ai
 
@@ -108,7 +115,7 @@ locally.
 
 | Area | Status |
 |---|---|
-| Lean PoC server + 6 MCP tools + logo serving | ✅ built |
+| Lean PoC server + 12 MCP tools + logo serving | ✅ built |
 | Deploy (Docker, Render/Railway/Cloud Run, claude.ai connector) | ✅ built |
 | Production pgvector: schema / config / `/health` | ✅ skeleton |
 | Production pgvector: ingestion + embeddings + tools | ⛔ planned |

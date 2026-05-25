@@ -127,6 +127,70 @@ def find_similar_slides(text: str, limit: int = 10) -> list[dict]:
     return corpus.find_similar_slides(text, limit)
 
 
+@mcp.tool()
+def list_vocabulary() -> dict:
+    """List the valid filter values actually present in the corpus, per field
+    (slide_purpose, message_type, dominant_visual_element, client_industry,
+    content_area, audience_level, and more). search_slides matches values exactly,
+    so call this first to use real strings instead of guessing (a near-miss returns
+    nothing). Empty fields are omitted."""
+    return corpus.list_vocabulary()
+
+
+@mcp.tool()
+def get_deck_outline(deck: str) -> dict | None:
+    """Return a deck's narrative flow: every slide's slide_position_role +
+    slide_purpose + title, in order. Use it to learn how a real deck is sequenced
+    (opening → context → findings → recommendation → close) before generating a
+    whole deck. Null if the deck id is unknown."""
+    return corpus.get_deck_outline(deck)
+
+
+@mcp.tool()
+def find_slide_templates(
+    slide_purpose: str | None = None,
+    dominant_visual_element: str | None = None,
+    message_type: str | None = None,
+    limit: int = 10,
+) -> list[dict]:
+    """Find reusable layout skeletons for a kind of slide, ranked by reusability
+    (High→Low). Each result includes its `zones` and `slot_types_present` — the
+    structural recipe to fill in — plus `tier_match_difficulty`. Use it to scaffold
+    a new slide of a given purpose/visual style. All filters are optional and ANDed."""
+    return corpus.find_slide_templates(
+        slide_purpose=slide_purpose,
+        dominant_visual_element=dominant_visual_element,
+        message_type=message_type,
+        limit=limit,
+    )
+
+
+@mcp.tool()
+def get_house_style() -> dict:
+    """Return the firm's house style aggregated across all decks: dominant title/body
+    fonts + sizes, default alignment, most-common palette colors, and references to
+    all logos. Use it when generating a deck not modeled on one specific reference.
+    Fetch logo bytes with get_deck_assets(deck)."""
+    return corpus.get_house_style()
+
+
+@mcp.tool()
+def start_deck(deck: str, max_reference_slides: int = 5) -> dict | None:
+    """One-call kit to start generating a deck modeled on `deck`: its design_system,
+    inferred_rules, logos (base64 PNGs), the full narrative outline, and a few
+    reference slides — instead of chaining get_deck + get_deck_outline +
+    get_deck_assets. Null if the deck id is unknown."""
+    return corpus.start_deck(deck, max_reference_slides=max_reference_slides)
+
+
+@mcp.tool()
+def corpus_stats() -> dict:
+    """Corpus coverage at a glance: total decks/slides, how many decks have a logo,
+    and counts by client_industry / content_area / slide_purpose. Use it to pick a
+    reference deck and to see what the corpus does and doesn't cover."""
+    return corpus.corpus_stats()
+
+
 @mcp.custom_route("/health", methods=["GET"])  # type: ignore[untyped-decorator]
 async def health(request: Request) -> JSONResponse:
     """Liveness for the PoC server: ok once the in-memory corpus is loaded."""

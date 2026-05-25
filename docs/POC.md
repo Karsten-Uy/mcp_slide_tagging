@@ -13,7 +13,7 @@ the corpus is large enough to need vector search.
 ## What it serves
 
 `src/poc_server.py` — FastMCP over Streamable HTTP at `/mcp`, plus `GET /health`.
-Six tools over the corpus (currently 4 decks / 127 slides):
+Twelve tools over the corpus (currently 4 decks / 127 slides):
 
 | Tool | What it does |
 |---|---|
@@ -23,15 +23,22 @@ Six tools over the corpus (currently 4 decks / 127 slides):
 | `search_slides(...)` | Filter slides by `slide_purpose` / `message_type` / `dominant_visual_element` + deck-level `client_industry` / `content_area` / `audience_level`, and/or a `text` keyword over title + main_message. |
 | `get_slide(deck, index)` | Full tag set for one slide. |
 | `find_similar_slides(text)` | Keyword-overlap ranking over main_message (cheap stand-in for embeddings). |
+| `list_vocabulary()` | The valid filter values actually present in the corpus, per field — so `search_slides` strings hit instead of silently returning nothing. |
+| `get_deck_outline(deck)` | The deck's narrative flow: each slide's `slide_position_role` + purpose + title, in order. |
+| `find_slide_templates(...)` | Reusable layout skeletons for a slide kind, ranked by reusability, with their `zones` / `slot_types_present`. |
+| `get_house_style()` | The firm's style aggregated across all decks (dominant fonts/sizes, common palette, all logos). |
+| `start_deck(deck)` | One-call kit to model a new deck: design_system + inferred_rules + logos (base64) + outline + reference slides. |
+| `corpus_stats()` | Coverage: deck/slide counts, decks-with-logos, and counts by industry / content_area / slide_purpose. |
 
 ### Generating decks with the corpus
 
 To have claude.ai *build* decks grounded in this corpus (not just query it), load
 the [`skills/skill_v1.md`](../skills/skill_v1.md) skill alongside the connector
 (the skill is **client-owned** and being rewritten). It drives the tools above —
-`list_decks` → `get_deck` (design system) → `get_deck_assets` (logos) →
-`search_slides` / `find_similar_slides` (reference slides) — then builds the `.pptx`
-in the firm's real fonts/palette/structure.
+`list_decks` → `start_deck` (design system + outline + logos in one call, or the
+`get_deck`/`get_deck_outline`/`get_deck_assets` trio) → `search_slides` /
+`find_slide_templates` / `find_similar_slides` (reference slides + layouts) — then
+builds the `.pptx` in the firm's real fonts/palette/structure.
 
 Sanity-check the data with no server/tokens: `uv run python scripts/poc_demo.py`.
 
@@ -64,7 +71,7 @@ claude.ai → **Settings → Connectors → Add custom connector** →
 - **URL:** `https://<your-tunnel>.trycloudflare.com/mcp`  ← note the `/mcp` path
 - **Auth:** None
 
-claude.ai will connect and list the six tools.
+claude.ai will connect and list the twelve tools.
 
 ## 4. Try it
 
@@ -153,7 +160,7 @@ cron-job.org) during your tester's window.
 
 ### Your tester adds it in claude.ai
 Settings → Connectors → Add custom connector → URL = **`https://<deploy-host>/mcp`**,
-Auth = **None**. They'll see the six tools.
+Auth = **None**. They'll see the twelve tools.
 
 > Docker isn't installed here, so the image wasn't build-tested locally — but the
 > exact runtime it runs (`CORPUS_PATH=corpus` + `$PORT`) is verified. If `docker`

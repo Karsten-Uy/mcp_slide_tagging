@@ -63,7 +63,7 @@ The handoff is a folder of JSON + image assets. Everything else is internal to o
 │ mcp_slide_tagging  (consumer / server)                    │
 │  Lean PoC server [built]          Production server [skeleton] │
 │  src/poc_server.py + poc_corpus   src/server.py + Postgres │
-│  in-memory; 6 MCP tools;          + pgvector + OpenAI/CLIP │
+│  in-memory; 12 MCP tools;         + pgvector + OpenAI/CLIP │
 │  logos as base64;                 embeddings + ingestion   │
 │  /mcp + /health (no DB/keys)      [planned]                │
 └──────────────────────┬─────────────────────────────────────┘
@@ -207,7 +207,7 @@ Templates carry a leading `_legend` of allowed enum values; the server strips it
 [`src/poc_server.py`](../src/poc_server.py) + [`src/poc_corpus.py`](../src/poc_corpus.py):
 a `FastMCP("slide-corpus-poc")` over `transport="streamable-http"` (`/mcp`) plus a
 `GET /health`. It loads the Gen-2 JSON from `CORPUS_PATH` **into memory** — no Postgres,
-no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Six read-only tools:
+no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Twelve read-only tools:
 
 | Tool | Returns |
 |---|---|
@@ -217,6 +217,12 @@ no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Six read-only to
 | `search_slides(...)` | slides by tag filters (slide_purpose/message_type/dominant_visual_element + deck-level industry/content_area/audience) and/or a keyword |
 | `get_slide(deck, index)` | full tag set for one slide |
 | `find_similar_slides(text)` | slides ranked by keyword overlap on `main_message` (embedding stand-in) |
+| `list_vocabulary()` | valid filter values actually present in the corpus, per field (so `search_slides` strings hit) |
+| `get_deck_outline(deck)` | narrative flow — each slide's `slide_position_role` + purpose + title, in order |
+| `find_slide_templates(...)` | reusable layouts for a slide kind, ranked by reusability, with `zones`/`slot_types_present` |
+| `get_house_style()` | style aggregated across all decks (dominant fonts/sizes, common palette, all logos) |
+| `start_deck(deck)` | one-call kit: design_system + inferred_rules + logos (base64) + outline + reference slides |
+| `corpus_stats()` | coverage: deck/slide counts, decks-with-logos, counts by industry/content_area/slide_purpose |
 
 `/health` returns `{status, decks, slides}` once the corpus loads (no external deps).
 A no-LLM smoke check: [`scripts/poc_demo.py`](../scripts/poc_demo.py).
@@ -249,7 +255,7 @@ the claude.ai custom-connector flow (URL `https://…/mcp`, Auth: None) are in
 | slide_tagging · enrichment via API (`bench`) + `merge`/`score`/`eval` | ✅ built |
 | slide_tagging · enrichment schema (`tagged.py`, enums) | ✅ built |
 | slide_tagging · PDF parsing, consistency_score, vector-logo extraction | ⛔ deferred |
-| mcp_slide_tagging · **lean PoC server + 6 MCP tools + logo serving** | ✅ built |
+| mcp_slide_tagging · **lean PoC server + 12 MCP tools + logo serving** | ✅ built |
 | mcp_slide_tagging · deploy (Docker, Render/Railway/Cloud Run, connector) | ✅ built |
 | mcp_slide_tagging · production pgvector: schema/config/`/health` | ✅ skeleton |
 | mcp_slide_tagging · production pgvector: ingestion + embeddings + tools | ⛔ planned |
