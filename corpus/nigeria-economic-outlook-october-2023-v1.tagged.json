@@ -226,14 +226,14 @@
   "deck_summary_one_sentence": "Bi-monthly PwC Strategy& Nigeria economic outlook analyzing how global economic trends (monetary tightening, debt, geopolitics, trade, GDP slowdown) are impacting Nigeria's foreign exchange market and recommending a sequenced policy response.",
   "design_system": {
     "title_style": {
-      "font_family": "Arial MT",
+      "font_family": "Arial",
       "size_pt": 15.0,
       "weight": "regular",
       "color_hex": "#FFFFFF",
       "alignment": null
     },
     "body_style": {
-      "font_family": "Arial MT",
+      "font_family": "Arial",
       "size_pt": 7.0,
       "weight": "regular",
       "color_hex": "#0D0D0D",

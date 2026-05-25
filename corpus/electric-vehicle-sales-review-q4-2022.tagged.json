@@ -226,29 +226,29 @@
   "deck_summary_one_sentence": "Strategy& and PwC Autofacts quarterly review of global electric vehicle sales (Q4 2022) covering BEV/PHEV/Hybrid market dynamics across 15 countries, OEM competition, charging infrastructure, and EV TCO outlook as incentives wane.",
   "design_system": {
     "title_style": {
-      "font_family": null,
-      "size_pt": null,
-      "weight": "bold",
-      "color_hex": "#000000",
-      "alignment": "left"
+      "font_family": "Arial",
+      "size_pt": 28.0,
+      "weight": "regular",
+      "color_hex": "#FFFFFF",
+      "alignment": null
     },
     "body_style": {
-      "font_family": null,
-      "size_pt": null,
+      "font_family": "Arial",
+      "size_pt": 8.0,
       "weight": "regular",
-      "color_hex": "#0D0D0D",
-      "alignment": "left"
+      "color_hex": "#464646",
+      "alignment": "justify"
     },
     "color_palette": {
-      "primary": "#C00000",
-      "accent": "#D93953",
+      "primary": "#A21F1F",
+      "accent": "#DB526A",
       "neutrals": [
-        "#000000",
-        "#585858",
-        "#FFFFFF"
+        "#FFFFFF",
+        "#464646",
+        "#585858"
       ]
     },
-    "default_text_alignment": "left",
+    "default_text_alignment": "justify",
     "grid": "free",
     "recurring_elements": [
       {
@@ -257,63 +257,6 @@
       },
       {
         "type": "page_number"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "8000000000000000",
-        "position": "top-left",
-        "appears_on_slides": [
-          1,
-          11,
-          12,
-          13,
-          25
-        ],
-        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_00.png",
-        "source": "layout"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "aa2a2a2a2ad5d5af",
-        "position": "top-left",
-        "appears_on_slides": [
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          20,
-          21,
-          22,
-          23,
-          24
-        ],
-        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_01.png",
-        "source": "slide"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "f1978e9c590a6e52",
-        "position": "center",
-        "appears_on_slides": [],
-        "image_path": "assets/electric-vehicle-sales-review-q4-2022/recurring_02.png",
-        "source": "layout"
       },
       {
         "type": "logo",

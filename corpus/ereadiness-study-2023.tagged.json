@@ -226,29 +226,29 @@
   "deck_summary_one_sentence": "4th edition of Strategy& eReadiness Survey covering 18 countries and 12,500+ consumer interviews, segmenting consumers into EV Owners/Prospects/Sceptics, ranking countries on an eReadiness Index, and recommending actions for e-mobility players.",
   "design_system": {
     "title_style": {
-      "font_family": null,
-      "size_pt": null,
-      "weight": "bold",
-      "color_hex": "#000000",
-      "alignment": "left"
+      "font_family": "Arial",
+      "size_pt": 44.0,
+      "weight": "regular",
+      "color_hex": "#FFFFFF",
+      "alignment": null
     },
     "body_style": {
-      "font_family": null,
-      "size_pt": null,
-      "weight": "regular",
-      "color_hex": "#0D0D0D",
-      "alignment": "left"
+      "font_family": "Arial",
+      "size_pt": 12.0,
+      "weight": "bold",
+      "color_hex": "#FFFFFF",
+      "alignment": "center"
     },
     "color_palette": {
-      "primary": "#C00000",
-      "accent": "#D93953",
+      "primary": "#A21F1F",
+      "accent": "#DB526A",
       "neutrals": [
+        "#FFFFFF",
         "#000000",
-        "#585858",
-        "#FFFFFF"
+        "#F1F1F1"
       ]
     },
-    "default_text_alignment": "left",
+    "default_text_alignment": "center",
     "grid": "free",
     "recurring_elements": [
       {
@@ -261,42 +261,6 @@
       },
       {
         "type": "page_number"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "8000000000000000",
-        "position": "middle-right",
-        "appears_on_slides": [
-          0,
-          5,
-          9,
-          14,
-          16,
-          18,
-          22,
-          23,
-          27,
-          39,
-          42,
-          45,
-          46,
-          47,
-          48,
-          58,
-          66,
-          67,
-          69,
-          70,
-          72,
-          73,
-          74,
-          75,
-          76,
-          82
-        ],
-        "image_path": "assets/strategyand-ereadiness-study-2023/recurring_00.png",
-        "source": "slide"
       }
     ]
   },

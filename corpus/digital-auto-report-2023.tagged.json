@@ -227,29 +227,29 @@
   "deck_summary_one_sentence": "11th annual Strategy& Digital Auto Report (Volume 1) presenting consumer survey insights (n=3,000 across US/EU/China) on connected/electric/autonomous mobility preferences plus strategic implications for OEMs on user interfaces, subscription models, and battery/charging ecosystems.",
   "design_system": {
     "title_style": {
-      "font_family": null,
-      "size_pt": null,
-      "weight": "bold",
+      "font_family": "Arial",
+      "size_pt": 40.0,
+      "weight": "regular",
       "color_hex": "#000000",
-      "alignment": "left"
+      "alignment": null
     },
     "body_style": {
-      "font_family": null,
-      "size_pt": null,
-      "weight": "regular",
-      "color_hex": "#0D0D0D",
-      "alignment": "left"
+      "font_family": "Arial",
+      "size_pt": 12.0,
+      "weight": "bold",
+      "color_hex": "#FFFFFF",
+      "alignment": "center"
     },
     "color_palette": {
-      "primary": "#C00000",
-      "accent": "#D93953",
+      "primary": "#A21F1F",
+      "accent": "#DB526A",
       "neutrals": [
+        "#FFFFFF",
         "#000000",
-        "#585858",
-        "#FFFFFF"
+        "#F1F1F1"
       ]
     },
-    "default_text_alignment": "left",
+    "default_text_alignment": "center",
     "grid": "free",
     "recurring_elements": [
       {
@@ -262,86 +262,6 @@
       },
       {
         "type": "page_number"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "9c63d82f6d8437c8",
-        "position": "top-left",
-        "appears_on_slides": [
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19,
-          35,
-          36
-        ],
-        "image_path": "assets/digital-auto-report-2023/recurring_00.png",
-        "source": "slide"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "9e0ef1ce2d49e40e",
-        "position": "top-center",
-        "appears_on_slides": [
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
-        ],
-        "image_path": "assets/digital-auto-report-2023/recurring_01.png",
-        "source": "slide"
-      },
-      {
-        "type": null,
-        "value": null,
-        "phash": "fee6010303fcfc31",
-        "position": "top-center",
-        "appears_on_slides": [
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          18,
-          19
-        ],
-        "image_path": "assets/digital-auto-report-2023/recurring_02.png",
-        "source": "slide"
       }
     ]
   },
