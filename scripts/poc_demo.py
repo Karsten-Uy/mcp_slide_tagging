@@ -43,6 +43,19 @@ show(
 )
 _first = c.list_decks()[0]["deck"]
 show(f"get_deck_outline({_first!r})", c.get_deck_outline(_first))
+show(
+    "suggest_outline(industry='Cross-industry', content_area='Market analysis', audience='C-suite / board', slide_count=8)",
+    c.suggest_outline(
+        client_industry="Cross-industry",
+        content_area="Market analysis",
+        audience_level="C-suite / board",
+        slide_count=8,
+    ),
+)
+show(
+    "match_slide('public debt rise', slide_purpose='Finding', limit=3)",
+    c.match_slide("public debt rise", slide_purpose="Finding", limit=3),
+)
 show(f"start_deck({_first!r}) [logos base64 elided]", {
     **{k: v for k, v in (c.start_deck(_first) or {}).items() if k != "logos"},
     "logos": [

@@ -13,7 +13,7 @@ the corpus is large enough to need vector search.
 ## What it serves
 
 `src/poc_server.py` — FastMCP over Streamable HTTP at `/mcp`, plus `GET /health`.
-Twelve tools over the corpus (currently 4 decks / 127 slides):
+Fourteen tools over the corpus (currently 4 decks / 127 slides):
 
 | Tool | What it does |
 |---|---|
@@ -25,20 +25,32 @@ Twelve tools over the corpus (currently 4 decks / 127 slides):
 | `find_similar_slides(text)` | Keyword-overlap ranking over main_message (cheap stand-in for embeddings). |
 | `list_vocabulary()` | The valid filter values actually present in the corpus, per field — so `search_slides` strings hit instead of silently returning nothing. |
 | `get_deck_outline(deck)` | The deck's narrative flow: each slide's `slide_position_role` + purpose + title, in order. |
+| **`suggest_outline(...)`** | **Storyboard skeleton from brief attributes** (industry/content/audience/engagement/slide_count/key_sections). Picks the closest reference deck by weighted tag overlap (threshold `min_deck_score=3.0`) and adapts its outline; each planned slide carries a candidate `reference {deck, index}`. Returns `low_confidence=true` with a generic spine when no deck clears the threshold — never silently locks in a weak deck. |
 | `find_slide_templates(...)` | Reusable layout skeletons for a slide kind, ranked by reusability, with their `zones` / `slot_types_present`. |
+| **`match_slide(...)`** | **Per-slide clone kit** for one storyboard point: tags + `zones` + `slot_types_present` + reusability/tier + the source deck's `design_system`. Combines find_similar_slides + get_slide + design lookup in one call; threshold `min_score=0.15` filters noise; `prefer_deck` biases toward the storyboard's chosen reference deck for design coherence; surfaces `best_below_threshold` when nothing clears. |
 | `get_house_style()` | The firm's style aggregated across all decks (dominant fonts/sizes, common palette, all logos). |
 | `start_deck(deck)` | One-call kit to model a new deck: design_system + inferred_rules + logos (base64) + outline + reference slides. |
 | `corpus_stats()` | Coverage: deck/slide counts, decks-with-logos, and counts by industry / content_area / slide_purpose. |
 
 ### Generating decks with the corpus
 
-To have claude.ai *build* decks grounded in this corpus (not just query it), load
-the [`skills/skill_v1.md`](../skills/skill_v1.md) skill alongside the connector
-(the skill is **client-owned** and being rewritten). It drives the tools above —
-`list_decks` → `start_deck` (design system + outline + logos in one call, or the
-`get_deck`/`get_deck_outline`/`get_deck_assets` trio) → `search_slides` /
-`find_slide_templates` / `find_similar_slides` (reference slides + layouts) — then
-builds the `.pptx` in the firm's real fonts/palette/structure.
+Two skills are available; load **one** alongside the connector:
+
+- **[`skills/skill_v2.md`](../skills/skill_v2.md)** (`corpus-pptx-v2`) — the
+  **3-stage flow**: (1) collect & summarize the user's local source materials into
+  a structured brief, (2) draft an iterative storyboard with the user, with each
+  planned slide bound to a concrete reference slide via `suggest_outline` +
+  `match_slide` (using the thresholds above), (3) generate the `.pptx` from the
+  approved `storyboard.json`. Use this whenever the deck starts from source
+  materials (RFP + supporting files).
+- **[`skills/skill_v1.md`](../skills/skill_v1.md)** (`corpus-pptx`) — the
+  **Stage-3-only** flow: ground in the corpus → build → QA. Kept as a legacy
+  reference for when no storyboarding is needed.
+
+Both drive the same retrieval primitives — `list_decks` → `start_deck` (or
+`get_deck` / `get_deck_outline` / `get_deck_assets`) → `search_slides` /
+`find_slide_templates` / `find_similar_slides` — then build the `.pptx` in the
+firm's real fonts/palette/structure.
 
 Sanity-check the data with no server/tokens: `uv run python scripts/poc_demo.py`.
 
@@ -71,7 +83,7 @@ claude.ai → **Settings → Connectors → Add custom connector** →
 - **URL:** `https://<your-tunnel>.trycloudflare.com/mcp`  ← note the `/mcp` path
 - **Auth:** None
 
-claude.ai will connect and list the twelve tools.
+claude.ai will connect and list the fourteen tools.
 
 ## 4. Try it
 
@@ -160,7 +172,7 @@ cron-job.org) during your tester's window.
 
 ### Your tester adds it in claude.ai
 Settings → Connectors → Add custom connector → URL = **`https://<deploy-host>/mcp`**,
-Auth = **None**. They'll see the twelve tools.
+Auth = **None**. They'll see the fourteen tools.
 
 > Docker isn't installed here, so the image wasn't build-tested locally — but the
 > exact runtime it runs (`CORPUS_PATH=corpus` + `$PORT`) is verified. If `docker`

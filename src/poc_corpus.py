@@ -294,6 +294,220 @@ class Corpus:
             ],
         }
 
+    def suggest_outline(
+        self,
+        *,
+        client_industry: str | None = None,
+        content_area: str | None = None,
+        audience_level: str | None = None,
+        engagement_stage: str | None = None,
+        slide_count: int | None = None,
+        key_sections: list[str] | None = None,
+        max_reference_decks: int = 2,
+        min_deck_score: float = 3.0,
+    ) -> dict:
+        """Propose a storyboard skeleton for a new deck by picking the closest
+        reference deck(s) from the corpus and adapting their outline. Operationalizes
+        the 'reuse existing deck outlines' principle: deck-pick is a deterministic
+        weighted tag-overlap (industry 3 + content_area 3 + audience 2 + engagement 1,
+        max 9) instead of the agent eyeballing list_decks; each planned slide carries
+        a candidate `reference {deck, index}` cloned from a donor slide.
+
+        Threshold (`min_deck_score`, default 3.0): if no deck clears it,
+        `chosen_reference_deck` is null and `low_confidence` is true; `slides[]`
+        carries a generic spine (Title / Agenda / Context / Finding / Recommendation
+        / Closing) built from the strongest available per-purpose slides, each marked
+        `low_confidence: true`. The skill then asks the user to proceed with the weak
+        best-match, fall back to get_house_style(), or refine the brief — never
+        silently locks in noise.
+
+        `slide_count` trims/pads the donor outline (Title stays first, Closing last).
+        `key_sections` hints inject/annotate planned slides via find_similar_slides;
+        only hits clearing `min_score=0.15` annotate."""
+        # Score every deck on weighted tag overlap; report raw + normalized.
+        candidates: list[dict] = []
+        wanted_areas = (
+            {content_area.lower()} if isinstance(content_area, str) else
+            {c.lower() for c in (content_area or [])}
+        )
+        for did, d in self.decks.items():
+            ind_hit = bool(client_industry) and _ieq(d.get("client_industry"), client_industry)
+            d_areas = {str(c).lower() for c in (d.get("content_area") or [])}
+            area_hit = bool(wanted_areas) and bool(wanted_areas & d_areas)
+            aud_hit = bool(audience_level) and _ieq(d.get("audience_level"), audience_level)
+            eng_hit = bool(engagement_stage) and _ieq(d.get("engagement_stage"), engagement_stage)
+            score = 3 * ind_hit + 3 * area_hit + 2 * aud_hit + 1 * eng_hit
+            candidates.append({
+                "deck": did,
+                "match_score": float(score),
+                "match_score_normalized": round(score / 9.0, 3),
+                "above_threshold": score >= min_deck_score,
+                "why": {
+                    "client_industry_hit": bool(ind_hit),
+                    "content_area_hit": bool(area_hit),
+                    "audience_level_hit": bool(aud_hit),
+                    "engagement_stage_hit": bool(eng_hit),
+                },
+                "deck_summary": d.get("deck_summary_one_sentence"),
+            })
+        candidates.sort(key=lambda c: -c["match_score"])
+        top = candidates[:max_reference_decks]
+
+        # Pick the donor outline. If the top deck clears the threshold, snapshot its
+        # design system; otherwise fall back to whatever deck is closest (for the
+        # generic spine) but mark low_confidence and leave chosen_reference_deck null.
+        donor_id = top[0]["deck"] if top else None
+        donor = self.decks.get(donor_id) if donor_id else None
+        cleared = bool(top and top[0]["above_threshold"])
+        chosen = donor_id if cleared else None
+        low_confidence = not cleared
+
+        donor_design = (donor or {}).get("design_system") if donor else None
+        donor_rules = (donor or {}).get("inferred_rules") if donor else None
+        recurring_available = bool(
+            donor and any(
+                r.get("image_path") for r in (donor.get("design_system") or {}).get("recurring_elements", [])
+            )
+        )
+
+        # Build the storyboard slides[].
+        slides: list[dict] = []
+        notes: list[str] = []
+        if cleared and donor:
+            # Adapt donor's outline directly: each donor slide -> a planned slide
+            # with a candidate reference pointing back at that donor slide.
+            donor_slides = sorted(donor.get("slides", []), key=lambda s: s.get("index") or 0)
+            outline = list(donor_slides)
+            if slide_count and slide_count != len(outline):
+                # Keep Title (first) and Closing (last); trim/pad the middle.
+                if slide_count < len(outline):
+                    head = outline[:1]
+                    tail = outline[-1:] if len(outline) > 1 else []
+                    middle = outline[1:-1] if len(outline) > 1 else []
+                    # Prefer trimming "Evidence / backup" slides from the back.
+                    evidence_mask = [s.get("slide_position_role") == "Evidence / backup" for s in middle]
+                    drop = len(outline) - slide_count
+                    keep_middle: list[dict] = []
+                    for s, is_ev in zip(reversed(middle), reversed(evidence_mask)):
+                        if drop > 0 and is_ev:
+                            drop -= 1
+                            continue
+                        keep_middle.append(s)
+                    keep_middle.reverse()
+                    # If we still need to drop, lop off from the back of middle.
+                    if drop > 0:
+                        keep_middle = keep_middle[: max(0, len(keep_middle) - drop)]
+                    outline = head + keep_middle + tail
+                    notes.append(f"Adapted {donor_id} {len(donor_slides)}→{len(outline)}; trimmed Evidence-backup run.")
+                else:
+                    # Pad by repeating the most-reusable Finding/Data slide.
+                    pad_candidates = self.find_slide_templates(
+                        slide_purpose="Finding", limit=1
+                    ) or self.find_slide_templates(
+                        slide_purpose="Data presentation", limit=1
+                    )
+                    while pad_candidates and len(outline) < slide_count:
+                        # Pull the actual slide dict from the donor (or any deck the pad came from).
+                        pad_did = pad_candidates[0]["deck"]
+                        pad_idx = pad_candidates[0]["index"]
+                        pad_deck = self.decks.get(pad_did) or donor
+                        pad_slide = next(
+                            (s for s in pad_deck.get("slides", []) if s.get("index") == pad_idx),
+                            None,
+                        )
+                        if pad_slide is None:
+                            break
+                        outline = outline[:-1] + [pad_slide] + outline[-1:] if len(outline) > 1 else outline + [pad_slide]
+                    notes.append(f"Adapted {donor_id} {len(donor_slides)}→{len(outline)}; padded with reusable Finding slides.")
+            for new_idx, s in enumerate(outline):
+                slides.append({
+                    "index": new_idx,
+                    "slide_purpose": s.get("slide_purpose"),
+                    "message_type": s.get("message_type"),
+                    "slide_position_role": s.get("slide_position_role"),
+                    "dominant_visual_element": s.get("dominant_visual_element"),
+                    "intended_main_message": s.get("main_message"),
+                    "reference": {
+                        "deck": donor_id,
+                        "index": s.get("index"),
+                        "why": f"Donor outline slide {s.get('index')}; {s.get('slide_position_role') or 'role unset'}.",
+                        "reusability_score_qualitative": s.get("reusability_score_qualitative"),
+                        "tier_match_difficulty": s.get("tier_match_difficulty"),
+                    },
+                    "low_confidence": False,
+                })
+        else:
+            # No deck cleared the threshold — build a generic spine from the strongest
+            # per-purpose templates available, regardless of source deck. Mark every
+            # planned slide low_confidence so the skill surfaces it.
+            spine = ["Title", "Agenda / Contents", "Context-setting", "Finding", "Recommendation", "Closing / contacts"]
+            target = slide_count or len(spine)
+            # If target > len(spine), repeat Finding in the middle; if target < len(spine),
+            # drop from the back, keeping Title and Closing.
+            if target > len(spine):
+                spine = spine[:-1] + ["Finding"] * (target - len(spine)) + spine[-1:]
+            elif target < len(spine):
+                spine = spine[:1] + spine[1 : 1 + max(0, target - 2)] + spine[-1:]
+            for new_idx, purpose in enumerate(spine):
+                templates = self.find_slide_templates(slide_purpose=purpose, limit=1)
+                ref = None
+                if templates:
+                    t = templates[0]
+                    ref = {
+                        "deck": t["deck"],
+                        "index": t["index"],
+                        "why": f"No deck cleared min_deck_score={min_deck_score}; using best available {purpose} template.",
+                        "reusability_score_qualitative": t.get("reusability_score_qualitative"),
+                        "tier_match_difficulty": t.get("tier_match_difficulty"),
+                    }
+                slides.append({
+                    "index": new_idx,
+                    "slide_purpose": purpose,
+                    "message_type": None,
+                    "slide_position_role": None,
+                    "dominant_visual_element": (templates[0].get("dominant_visual_element") if templates else None),
+                    "intended_main_message": None,
+                    "reference": ref,
+                    "low_confidence": True,
+                })
+            top_score = top[0]["match_score"] if top else 0.0
+            notes.append(
+                f"No deck cleared min_deck_score={min_deck_score} (top={top_score}); generic spine built from per-purpose templates."
+            )
+
+        # `key_sections` hints: only annotate when a hit clears the slide-level
+        # threshold (uses match_slide's default min_score=0.15).
+        if key_sections:
+            for hint in key_sections:
+                hit = self.match_slide(hint, limit=1)
+                top_hit = (hit.get("matches") or [None])[0]
+                if not top_hit:
+                    continue
+                # Annotate the first slide whose intended_main_message is empty/null.
+                for s in slides:
+                    if not s.get("intended_main_message"):
+                        s["intended_main_message"] = hint
+                        s["reference"] = {
+                            "deck": top_hit["deck"],
+                            "index": top_hit["index"],
+                            "why": f"key_section '{hint}' matched with score {top_hit['score']}.",
+                            "reusability_score_qualitative": top_hit.get("reusability_score_qualitative"),
+                            "tier_match_difficulty": top_hit.get("tier_match_difficulty"),
+                        }
+                        break
+
+        return {
+            "candidate_reference_decks": top,
+            "chosen_reference_deck": chosen,
+            "low_confidence": low_confidence,
+            "min_deck_score": min_deck_score,
+            "design_system": donor_design if cleared else None,
+            "inferred_rules": donor_rules if cleared else None,
+            "recurring_assets_available": recurring_available if cleared else False,
+            "slides": slides,
+            "notes": notes,
+        }
+
     def find_slide_templates(
         self,
         *,
@@ -330,6 +544,86 @@ class Corpus:
                 )
         out.sort(key=lambda t: _REUSE_RANK.get(t.get("reusability_score_qualitative"), 0), reverse=True)
         return out[:limit]
+
+    def match_slide(
+        self,
+        text: str,
+        *,
+        slide_purpose: str | None = None,
+        dominant_visual_element: str | None = None,
+        message_type: str | None = None,
+        prefer_deck: str | None = None,
+        limit: int = 5,
+        min_score: float = 0.15,
+    ) -> dict:
+        """For one planned storyboard slide, return ranked reference slides with the
+        full clone kit (tags + zones + slot_types_present + reusability/tier + the
+        source deck's design_system) needed to clone-and-edit. Combines the
+        find_similar_slides token-overlap formula with find_slide_templates' tag
+        filters, plus boosts for `prefer_deck` (design coherence) and High reusability.
+
+        Threshold (`min_score`, default 0.15 on the boosted [0, 1] scale): filters
+        pure-noise matches. When nothing clears it, `matches` is empty and
+        `best_below_threshold` surfaces the single best near-miss so the agent can
+        decide (widen filters, lower threshold, fall back) — never binds a storyboard
+        slide to noise. Use `prefer_deck` to bias matches toward the storyboard's
+        chosen reference deck for design coherence."""
+        q = _tokens(text)
+        scored: list[tuple[float, float, dict, dict, str]] = []  # final, base, slide, deck, did
+        evaluated = 0
+        for did, d in self.decks.items():
+            for s in d.get("slides", []):
+                if not _ieq(s.get("slide_purpose"), slide_purpose):
+                    continue
+                if not _ieq(s.get("dominant_visual_element"), dominant_visual_element):
+                    continue
+                if not _ieq(s.get("message_type"), message_type):
+                    continue
+                evaluated += 1
+                t = _tokens(f"{s.get('main_message') or ''} {s.get('title_text') or ''}")
+                base = (len(q & t) / (len(q) or 1)) if t else 0.0
+                prefer_boost = 0.15 if prefer_deck and did == prefer_deck else 0.0
+                reuse_boost = 0.10 * (_REUSE_RANK.get(s.get("reusability_score_qualitative"), 0) / 3)
+                final = min(1.0, base + prefer_boost + reuse_boost)
+                scored.append((final, base, s, d, did))
+        scored.sort(key=lambda x: -x[0])
+
+        def _kit(final: float, base: float, s: dict, d: dict, did: str) -> dict:
+            return {
+                "deck": did,
+                "index": s.get("index"),
+                "score": round(final, 3),
+                "base_score": round(base, 3),
+                "boosts": {
+                    "prefer_deck": 0.15 if prefer_deck and did == prefer_deck else 0.0,
+                    "reusability": round(0.10 * (_REUSE_RANK.get(s.get("reusability_score_qualitative"), 0) / 3), 3),
+                },
+                "title_text": s.get("title_text"),
+                "main_message": s.get("main_message"),
+                "slide_purpose": s.get("slide_purpose"),
+                "message_type": s.get("message_type"),
+                "slide_position_role": s.get("slide_position_role"),
+                "dominant_visual_element": s.get("dominant_visual_element"),
+                "chart_type": s.get("chart_type"),
+                "zones": s.get("zones", []),
+                "slot_types_present": s.get("slot_types_present", []),
+                "reusability_score_qualitative": s.get("reusability_score_qualitative"),
+                "tier_match_difficulty": s.get("tier_match_difficulty"),
+                "design_system": d.get("design_system"),
+            }
+
+        above = [(f, b, s, d, did) for (f, b, s, d, did) in scored if f >= min_score]
+        matches = [_kit(*row) for row in above[:limit]]
+        best_below = None
+        if not matches and scored:
+            best_below = _kit(*scored[0])
+        return {
+            "matches": matches,
+            "candidates_evaluated": evaluated,
+            "above_threshold_count": len(above),
+            "min_score": min_score,
+            "best_below_threshold": best_below,
+        }
 
     def get_house_style(self) -> dict:
         """The firm's house style aggregated across every deck: the dominant

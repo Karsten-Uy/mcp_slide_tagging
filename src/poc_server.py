@@ -147,6 +147,45 @@ def get_deck_outline(deck: str) -> dict | None:
 
 
 @mcp.tool()
+def suggest_outline(
+    client_industry: str | None = None,
+    content_area: str | None = None,
+    audience_level: str | None = None,
+    engagement_stage: str | None = None,
+    slide_count: int | None = None,
+    key_sections: list[str] | None = None,
+    max_reference_decks: int = 2,
+    min_deck_score: float = 3.0,
+) -> dict:
+    """Propose a storyboard skeleton for a new deck by picking the closest reference
+    deck(s) from the corpus and adapting their outline. Deck-pick is a deterministic
+    weighted tag overlap (industry 3 + content_area 3 + audience 2 + engagement 1,
+    max 9) instead of eyeballing list_decks; each planned slide carries a candidate
+    `reference {deck, index}` cloned from a donor slide so Stage-3 generation has a
+    concrete precedent to clone-and-edit.
+
+    Threshold: `min_deck_score` (default 3.0). If no deck clears it,
+    `chosen_reference_deck` is null, `low_confidence` is true, and `slides[]` carries
+    a generic spine (Title / Agenda / Context / Finding / Recommendation / Closing)
+    built from the strongest available per-purpose templates — each marked
+    `low_confidence: true`. Never silently locks in a weak deck.
+
+    `slide_count` trims/pads the donor outline (Title stays first, Closing last).
+    `key_sections` hints inject/annotate planned slides via the match_slide
+    threshold (only hits clearing min_score=0.15 annotate)."""
+    return corpus.suggest_outline(
+        client_industry=client_industry,
+        content_area=content_area,
+        audience_level=audience_level,
+        engagement_stage=engagement_stage,
+        slide_count=slide_count,
+        key_sections=key_sections,
+        max_reference_decks=max_reference_decks,
+        min_deck_score=min_deck_score,
+    )
+
+
+@mcp.tool()
 def find_slide_templates(
     slide_purpose: str | None = None,
     dominant_visual_element: str | None = None,
@@ -162,6 +201,41 @@ def find_slide_templates(
         dominant_visual_element=dominant_visual_element,
         message_type=message_type,
         limit=limit,
+    )
+
+
+@mcp.tool()
+def match_slide(
+    text: str,
+    slide_purpose: str | None = None,
+    dominant_visual_element: str | None = None,
+    message_type: str | None = None,
+    prefer_deck: str | None = None,
+    limit: int = 5,
+    min_score: float = 0.15,
+) -> dict:
+    """For one planned storyboard slide, return ranked reference slides with the full
+    clone kit needed to clone-and-edit: tags + `zones` + `slot_types_present` +
+    reusability/tier + the source deck's `design_system`. One call replaces
+    find_similar_slides + get_slide + a design lookup. Use `prefer_deck` to bias
+    matches toward the storyboard's chosen reference deck for design coherence.
+
+    Threshold: `min_score` (default 0.15 on the boosted [0, 1] scale) filters
+    pure-noise matches. When nothing clears it, `matches` is empty and
+    `best_below_threshold` surfaces the single best near-miss so the agent can
+    decide (widen filters, lower threshold, or fall back) — never binds a storyboard
+    slide to noise.
+
+    Returns `{matches, candidates_evaluated, above_threshold_count, min_score,
+    best_below_threshold}`."""
+    return corpus.match_slide(
+        text,
+        slide_purpose=slide_purpose,
+        dominant_visual_element=dominant_visual_element,
+        message_type=message_type,
+        prefer_deck=prefer_deck,
+        limit=limit,
+        min_score=min_score,
     )
 
 

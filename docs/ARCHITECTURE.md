@@ -13,10 +13,11 @@ Two facts up front:
    (+ extracted image assets) on disk. `mcp_slide_tagging` reads that folder
    **read-only** and never touches `slide_tagging` or its output.
 2. **There are two server paths, and the lean one is built.** A **lean PoC server**
-   (in-memory, no database, 6 retrieval tools incl. logo serving) is built, deployed,
-   and is what claude.ai connects to today. A **production pgvector server**
-   (Postgres + embeddings) is scaffolded but its ingestion/tools/embeddings are
-   deferred. Sections below are tagged **[built]**, **[skeleton]**, or **[planned]**.
+   (in-memory, no database, 14 retrieval tools incl. logo serving and the storyboard
+   composites `suggest_outline` / `match_slide`) is built, deployed, and is what
+   claude.ai connects to today. A **production pgvector server** (Postgres +
+   embeddings) is scaffolded but its ingestion/tools/embeddings are deferred.
+   Sections below are tagged **[built]**, **[skeleton]**, or **[planned]**.
 
 ---
 
@@ -207,7 +208,7 @@ Templates carry a leading `_legend` of allowed enum values; the server strips it
 [`src/poc_server.py`](../src/poc_server.py) + [`src/poc_corpus.py`](../src/poc_corpus.py):
 a `FastMCP("slide-corpus-poc")` over `transport="streamable-http"` (`/mcp`) plus a
 `GET /health`. It loads the Gen-2 JSON from `CORPUS_PATH` **into memory** — no Postgres,
-no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Twelve read-only tools:
+no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Fourteen read-only tools:
 
 | Tool | Returns |
 |---|---|
@@ -219,10 +220,20 @@ no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Twelve read-only
 | `find_similar_slides(text)` | slides ranked by keyword overlap on `main_message` (embedding stand-in) |
 | `list_vocabulary()` | valid filter values actually present in the corpus, per field (so `search_slides` strings hit) |
 | `get_deck_outline(deck)` | narrative flow — each slide's `slide_position_role` + purpose + title, in order |
+| **`suggest_outline(...)`** | **storyboard skeleton** from brief attributes (industry/content/audience/engagement/slide_count/key_sections): picks the closest reference deck by weighted tag overlap (threshold `min_deck_score=3.0`) and adapts its outline; each planned slide carries a candidate `reference {deck, index}`. Marks `low_confidence=true` + returns a generic spine when no deck clears the threshold |
 | `find_slide_templates(...)` | reusable layouts for a slide kind, ranked by reusability, with `zones`/`slot_types_present` |
+| **`match_slide(...)`** | **per-slide clone kit** for one storyboard point: tags + `zones` + `slot_types_present` + reusability/tier + the source deck's `design_system`; threshold `min_score=0.15` filters noise; `prefer_deck` boost; surfaces `best_below_threshold` when nothing clears |
 | `get_house_style()` | style aggregated across all decks (dominant fonts/sizes, common palette, all logos) |
 | `start_deck(deck)` | one-call kit: design_system + inferred_rules + logos (base64) + outline + reference slides |
 | `corpus_stats()` | coverage: deck/slide counts, decks-with-logos, counts by industry/content_area/slide_purpose |
+
+`suggest_outline` and `match_slide` are read-only composites of the existing helpers
+(no new storage, no server writes). Together they power the
+[`skill_v2.md`](../skills/skill_v2.md) 3-stage flow (collect → storyboard →
+generate); the storyboard itself (`storyboard.json`) is a **client-side, per-project
+local artifact** the agent writes in the user's project folder — never uploaded,
+never persisted server-side. This preserves the read-only / one-directional
+boundary in §3.3.
 
 `/health` returns `{status, decks, slides}` once the corpus loads (no external deps).
 A no-LLM smoke check: [`scripts/poc_demo.py`](../scripts/poc_demo.py).
@@ -255,11 +266,13 @@ the claude.ai custom-connector flow (URL `https://…/mcp`, Auth: None) are in
 | slide_tagging · enrichment via API (`bench`) + `merge`/`score`/`eval` | ✅ built |
 | slide_tagging · enrichment schema (`tagged.py`, enums) | ✅ built |
 | slide_tagging · PDF parsing, consistency_score, vector-logo extraction | ⛔ deferred |
-| mcp_slide_tagging · **lean PoC server + 12 MCP tools + logo serving** | ✅ built |
+| mcp_slide_tagging · **lean PoC server + 14 MCP tools + logo serving** | ✅ built |
+| mcp_slide_tagging · **storyboard composites (`suggest_outline`, `match_slide`)** | ✅ built |
 | mcp_slide_tagging · deploy (Docker, Render/Railway/Cloud Run, connector) | ✅ built |
 | mcp_slide_tagging · production pgvector: schema/config/`/health` | ✅ skeleton |
 | mcp_slide_tagging · production pgvector: ingestion + embeddings + tools | ⛔ planned |
-| corpus-pptx skill (consumes the tools) | 🔄 client-owned (being rewritten) |
+| corpus-pptx-v2 skill (3-stage flow: collect → storyboard → generate) | ✅ built |
+| corpus-pptx (v1) skill (Stage-3-only, legacy) | ✅ built |
 
 ---
 
@@ -303,7 +316,8 @@ slide_mcp/                              # parent dir (not a git repo)
     │   └── config.py                       # CORPUS_PATH / ASSETS_PATH / …
     ├── corpus/                          # bundled Gen-2 snapshot (JSON + assets/) for deploy
     ├── scripts/poc_demo.py             # no-LLM tool smoke check
-    ├── skills/skill_v1.md              # corpus-pptx skill (client-owned)
+    ├── skills/skill_v2.md              # corpus-pptx-v2 (3-stage flow: collect → storyboard → generate)
+    ├── skills/skill_v1.md              # corpus-pptx (Stage-3-only, legacy)
     ├── migrations/001_initial.sql · docker-compose.yml
     ├── Dockerfile · render.yaml · railway.json · .gcloudignore · .railwayignore
     └── docs/{ARCHITECTURE,POC}.md

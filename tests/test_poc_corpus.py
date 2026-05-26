@@ -134,3 +134,122 @@ def test_corpus_stats_counts():
     assert stats["decks"] == len(c.decks)
     assert stats["slides"] == sum(len(d.get("slides", [])) for d in c.decks.values())
     assert isinstance(stats["by_slide_purpose"], dict) and stats["by_slide_purpose"]
+
+
+# --- match_slide ----------------------------------------------------------
+
+
+def test_match_slide_returns_clone_kit_above_threshold():
+    c = _corpus()
+    # "foreign exchange" hits the nigeria deck strongly.
+    res = c.match_slide("foreign exchange policy recommendation", limit=5)
+    assert isinstance(res, dict)
+    assert res["min_score"] == 0.15
+    assert res["candidates_evaluated"] > 0
+    assert res["matches"], "expected at least one clone-kit match"
+    top = res["matches"][0]
+    # Clone-kit shape: tags + structural recipe + source design_system.
+    for key in (
+        "deck", "index", "score", "base_score", "boosts", "title_text",
+        "main_message", "slide_purpose", "dominant_visual_element",
+        "zones", "slot_types_present", "reusability_score_qualitative",
+        "tier_match_difficulty", "design_system",
+    ):
+        assert key in top, f"clone kit missing {key}"
+    assert top["score"] >= 0.15
+    # Sorted descending.
+    scores = [m["score"] for m in res["matches"]]
+    assert scores == sorted(scores, reverse=True)
+
+
+def test_match_slide_threshold_filters_noise_and_surfaces_best_below():
+    c = _corpus()
+    # Gibberish text → nothing should clear the threshold.
+    res = c.match_slide("zzzqqq xyzzy plover unrelated", min_score=0.5)
+    assert res["matches"] == []
+    assert res["above_threshold_count"] == 0
+    # Even with no matches, the agent gets a `best_below_threshold` near-miss
+    # (or null if literally nothing scored) — never silently nothing.
+    assert "best_below_threshold" in res
+
+
+def test_match_slide_tag_filter_narrows_candidates():
+    c = _corpus()
+    everything = c.match_slide("the", min_score=0.0)
+    findings = c.match_slide("the", slide_purpose="Finding", min_score=0.0)
+    assert findings["candidates_evaluated"] <= everything["candidates_evaluated"]
+    assert all(m["slide_purpose"] == "Finding" for m in findings["matches"])
+
+
+def test_match_slide_prefer_deck_boost():
+    c = _corpus()
+    # Pick any deck and bias toward it; matched-deck hits should carry the +0.15 boost.
+    target = next(iter(c.decks))
+    res = c.match_slide("the", prefer_deck=target, limit=20, min_score=0.0)
+    for m in res["matches"]:
+        if m["deck"] == target:
+            assert m["boosts"]["prefer_deck"] == 0.15
+        else:
+            assert m["boosts"]["prefer_deck"] == 0.0
+
+
+# --- suggest_outline ------------------------------------------------------
+
+
+def test_suggest_outline_picks_close_deck_and_adapts_outline():
+    c = _corpus()
+    # The nigeria deck is Cross-industry / Market analysis / C-suite — this
+    # should clear the deck-level threshold easily.
+    res = c.suggest_outline(
+        client_industry="Cross-industry",
+        content_area="Market analysis",
+        audience_level="C-suite / board",
+        slide_count=8,
+    )
+    assert res["low_confidence"] is False
+    assert res["chosen_reference_deck"] is not None
+    assert res["design_system"], "snapshotted design_system expected when above threshold"
+    assert res["inferred_rules"] is not None
+    # candidate scoring is exposed
+    top = res["candidate_reference_decks"][0]
+    assert top["above_threshold"] is True
+    assert 0.0 <= top["match_score_normalized"] <= 1.0
+    # adapted to 8 slides, each bound to a donor reference, none low_confidence.
+    assert len(res["slides"]) == 8
+    assert all(s["reference"] is not None for s in res["slides"])
+    assert all(s["low_confidence"] is False for s in res["slides"])
+    # indices are 0..n-1, sequential.
+    assert [s["index"] for s in res["slides"]] == list(range(8))
+
+
+def test_suggest_outline_low_confidence_when_no_deck_clears():
+    c = _corpus()
+    # Filters no deck satisfies → low_confidence, chosen=null, generic spine.
+    res = c.suggest_outline(
+        client_industry="Healthcare",
+        content_area="ERP",
+        audience_level="Working team",
+        engagement_stage="Final delivery",
+        min_deck_score=9.0,  # require a perfect 4-way hit no deck can hit
+    )
+    assert res["low_confidence"] is True
+    assert res["chosen_reference_deck"] is None
+    assert res["design_system"] is None
+    assert res["slides"], "generic spine should still be returned"
+    assert all(s["low_confidence"] is True for s in res["slides"])
+    # candidate_reference_decks still lists the closest decks with their scores.
+    assert res["candidate_reference_decks"]
+    assert all("match_score" in c_ for c_ in res["candidate_reference_decks"])
+
+
+def test_suggest_outline_respects_slide_count_padding_and_trimming():
+    c = _corpus()
+    # Trim: ask for 3 slides; should always keep Title-like first + Closing-like last.
+    res_trim = c.suggest_outline(
+        client_industry="Cross-industry",
+        content_area="Market analysis",
+        audience_level="C-suite / board",
+        slide_count=3,
+    )
+    assert len(res_trim["slides"]) == 3
+    assert [s["index"] for s in res_trim["slides"]] == [0, 1, 2]
