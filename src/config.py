@@ -22,6 +22,10 @@ class Settings(BaseSettings):
     # Defaults to the deployed layout (corpus/assets); for local dev against the
     # sibling repo set ASSETS_PATH=../slide_tagging/reference_data/assets
     assets_path: Path = Path("corpus/assets")
+    # Where source .pptx decks live, for serving a single reference slide raw
+    # (get_slide_pptx). Defaults to the deployed layout (corpus/source); for local
+    # dev against the sibling repo set SOURCE_PPTX_PATH=../slide_tagging/data/source
+    source_pptx_path: Path = Path("corpus/source")
     mcp_server_host: str = "0.0.0.0"
     mcp_server_port: int = 8000
     log_level: str = "INFO"

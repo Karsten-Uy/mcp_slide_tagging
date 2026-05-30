@@ -16,6 +16,21 @@ from collections import Counter
 from pathlib import Path
 from typing import Any
 
+from pptx import Presentation
+
+from src.manifest import load_manifest
+from src.pptx_split import extract_single_slide
+
+PPTX_MIME = (
+    "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+)
+
+
+def _pptx_slide_count(path: Path) -> int:
+    """Number of slides python-pptx sees (sldIdLst order) — the index space
+    extract_single_slide() and the tagged JSON must agree on."""
+    return len(Presentation(str(path)).slides)
+
 _TOKEN = re.compile(r"[a-z0-9]+")
 
 # Deck/slide fields surfaced by list_vocabulary (the ones search_slides filters on,
@@ -51,21 +66,84 @@ def _top1(counter: Counter) -> Any:
 class Corpus:
     """All tagged decks held in memory, keyed by deck id (filename stem)."""
 
-    def __init__(self, path: Path, assets_path: Path | None = None) -> None:
+    def __init__(
+        self,
+        path: Path,
+        assets_path: Path | None = None,
+        source_pptx_path: Path | None = None,
+        manifest_path: Path | None = None,
+    ) -> None:
         self.path = Path(path)
         # Where recurring-element image_paths ("assets/<slug>/x.png") resolve to disk.
         self.assets_path = Path(assets_path) if assets_path else self.path / "assets"
+        # Where source .pptx decks live, for serving a single reference slide raw.
+        self.source_pptx_path = (
+            Path(source_pptx_path) if source_pptx_path else self.path / "source"
+        )
+        # Precomputed {pptx_filename: slide_count} so the admission gate is a dict
+        # lookup instead of parsing every .pptx on boot. Defaults to a manifest.json
+        # next to the source decks; absent/partial manifests fall back to parsing.
+        self.manifest_path = (
+            Path(manifest_path) if manifest_path else self.source_pptx_path / "manifest.json"
+        )
         self.decks: dict[str, dict] = {}
+        # Resolved source .pptx per loaded deck (set during load()).
+        self._source_paths: dict[str, Path] = {}
         self.load()
 
+    def _resolve_source_pptx(self, deck_id: str, deck: dict) -> Path | None:
+        """Locate the deck's source .pptx under source_pptx_path. The tagged
+        source_filename often names the .pdf, so normalize its extension to .pptx,
+        then fall back to <deck>.pptx. None if no candidate exists on disk."""
+        candidates: list[str] = []
+        sf = deck.get("source_filename")
+        if sf:
+            candidates.append(Path(sf).with_suffix(".pptx").name)
+        candidates.append(f"{deck_id}.pptx")
+        for c in candidates:
+            p = self.source_pptx_path / c
+            if p.exists():
+                return p
+        return None
+
     def load(self) -> None:
+        """Load every tagged deck that has a *matching* source .pptx — the file must
+        exist AND its slide count must equal the tagged JSON's. Decks without a
+        matching .pptx are dropped from the whole corpus (so every endpoint only
+        ever sees serveable, index-aligned decks) with a one-line note to stderr."""
         self.decks = {}
+        self._source_paths = {}
+        manifest = load_manifest(self.manifest_path)
         for f in sorted(self.path.glob("*.json")):
             data = json.loads(f.read_text(encoding="utf-8"))
             data.pop("_legend", None)  # tagging aid, not schema
             name = f.name
             deck_id = name[: -len(".tagged.json")] if name.endswith(".tagged.json") else f.stem
+
+            src = self._resolve_source_pptx(deck_id, data)
+            if src is None:
+                print(f"# corpus: excluding {deck_id} — no matching source .pptx", file=sys.stderr)
+                continue
+            tagged = len(data.get("slides", []))
+            # Prefer the precomputed manifest count; only parse the .pptx if it's
+            # not in the manifest (keeps boot O(decks) lookups, not O(decks) parses).
+            actual = manifest.get(src.name)
+            if actual is None:
+                try:
+                    actual = _pptx_slide_count(src)
+                except Exception as exc:  # noqa: BLE001 — a corrupt deck is just excluded
+                    print(f"# corpus: excluding {deck_id} — cannot read {src.name}: {exc}", file=sys.stderr)
+                    continue
+            if tagged != actual:
+                print(
+                    f"# corpus: excluding {deck_id} — slide count mismatch "
+                    f"(tagged {tagged} != {src.name} {actual})",
+                    file=sys.stderr,
+                )
+                continue
+
             self.decks[deck_id] = data
+            self._source_paths[deck_id] = src
 
     # --- views -------------------------------------------------------------
 
@@ -230,6 +308,32 @@ class Corpus:
                     "slide": s,  # full tag set for this slide
                 }
         return None
+
+    def get_slide_pptx(self, deck: str, index: int) -> dict | None:
+        """Return one reference slide as a standalone, self-contained .pptx (base64).
+
+        The highest-fidelity reference: the real slide bytes (shapes, geometry,
+        fills, fonts, charts) the agent can open with python-pptx and clone-and-edit,
+        rather than rebuilding from the tag summary. Every loaded deck has a matching,
+        index-aligned source .pptx by construction (enforced at load), so this returns
+        None only if the deck id is unknown/excluded or `index` is out of range."""
+        # Only matching decks (source .pptx present + count-aligned) are loaded, so a
+        # known deck always has a resolved source path.
+        src = self._source_paths.get(deck)
+        if src is None:
+            return None
+        try:
+            slide_bytes = extract_single_slide(src.read_bytes(), index)
+        except IndexError:
+            return None
+        return {
+            "deck": deck,
+            "index": index,
+            "source_filename": src.name,
+            "filename": f"{deck}-slide-{index}.pptx",
+            "mime_type": PPTX_MIME,
+            "base64": base64.b64encode(slide_bytes).decode(),
+        }
 
     def find_similar_slides(self, text: str, limit: int = 10) -> list[dict]:
         """Rank slides by keyword overlap of `text` with their main_message/title

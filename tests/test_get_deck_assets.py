@@ -5,13 +5,29 @@ from __future__ import annotations
 import base64
 import json
 
+from pptx import Presentation
+from pptx.util import Inches
+
 from src.poc_corpus import Corpus
+
+
+def _write_pptx(path, n_slides):
+    prs = Presentation()
+    blank = prs.slide_layouts[6]
+    for i in range(n_slides):
+        slide = prs.slides.add_slide(blank)
+        slide.shapes.add_textbox(Inches(1), Inches(1), Inches(4), Inches(1)).text_frame.text = f"S{i}"
+    prs.save(str(path))
 
 
 def _corpus(tmp_path):
     corpus = tmp_path / "corpus"
+    source = tmp_path / "source"
+    source.mkdir(parents=True)
     (corpus / "assets" / "demo-deck").mkdir(parents=True)
     (corpus / "assets" / "demo-deck" / "logo.png").write_bytes(b"PNGBYTES")
+    # Enforcement requires a matching .pptx (1 tagged slide -> 1-slide deck).
+    _write_pptx(source / "demo-deck.pptx", 1)
     deck = {
         "source_filename": "demo.pptx",
         "slide_count": 1,
@@ -27,7 +43,7 @@ def _corpus(tmp_path):
         "slides": [{"index": 0}],
     }
     (corpus / "demo-deck.tagged.json").write_text(json.dumps(deck), encoding="utf-8")
-    return Corpus(corpus, corpus / "assets")
+    return Corpus(corpus, corpus / "assets", source)
 
 
 def test_get_deck_assets_returns_decodable_base64(tmp_path):

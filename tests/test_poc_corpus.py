@@ -2,17 +2,28 @@
 
 from __future__ import annotations
 
-from src.config import settings
+from pathlib import Path
+
 from src.poc_corpus import _REUSE_RANK, Corpus
+
+# Enforcement: only decks with a matching source .pptx (present + count-aligned) load.
+# The bundled snapshot ships two such decks (nigeria, digital-auto); the other two
+# tagged JSONs are intentionally excluded (no/misaligned .pptx).
+_CORPUS = Path("corpus")
+_SOURCE = Path("corpus/source")
 
 
 def _corpus() -> Corpus:
-    return Corpus(settings.corpus_path)
+    return Corpus(_CORPUS, _CORPUS / "assets", _SOURCE)
 
 
-def test_loads_the_tagged_decks():
+def test_loads_only_decks_with_matching_pptx():
     c = _corpus()
-    assert len(c.decks) >= 4  # the 4 Gen-2 hand-labels
+    assert len(c.decks) == 2  # nigeria + digital-auto (the bundled, aligned decks)
+    assert "nigeria-economic-outlook-october-2023-v1" in c.decks
+    # decks whose .pptx is absent/misaligned are dropped from the whole corpus
+    assert "electric-vehicle-sales-review-q4-2022" not in c.decks
+    assert "ereadiness-study-2023" not in c.decks
     decks = c.list_decks()
     assert all(d["deck"] and d["slide_count"] > 0 for d in decks)
     # _legend is stripped, not surfaced as a deck

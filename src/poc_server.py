@@ -25,7 +25,7 @@ from src.poc_corpus import Corpus
 
 logger = get_logger(__name__)
 
-corpus = Corpus(settings.corpus_path, settings.assets_path)
+corpus = Corpus(settings.corpus_path, settings.assets_path, settings.source_pptx_path)
 
 # Cloud hosts (Cloud Run, Render, …) inject the port to bind via $PORT; fall back
 # to the configured port for local runs.
@@ -117,6 +117,21 @@ def get_slide(deck: str, index: int) -> dict | None:
     """Return the full tag set for one slide, given a deck id (from list_decks)
     and the 0-based slide index. Includes deck-level context. Null if not found."""
     return corpus.get_slide(deck, index)
+
+
+@mcp.tool()
+def get_slide_pptx(deck: str, index: int) -> dict | None:
+    """Return one reference slide as a standalone, self-contained .pptx (base64) —
+    the highest-fidelity reference for cloning. Given a deck id (from list_decks) and
+    a 0-based slide index, you get the real slide bytes (shapes, exact geometry,
+    fills, fonts, charts, layout/theme) as a one-slide deck. To clone-and-edit it:
+    decode the base64, write it to a file, open with python-pptx, copy/modify the
+    shapes into your new slide, then re-apply the deck's design_system. Prefer this
+    over rebuilding from get_slide's tag summary when you need a faithful duplicate.
+    Item: {deck, index, source_filename, filename, mime_type, base64}. Every deck the
+    server exposes has a matching raw .pptx, so this is null only if the deck id is
+    unknown or the index is out of range."""
+    return corpus.get_slide_pptx(deck, index)
 
 
 @mcp.tool()

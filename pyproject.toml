@@ -12,6 +12,7 @@ dependencies = [
     "pydantic-settings>=2.5",
     "structlog>=24.4",
     "starlette>=0.40",
+    "python-pptx>=1.0",
 ]
 
 [dependency-groups]
