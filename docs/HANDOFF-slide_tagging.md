@@ -119,15 +119,18 @@ consumer's snapshot can include it. A copy is fine; don't rely on the consumer h
 for it in `data/source/` under a different name (e.g. `ereadiness-study-2023` vs the
 real `strategyand-ereadiness-study-2023.pptx`).
 
-### P1-1 — Extend `validate` to assert the contract
-Add to the existing `validate` command an alignment check that fails when:
-- the resolved `.pptx` is missing,
-- `python-pptx slide count != len(slides[])` (or `!= slide_count`/`deck_length`),
-- slide indices aren't contiguous `0..N-1`,
-- `source_format != "pptx"` for a served deck.
+### P1-1 — Assert the contract with `validate` ✅ *built*
+`validate` now runs a **structural-alignment guard** and exits non-zero when
+`slide_count`, `deck_length`, and `len(slides[])` disagree, or slide indices aren't a
+contiguous `0..N-1`. Pass `--pptx <deck.pptx>` to also assert the real `.pptx` slide
+count (`check_structural_invariants` in `cli.py`):
+
+```bash
+slide-tagger validate labels.json --pptx deck.pptx   # exit 1 on any misalignment
+```
 
 This catches misalignment **at production time**, before it reaches the server and
-silently empties a deploy.
+silently empties a deploy. (It already flags the two broken decks — see P1-2.)
 
 ### P1-2 — Reconcile the two broken decks
 - `electric-vehicle-sales-review-q4-2022`: re-tag the 26-slide `.pptx` (currently 25).
@@ -135,17 +138,19 @@ silently empties a deploy.
   the current 33/81 record can't be reconciled to that file — it was a different/trimmed
   source. Decide which `.pptx` is canonical and tag *that one*.
 
-### P2-1 — Emit the manifest (the producer knows the counts already)
-The server reads a `manifest.json` mapping `pptx_filename -> slide_count` so its boot-time
-gate is a dict lookup instead of opening every `.pptx` (matters as the corpus grows). The
-producer is the natural author — it has the count at tag time. Emit it as part of the
-export so the consumer doesn't run a separate `build_manifest` step. Format in §6.
+### P2-1 — Emit the manifest ✅ *built*
+`slide-tagger manifest <source-dir>` writes `manifest.json` (`pptx_filename ->
+slide_count`) for a folder of source `.pptx`, so the server's boot-time gate is a dict
+lookup instead of opening every `.pptx`. `bundle` (P2-2) writes it automatically; run
+`manifest` standalone to refresh it. Format in §6.
 
-### P2-2 — A `bundle`/`export` command
-Add a producer command that assembles the deploy snapshot deterministically: tagged JSON
-+ assets + the `.pptx` (named per §5) + `manifest.json`, optionally filtering by
-`confidentiality_tier`. This turns the §"folder copy" handoff into a versioned bundle and
-is the foundation for incremental re-ingest later.
+### P2-2 — A `bundle` command ✅ *built*
+`slide-tagger bundle <labels.json> <deck.pptx> --out corpus` assembles the deploy
+snapshot deterministically — tagged JSON + logo assets + the `.pptx` (named per §5) +
+a refreshed `manifest.json` — **and refuses (writes nothing) if the deck is misaligned**,
+so a broken deck can't silently empty the deploy. Non-public decks are skipped unless
+`--include-restricted` (confidentiality filtering). This is the versioned-bundle handoff
+that replaces the manual "folder copy."
 
 ---
 

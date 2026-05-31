@@ -13,7 +13,11 @@ the corpus is large enough to need vector search.
 ## What it serves
 
 `src/poc_server.py` — FastMCP over Streamable HTTP at `/mcp`, plus `GET /health`.
-Fourteen tools over the corpus (currently 4 decks / 127 slides):
+Fifteen tools over the corpus. The corpus is filtered by an **admission gate** — a
+deck is served only if its source `.pptx` is present and its slide count matches the
+tags — so of the four tagged decks, two currently pass (nigeria + digital-auto =
+2 decks / 69 slides); the other two lack an index-aligned `.pptx` (see
+[`HANDOFF-slide_tagging.md`](HANDOFF-slide_tagging.md)). Tools:
 
 | Tool | What it does |
 |---|---|
@@ -22,6 +26,7 @@ Fourteen tools over the corpus (currently 4 decks / 127 slides):
 | `get_deck_assets(deck)` | The deck's recurring **branding images (logos)** as base64 PNGs (type/source/position/image_path/base64), so a generated deck can carry real branding. Returns `[]` when a deck's logo is vector-only (no extractable raster). |
 | `search_slides(...)` | Filter slides by `slide_purpose` / `message_type` / `dominant_visual_element` + deck-level `client_industry` / `content_area` / `audience_level`, and/or a `text` keyword over title + main_message. |
 | `get_slide(deck, index)` | Full tag set for one slide. |
+| **`get_slide_pptx(deck, index)`** | **One reference slide as a standalone, self-contained `.pptx`** (base64) + a per-shape map (shape_idx/text/style/geometry). The highest-fidelity clone source: open it with python-pptx and overwrite only the text. Non-text shapes (charts/tables/groups) aren't in the map — use python-pptx on the bytes for those. |
 | `find_similar_slides(text)` | Keyword-overlap ranking over main_message (cheap stand-in for embeddings). |
 | `list_vocabulary()` | The valid filter values actually present in the corpus, per field — so `search_slides` strings hit instead of silently returning nothing. |
 | `get_deck_outline(deck)` | The deck's narrative flow: each slide's `slide_position_role` + purpose + title, in order. |
@@ -30,22 +35,25 @@ Fourteen tools over the corpus (currently 4 decks / 127 slides):
 | **`match_slide(...)`** | **Per-slide clone kit** for one storyboard point: tags + `zones` + `slot_types_present` + reusability/tier + the source deck's `design_system`. Combines find_similar_slides + get_slide + design lookup in one call; threshold `min_score=0.15` filters noise; `prefer_deck` biases toward the storyboard's chosen reference deck for design coherence; surfaces `best_below_threshold` when nothing clears. |
 | `get_house_style()` | The firm's style aggregated across all decks (dominant fonts/sizes, common palette, all logos). |
 | `start_deck(deck)` | One-call kit to model a new deck: design_system + inferred_rules + logos (base64) + outline + reference slides. |
-| `corpus_stats()` | Coverage: deck/slide counts, decks-with-logos, and counts by industry / content_area / slide_purpose. |
+| `corpus_stats()` | Coverage: deck/slide counts, decks-with-logos, and counts by industry / content_area / slide_purpose / message_type / dominant_visual_element (shows which slide kinds lack a clone precedent). |
 
 ### Generating decks with the corpus
 
-Two skills are available; load **one** alongside the connector:
+Skills are client-owned and live in `skills/`; load **one** alongside the connector.
+The latest is:
 
-- **[`skills/skill_v2.md`](../skills/skill_v2.md)** (`corpus-pptx-v2`) — the
-  **3-stage flow**: (1) collect & summarize the user's local source materials into
-  a structured brief, (2) draft an iterative storyboard with the user, with each
-  planned slide bound to a concrete reference slide via `suggest_outline` +
-  `match_slide` (using the thresholds above), (3) generate the `.pptx` from the
-  approved `storyboard.json`. Use this whenever the deck starts from source
-  materials (RFP + supporting files).
-- **[`skills/skill_v1.md`](../skills/skill_v1.md)** (`corpus-pptx`) — the
-  **Stage-3-only** flow: ground in the corpus → build → QA. Kept as a legacy
-  reference for when no storyboarding is needed.
+- **[`skills/skill_v5.md`](../skills/skill_v5.md)** (`corpus-pptx-v5`) — the 3-stage
+  flow (brief → storyboard → generate), where Stage 3 **clones the bound reference
+  slide's raw `.pptx`** via `get_slide_pptx` and overwrites only the visible text
+  (never restyling), gated by a three-axis consistency check
+  ([`scripts/check_slide_consistency.py`](../scripts/check_slide_consistency.py))
+  before render, plus cross-deck canvas handling. Cloning is the only generation path —
+  no from-scratch building — which is what keeps output firm-authentic instead of
+  generic-AI.
+
+Earlier iterations remain for reference: `skill_v4.md` (clone + consistency gate),
+`skill_v3.md` (raw-clone, pre-gate), `skill_v2.md` (reconstruct-from-tags storyboard),
+`skill_v1.md` (Stage-3-only).
 
 Both drive the same retrieval primitives — `list_decks` → `start_deck` (or
 `get_deck` / `get_deck_outline` / `get_deck_assets`) → `search_slides` /
@@ -60,10 +68,17 @@ Sanity-check the data with no server/tokens: `uv run python scripts/poc_demo.py`
 uv sync
 uv run python -m src.poc_server      # serves http://localhost:8000  (/mcp + /health)
 ```
-Verify: `curl http://localhost:8000/health` → `{"status":"ok","decks":4,"slides":127}`.
+Verify: `curl http://localhost:8000/health` → `{"status":"ok","decks":2,"slides":69}`
+(the count reflects decks that pass the admission gate, not all tagged JSON).
 
-`CORPUS_PATH` defaults to `../slide_tagging/reference_data/hand_labels`; override in
-`.env` if your layout differs. (No `OPENAI_API_KEY` or `DATABASE_URL` needed for the PoC.)
+`CORPUS_PATH` defaults to `../slide_tagging/reference_data/hand_labels`;
+`SOURCE_PPTX_PATH` defaults to `corpus/source` (the bundled snapshot — which is why
+nigeria + digital-auto pass even when `CORPUS_PATH` points at the sibling). To serve
+raw slices straight from the producer's source decks during local dev, set
+`SOURCE_PPTX_PATH=../slide_tagging/data/source`. Override in `.env` if your layout
+differs. (No `OPENAI_API_KEY` or `DATABASE_URL` needed for the PoC.) Run
+`uv run python -m scripts.check_corpus` to see which decks pass the gate and why the
+rest don't.
 
 ## 2. Expose it over HTTPS
 
@@ -83,7 +98,7 @@ claude.ai → **Settings → Connectors → Add custom connector** →
 - **URL:** `https://<your-tunnel>.trycloudflare.com/mcp`  ← note the `/mcp` path
 - **Auth:** None
 
-claude.ai will connect and list the fourteen tools.
+claude.ai will connect and list the fifteen tools.
 
 ## 4. Try it
 
@@ -102,13 +117,21 @@ The tunnel above is tied to your machine. To give a tester a durable URL, deploy
 `Dockerfile` (lean PoC server + bundled corpus, no Postgres/OpenAI). It binds to
 `$PORT` and serves `/mcp` + `/health`.
 
-**Refresh the corpus snapshot first** (it's a point-in-time copy, gitignored) —
-copy both the tagged JSON **and** the extracted logo assets:
+**Refresh the corpus snapshot first** (it's a point-in-time copy, gitignored) — copy
+the tagged JSON, the logo assets, **and the source `.pptx`**, then rebuild the
+manifest. All three are required: the admission gate drops any deck whose `.pptx` is
+missing, so a JSON-only snapshot deploys *empty*.
 
 ```bash
 cp ../slide_tagging/reference_data/hand_labels/*.tagged.json corpus/
-cp -r ../slide_tagging/reference_data/assets/* corpus/assets/   # logo PNGs served by get_deck_assets
+cp -r ../slide_tagging/reference_data/assets/* corpus/assets/      # logo PNGs (get_deck_assets)
+cp ../slide_tagging/data/source/*.pptx corpus/source/             # raw decks (get_slide_pptx + gate)
+uv run python -m scripts.build_manifest corpus/source             # slide-count manifest
+uv run python -m scripts.check_corpus                             # verify which decks will serve
 ```
+
+(The producer's `slide-tagger bundle <tagged.json> <deck.pptx> --out corpus` does the
+copy + manifest for one deck in a single, alignment-checked step.)
 
 ### Option A — Google Cloud Run (one command, scale-to-zero, public HTTPS)
 
@@ -144,8 +167,9 @@ railway up                 # uploads the dir, builds the Dockerfile, deploys
 railway domain             # generate https://<app>.up.railway.app
 ```
 Give your tester **`https://<app>.up.railway.app/mcp`**. (GitHub flow also works —
-connect the repo in the Railway dashboard — but then commit the snapshot first:
-`git add -f corpus/`.)
+connect the repo in the Railway dashboard — but then commit the **whole** snapshot
+first: `git add -f corpus/*.json corpus/assets corpus/source` so the `.pptx` +
+manifest reach the build, not just the JSON.)
 
 ### Option D — Render (free tier, via Blueprint)
 
@@ -154,8 +178,11 @@ A [`render.yaml`](../render.yaml) Blueprint is included (Docker, free plan,
 `corpus/` snapshot must be committed (it's gitignored):
 
 ```bash
-git add -f corpus/*.json render.yaml          # force-add the gitignored snapshot
-git commit -m "Add Render blueprint + corpus snapshot"
+# force-add the WHOLE gitignored snapshot — JSON, assets, AND the source .pptx + manifest.
+# JSON-only here is the classic mistake: the admission gate then drops every deck and the
+# deploy comes up with an empty corpus.
+git add -f corpus/*.json corpus/assets corpus/source render.yaml
+git commit -m "Add Render blueprint + corpus snapshot (JSON + assets + .pptx + manifest)"
 git remote add origin https://github.com/<you>/<repo>.git   # create the repo on github.com first
 git push -u origin master
 ```
@@ -172,7 +199,7 @@ cron-job.org) during your tester's window.
 
 ### Your tester adds it in claude.ai
 Settings → Connectors → Add custom connector → URL = **`https://<deploy-host>/mcp`**,
-Auth = **None**. They'll see the fourteen tools.
+Auth = **None**. They'll see the fifteen tools.
 
 > Docker isn't installed here, so the image wasn't build-tested locally — but the
 > exact runtime it runs (`CORPUS_PATH=corpus` + `$PORT`) is verified. If `docker`
@@ -180,8 +207,12 @@ Auth = **None**. They'll see the fourteen tools.
 
 ## Caveats (it's a PoC)
 
-- **Corpus is 4 decks** (nigeria is fully clean; digital-auto's labels were partly
-  corrected — see `../slide_tagging/reference_data/hand_labels/digital-auto-label-review.md`).
+- **Corpus is 4 tagged decks, but only the 2 that pass the admission gate are served**
+  (nigeria + digital-auto have an index-aligned source `.pptx`; electric-vehicle and
+  ereadiness don't yet — their tags were made from PDF exports whose page count differs
+  from the `.pptx`). See [`HANDOFF-slide_tagging.md`](HANDOFF-slide_tagging.md) for the
+  producer contract that fixes this. The deployed snapshot must include
+  `corpus/source/*.pptx` + `manifest.json`, not just the JSON.
 - **The trycloudflare URL changes every restart** — re-paste it into the connector.
 - **No auth** — anyone with the URL can call the tools (read-only over slide *tags*
   from published reports, so low risk, but it's also open compute). A deployed

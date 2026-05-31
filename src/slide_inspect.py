@@ -46,17 +46,20 @@ def _run_color(run: Any) -> str | None:
         return f"theme:{_enum_name(getattr(color, 'theme_color', None))}"
 
 
-def _first_run(shape: Any) -> Any | None:
+def _first_run(shape: Any) -> tuple[Any | None, Any | None]:
+    """The (paragraph, run) of the first non-empty paragraph — so the representative
+    run and the alignment we report come from the *same* paragraph (a blank leading
+    paragraph can carry a different alignment than the one that holds the text)."""
     for para in shape.text_frame.paragraphs:
         if para.runs:
-            return para.runs[0]
-    return None
+            return para, para.runs[0]
+    return None, None
 
 
 def slide_signatures(source: bytes | str, slide_index: int = 0) -> list[dict[str, Any]]:
     """Return a style+geometry signature for every text shape on the slide, in shape
-    order. `source` is a .pptx path or its bytes. The representative run is the first
-    run of the first non-empty paragraph."""
+    order. `source` is a .pptx path or its bytes. The representative run/paragraph is
+    the first run of the first non-empty paragraph (falling back to paragraph 0)."""
     prs = Presentation(io.BytesIO(source) if isinstance(source, bytes) else source)
     slide = list(prs.slides)[slide_index]
     out: list[dict[str, Any]] = []
@@ -64,8 +67,9 @@ def slide_signatures(source: bytes | str, slide_index: int = 0) -> list[dict[str
         if not shape.has_text_frame:
             continue
         tf = shape.text_frame
-        run = _first_run(shape)
-        first_para = tf.paragraphs[0] if tf.paragraphs else None
+        rep_para, run = _first_run(shape)
+        if rep_para is None:
+            rep_para = tf.paragraphs[0] if tf.paragraphs else None
         size = run.font.size if run is not None else None
         out.append(
             {
@@ -75,7 +79,7 @@ def slide_signatures(source: bytes | str, slide_index: int = 0) -> list[dict[str
                 "bold": run.font.bold if run is not None else None,
                 "size_pt": (size.pt if size is not None else None),
                 "font": run.font.name if run is not None else None,
-                "algn": _enum_name(first_para.alignment) if first_para is not None else None,
+                "algn": _enum_name(rep_para.alignment) if rep_para is not None else None,
                 "anchor": _enum_name(tf.vertical_anchor),
                 "left": shape.left,
                 "top": shape.top,
@@ -105,7 +109,11 @@ def consistency_report(
             vals = [s.get(field) for s in present]
             if field in ("width", "height"):
                 nums = [v for v in vals if isinstance(v, int)]
-                uniform = bool(nums) and (max(nums) - min(nums) <= geom_tol) and len(nums) == len(vals)
+                # An empty/all-absent group is uniform (nothing to compare) — matching
+                # the non-geometry branch — instead of false "drift" with empty values.
+                uniform = (not vals) or (
+                    len(nums) == len(vals) and (max(nums) - min(nums) <= geom_tol)
+                )
             else:
                 uniform = len(set(vals)) <= 1
             if not uniform:

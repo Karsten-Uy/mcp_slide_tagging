@@ -83,6 +83,32 @@ def test_report_uniform_when_siblings_match():
     assert rep["groups"][0]["differing_fields"] == []
 
 
+def test_algn_comes_from_the_representative_paragraph_not_a_blank_leading_one():
+    # A box whose paragraph[0] is blank (right-aligned) but whose text lives in a
+    # center-aligned paragraph[1]: algn must describe the paragraph the run came from.
+    def build(s):
+        box = s.shapes.add_textbox(Inches(1), Inches(1), Inches(2), Inches(1))
+        tf = box.text_frame
+        tf.paragraphs[0].alignment = PP_ALIGN.RIGHT  # blank leading paragraph
+        p2 = tf.add_paragraph()
+        p2.alignment = PP_ALIGN.CENTER
+        p2.add_run().text = "HELLO"
+    sig = slide_signatures(_slide_bytes(build))[0]
+    assert sig["text"] == "HELLO"
+    assert sig["algn"] == "CENTER"  # not RIGHT (the blank paragraph[0])
+
+
+def test_report_treats_all_absent_group_as_uniform():
+    # A group whose shape indices don't exist (e.g. only non-text/chart shapes, or a
+    # typo) must not be reported as width/height drift with empty value lists.
+    def build(s):
+        _styled_label(s, 1, text="A", fill="FFFFFF", bold=True, font="Arial", size=10)
+    rep = consistency_report(slide_signatures(_slide_bytes(build)), [[7, 8]])
+    assert rep["ok"] is True
+    assert rep["groups"][0]["uniform"] is True
+    assert rep["groups"][0]["differing_fields"] == []
+
+
 def test_report_flags_geometry_drift():
     def build(s):
         _styled_label(s, 1, text="A", fill="FFFFFF", bold=True, font="Arial", size=10, width=1.5)

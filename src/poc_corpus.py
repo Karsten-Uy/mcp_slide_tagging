@@ -20,6 +20,7 @@ from pptx import Presentation
 
 from src.manifest import load_manifest
 from src.pptx_split import extract_single_slide
+from src.slide_inspect import slide_signatures
 
 PPTX_MIME = (
     "application/vnd.openxmlformats-officedocument.presentationml.presentation"
@@ -89,6 +90,8 @@ class Corpus:
         self.decks: dict[str, dict] = {}
         # Resolved source .pptx per loaded deck (set during load()).
         self._source_paths: dict[str, Path] = {}
+        # Decks dropped by the admission gate, with why (for audit()/check_corpus).
+        self._excluded: list[dict[str, str]] = []
         self.load()
 
     def _resolve_source_pptx(self, deck_id: str, deck: dict) -> Path | None:
@@ -113,7 +116,15 @@ class Corpus:
         ever sees serveable, index-aligned decks) with a one-line note to stderr."""
         self.decks = {}
         self._source_paths = {}
+        self._excluded = []
         manifest = load_manifest(self.manifest_path)
+
+        def _exclude(deck_id: str, reason: str) -> None:
+            # ASCII only: this prints to stderr, which on a Windows cp932 console
+            # can't encode an em dash (would crash the server/preflight at boot).
+            print(f"# corpus: excluding {deck_id} - {reason}", file=sys.stderr)
+            self._excluded.append({"deck": deck_id, "reason": reason})
+
         for f in sorted(self.path.glob("*.json")):
             data = json.loads(f.read_text(encoding="utf-8"))
             data.pop("_legend", None)  # tagging aid, not schema
@@ -122,7 +133,7 @@ class Corpus:
 
             src = self._resolve_source_pptx(deck_id, data)
             if src is None:
-                print(f"# corpus: excluding {deck_id} — no matching source .pptx", file=sys.stderr)
+                _exclude(deck_id, "no matching source .pptx")
                 continue
             tagged = len(data.get("slides", []))
             # Prefer the precomputed manifest count; only parse the .pptx if it's
@@ -132,18 +143,20 @@ class Corpus:
                 try:
                     actual = _pptx_slide_count(src)
                 except Exception as exc:  # noqa: BLE001 — a corrupt deck is just excluded
-                    print(f"# corpus: excluding {deck_id} — cannot read {src.name}: {exc}", file=sys.stderr)
+                    _exclude(deck_id, f"cannot read {src.name}: {exc}")
                     continue
             if tagged != actual:
-                print(
-                    f"# corpus: excluding {deck_id} — slide count mismatch "
-                    f"(tagged {tagged} != {src.name} {actual})",
-                    file=sys.stderr,
-                )
+                _exclude(deck_id, f"slide count mismatch (tagged {tagged} != {src.name} {actual})")
                 continue
 
             self.decks[deck_id] = data
             self._source_paths[deck_id] = src
+
+    def audit(self) -> dict[str, Any]:
+        """Classify every deck JSON under CORPUS_PATH as deploy-ready (loaded) or
+        excluded-with-reason, for a pre-deploy preflight (scripts/check_corpus.py).
+        The MCP endpoints still drop excluded decks silently; this just surfaces why."""
+        return {"loaded": sorted(self.decks), "excluded": list(self._excluded)}
 
     # --- views -------------------------------------------------------------
 
@@ -314,9 +327,16 @@ class Corpus:
 
         The highest-fidelity reference: the real slide bytes (shapes, geometry,
         fills, fonts, charts) the agent can open with python-pptx and clone-and-edit,
-        rather than rebuilding from the tag summary. Every loaded deck has a matching,
-        index-aligned source .pptx by construction (enforced at load), so this returns
-        None only if the deck id is unknown/excluded or `index` is out of range."""
+        rather than rebuilding from the tag summary. Also returns a `shapes` map (one
+        entry per text shape: shape_idx, text, and the style+geometry signature) so the
+        clone editor knows which shape/run holds the title vs label vs body and can
+        overwrite just its text. shape_idx is the ordinal into the slide's shape list;
+        indices are sparse because non-text shapes (charts, pictures, tables, grouped
+        shapes) are omitted — use python-pptx on the bytes for chart/table data. Every
+        loaded deck passed the admission gate (its `.pptx` slide count matched the tags
+        at load — via `corpus/source/manifest.json`, which must be regenerated when a
+        `.pptx` changes, else a stale count could admit a misaligned deck). Returns None
+        only if the deck id is unknown/excluded or `index` is out of range."""
         # Only matching decks (source .pptx present + count-aligned) are loaded, so a
         # known deck always has a resolved source path.
         src = self._source_paths.get(deck)
@@ -333,6 +353,7 @@ class Corpus:
             "filename": f"{deck}-slide-{index}.pptx",
             "mime_type": PPTX_MIME,
             "base64": base64.b64encode(slide_bytes).decode(),
+            "shapes": slide_signatures(slide_bytes, 0),
         }
 
     def find_similar_slides(self, text: str, limit: int = 10) -> list[dict]:
@@ -799,9 +820,11 @@ class Corpus:
 
     def corpus_stats(self) -> dict:
         """Coverage at a glance: total decks/slides, how many decks have a logo, and
-        counts by client_industry / content_area / slide_purpose. Helps pick a
-        reference deck and shows where the corpus is thin as it grows."""
+        counts by client_industry / content_area / slide_purpose / message_type /
+        dominant_visual_element. Helps pick a reference deck and shows where the corpus
+        is thin (which slide kinds lack a clone precedent) as it grows."""
         by_industry, by_content, by_purpose = Counter(), Counter(), Counter()
+        by_message, by_visual = Counter(), Counter()
         n_slides = decks_with_logos = 0
         for d in self.decks.values():
             if d.get("client_industry"):
@@ -812,6 +835,10 @@ class Corpus:
             for s in slides:
                 if s.get("slide_purpose"):
                     by_purpose[s["slide_purpose"]] += 1
+                if s.get("message_type"):
+                    by_message[s["message_type"]] += 1
+                if s.get("dominant_visual_element"):
+                    by_visual[s["dominant_visual_element"]] += 1
             ds = d.get("design_system") or {}
             if any(r.get("type") == "logo" for r in ds.get("recurring_elements", [])):
                 decks_with_logos += 1
@@ -822,4 +849,7 @@ class Corpus:
             "by_client_industry": dict(by_industry.most_common()),
             "by_content_area": dict(by_content.most_common()),
             "by_slide_purpose": dict(by_purpose.most_common()),
+            # Slide-kind coverage — where the clone workflow may lack a precedent.
+            "by_message_type": dict(by_message.most_common()),
+            "by_dominant_visual_element": dict(by_visual.most_common()),
         }

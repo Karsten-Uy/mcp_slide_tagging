@@ -2,9 +2,11 @@
 # Render builds the Dockerfile, injects $PORT (the server honors it), and serves
 # HTTPS automatically. After deploy, the MCP endpoint is https://<service>.onrender.com/mcp
 #
-# Note: Render is git-based, so corpus/ must be committed (it's gitignored by
-# default) — use `git add -f corpus/*.json`. Free instances sleep after ~15 min
-# idle (cold start ~30-60s); see docs/POC.md for the keep-warm tip.
+# Note: Render is git-based, so the WHOLE corpus/ snapshot must be committed (it's
+# gitignored) — JSON, assets, AND the source .pptx + manifest the admission gate needs:
+#   git add -f corpus/*.json corpus/assets corpus/source
+# Committing only the JSON makes the gate drop every deck and the deploy come up empty.
+# Free instances sleep after ~15 min idle (cold start ~30-60s); see docs/POC.md.
 services:
   - type: web
     name: slide-corpus-poc

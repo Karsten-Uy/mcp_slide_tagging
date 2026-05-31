@@ -147,7 +147,7 @@ first decides your next move.
   slides) and one-time at ingest; CLIP visual embeddings need a GPU. Batch and cache;
   never embed on the request path.
 - **Auth + confidentiality.** The connector is **no-auth public** today
-  ([ARCHITECTURE §8.3](ARCHITECTURE.md)). As the corpus grows and you serve real client
+  ([ARCHITECTURE §8 item 3](ARCHITECTURE.md)). As the corpus grows and you serve real client
   decks' raw `.pptx`, add an auth gate **before** scaling exposure — this is a
   prerequisite for Tier 1+ with sensitive data, not an afterthought.
 - **The `.pptx` admission gate.** Every endpoint only serves decks whose `.pptx` exists

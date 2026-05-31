@@ -128,9 +128,11 @@ def get_slide_pptx(deck: str, index: int) -> dict | None:
     decode the base64, write it to a file, open with python-pptx, copy/modify the
     shapes into your new slide, then re-apply the deck's design_system. Prefer this
     over rebuilding from get_slide's tag summary when you need a faithful duplicate.
-    Item: {deck, index, source_filename, filename, mime_type, base64}. Every deck the
-    server exposes has a matching raw .pptx, so this is null only if the deck id is
-    unknown or the index is out of range."""
+    Item: {deck, index, source_filename, filename, mime_type, base64, shapes}. `shapes`
+    is the per-text-shape map (shape_idx, text, and the style+geometry signature) so you
+    can find which shape/run holds the title vs label vs body and overwrite just its
+    text. Every deck the server exposes has a matching raw .pptx, so this is null only if
+    the deck id is unknown or the index is out of range."""
     return corpus.get_slide_pptx(deck, index)
 
 

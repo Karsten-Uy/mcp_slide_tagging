@@ -45,6 +45,32 @@ def test_deck_with_matching_pptx_is_loaded(tmp_path):
     assert [d["deck"] for d in c.list_decks()] == ["deck"]
 
 
+def test_audit_reports_loaded_and_excluded_with_reasons(tmp_path):
+    corpus = tmp_path / "corpus"
+    source = tmp_path / "source"
+    corpus.mkdir(parents=True)
+    source.mkdir(parents=True)
+
+    def _deck(name, n):
+        (corpus / f"{name}.tagged.json").write_text(
+            json.dumps({"slide_count": n, "design_system": {}, "slides": [{"index": i} for i in range(n)]}),
+            encoding="utf-8",
+        )
+
+    _deck("good", 3)
+    _write_pptx(source / "good.pptx", 3)        # aligned -> loaded
+    _deck("nopptx", 2)                           # no .pptx -> excluded
+    _deck("mismatch", 3)
+    _write_pptx(source / "mismatch.pptx", 5)     # 3 != 5 -> excluded
+
+    audit = Corpus(corpus, corpus / "assets", source).audit()
+    assert audit["loaded"] == ["good"]
+    reasons = {e["deck"]: e["reason"] for e in audit["excluded"]}
+    assert set(reasons) == {"nopptx", "mismatch"}
+    assert "pptx" in reasons["nopptx"].lower()
+    assert "mismatch" in reasons["mismatch"].lower() or "!=" in reasons["mismatch"]
+
+
 def test_deck_without_pptx_is_excluded_everywhere(tmp_path):
     c = _setup(tmp_path, json_slides=3, write_pptx=False)
     assert "deck" not in c.decks

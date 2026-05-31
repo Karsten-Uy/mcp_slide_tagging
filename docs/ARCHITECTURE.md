@@ -13,9 +13,9 @@ Two facts up front:
    (+ extracted image assets) on disk. `mcp_slide_tagging` reads that folder
    **read-only** and never touches `slide_tagging` or its output.
 2. **There are two server paths, and the lean one is built.** A **lean PoC server**
-   (in-memory, no database, 14 retrieval tools incl. logo serving and the storyboard
-   composites `suggest_outline` / `match_slide`) is built, deployed, and is what
-   claude.ai connects to today. A **production pgvector server** (Postgres +
+   (in-memory, no database, 15 retrieval tools incl. logo serving, raw single-slide
+   `.pptx` export (`get_slide_pptx`), and the storyboard composites `suggest_outline` /
+   `match_slide`) is built, deployed, and is what claude.ai connects to today. A **production pgvector server** (Postgres +
    embeddings) is scaffolded but its ingestion/tools/embeddings are deferred.
    Sections below are tagged **[built]**, **[skeleton]**, or **[planned]**.
 
@@ -64,8 +64,8 @@ The handoff is a folder of JSON + image assets. Everything else is internal to o
 │ mcp_slide_tagging  (consumer / server)                    │
 │  Lean PoC server [built]          Production server [skeleton] │
 │  src/poc_server.py + poc_corpus   src/server.py + Postgres │
-│  in-memory; 12 MCP tools;         + pgvector + OpenAI/CLIP │
-│  logos as base64;                 embeddings + ingestion   │
+│  in-memory; 15 MCP tools;         + pgvector + OpenAI/CLIP │
+│  logos + raw slides as base64;    embeddings + ingestion   │
 │  /mcp + /health (no DB/keys)      [planned]                │
 └──────────────────────┬─────────────────────────────────────┘
                        │  MCP over HTTPS (Streamable HTTP /mcp)
@@ -78,24 +78,42 @@ The handoff is a folder of JSON + image assets. Everything else is internal to o
 
 ## 3. The integration contract
 
-### 3.1 The corpus is a directory of JSON (+ assets)
+### 3.1 The corpus is a directory of JSON (+ assets + source .pptx)
 `slide_tagging` writes one JSON per tagged deck under
-[`reference_data/hand_labels/`](../../slide_tagging/reference_data/hand_labels/) and
-extracted branding PNGs under `reference_data/assets/<deck-slug>/`. Each JSON is a
-serialized `DeckTag` (see §5).
+[`reference_data/hand_labels/`](../../slide_tagging/reference_data/hand_labels/),
+extracted branding PNGs under `reference_data/assets/<deck-slug>/`, and the **source
+`.pptx`** the deck was tagged from (under `data/source/`). Each JSON is a serialized
+`DeckTag` (see §5). The `.pptx` is now part of the contract: `get_slide_pptx` slices a
+single reference slide from it for high-fidelity cloning, and the admission gate
+(§3.4) refuses any deck whose `.pptx` is missing or misaligned.
 
-### 3.2 `CORPUS_PATH` / `ASSETS_PATH` are the wire
+### 3.2 `CORPUS_PATH` / `ASSETS_PATH` / `SOURCE_PPTX_PATH` are the wire
 [`src/config.py`](../src/config.py): `corpus_path` (default
 `../slide_tagging/reference_data/hand_labels`) points at the JSON; `assets_path`
 (default `corpus/assets`) resolves a recurring element's relative `image_path`
-(`assets/<slug>/x.png`) to bytes. For deployment, a **bundled snapshot** under
-[`corpus/`](../corpus/) (JSON + `corpus/assets/`) ships in the Docker image, with
-`CORPUS_PATH=corpus`. `thumbnail_base_path` remains reserved for slide renders.
+(`assets/<slug>/x.png`) to bytes; `source_pptx_path` (default `corpus/source`)
+resolves the deck's source `.pptx` (`<deck>.pptx`) and reads a `manifest.json` of
+precomputed slide counts. For deployment, a **bundled snapshot** under
+[`corpus/`](../corpus/) (JSON + `corpus/assets/` + `corpus/source/*.pptx` +
+`corpus/source/manifest.json`) ships in the Docker image, with `CORPUS_PATH=corpus`,
+`SOURCE_PPTX_PATH=corpus/source`. `thumbnail_base_path` remains reserved for renders.
 
 ### 3.3 The relationship is read-only and one-directional
 Data flows producer → consumer only. The server never writes back, tags, or renders.
 Neither repo imports the other; you can run the tagger with no server and the server
 against any folder of conformant JSON + assets.
+
+### 3.4 The admission gate (a deck must be tagged **and** cloneable)
+At load, [`poc_corpus.py`](../src/poc_corpus.py) keeps a deck only if its source
+`.pptx` resolves **and** the `.pptx` slide count equals `len(slides[])` in the tags —
+otherwise the deck is dropped from the **whole** corpus (every endpoint), with the
+reason logged. The count comes from `corpus/source/manifest.json` (a dict lookup) so
+boot doesn't parse every `.pptx`; absent manifest entries fall back to parsing (so keep
+the manifest current — a stale count could admit a misaligned deck). The
+producer-side contract that keeps decks passing this gate — tag from the `.pptx`, keep
+counts/indices aligned, ship the `.pptx`, emit the manifest — is
+[`docs/HANDOFF-slide_tagging.md`](HANDOFF-slide_tagging.md); run
+`scripts/check_corpus.py` to see which decks pass before deploying.
 
 ---
 
@@ -143,9 +161,11 @@ element-level (`inferred_rules`) enrichment + `provenance`. `RecurringElement` c
 |---|---|
 | `tag` / `deck-summary` | Paste-ready `STRUCTURAL DATA` / `DECK SUMMARY` grounding blocks (`--json` for full structural JSON). |
 | `template` | Blank hand-tagging template (structural filled, enrichment `null`, `_legend`). |
-| `validate` | Schema + completeness check of a tagged file. |
+| `validate` | Schema + completeness check, plus the **structural-alignment guard** the MCP gate needs (`slide_count == deck_length == len(slides)`, contiguous indices; `--pptx` also asserts the real `.pptx` slide count). |
 | `render` | `.pptx` → per-slide PNGs (full + thumbnail) via LibreOffice + poppler. |
 | `extract-assets` | Extract recurring logo/branding PNGs + merge into `recurring_elements`. |
+| `manifest` | Write `manifest.json` (`filename → slide_count`) for a folder of source `.pptx` — the precomputed counts the MCP gate reads. |
+| `bundle` | Assemble an MCP deploy snapshot for one deck (tagged JSON + assets + `.pptx` + manifest), alignment-checked, confidentiality-filtered. |
 | `merge` | Re-impose Pipeline A structural fields from the template onto a VLM output (guard). |
 | `score` / `eval` | Score enriched output vs hand-labels (per-field accuracy, confusions). |
 | `bench` | Run the enrichment prompt via the Anthropic API N×/deck; report mean ± std. |
@@ -208,7 +228,10 @@ Templates carry a leading `_legend` of allowed enum values; the server strips it
 [`src/poc_server.py`](../src/poc_server.py) + [`src/poc_corpus.py`](../src/poc_corpus.py):
 a `FastMCP("slide-corpus-poc")` over `transport="streamable-http"` (`/mcp`) plus a
 `GET /health`. It loads the Gen-2 JSON from `CORPUS_PATH` **into memory** — no Postgres,
-no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Fourteen read-only tools:
+no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. It applies the
+**admission gate** (§3.4) at load — keeping only decks with an index-aligned source
+`.pptx`, using `corpus/source/manifest.json` ([`src/manifest.py`](../src/manifest.py))
+to avoid parsing every deck on boot. Fifteen read-only tools:
 
 | Tool | Returns |
 |---|---|
@@ -217,6 +240,7 @@ no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Fourteen read-on
 | `get_deck_assets(deck)` | recurring branding images (logos) as **base64 PNGs** (type/source/position/image_path/base64) |
 | `search_slides(...)` | slides by tag filters (slide_purpose/message_type/dominant_visual_element + deck-level industry/content_area/audience) and/or a keyword |
 | `get_slide(deck, index)` | full tag set for one slide |
+| **`get_slide_pptx(deck, index)`** | **one reference slide as a standalone, self-contained `.pptx`** (base64; [`pptx_split.py`](../src/pptx_split.py) keeps that slide + drops the rest) **plus a per-shape map** (shape_idx/text/style/geometry via [`slide_inspect.py`](../src/slide_inspect.py)) — the highest-fidelity source for clone-and-edit generation |
 | `find_similar_slides(text)` | slides ranked by keyword overlap on `main_message` (embedding stand-in) |
 | `list_vocabulary()` | valid filter values actually present in the corpus, per field (so `search_slides` strings hit) |
 | `get_deck_outline(deck)` | narrative flow — each slide's `slide_position_role` + purpose + title, in order |
@@ -225,7 +249,7 @@ no OpenAI, no embeddings — and binds `$PORT` (cloud) or 8000. Fourteen read-on
 | **`match_slide(...)`** | **per-slide clone kit** for one storyboard point: tags + `zones` + `slot_types_present` + reusability/tier + the source deck's `design_system`; threshold `min_score=0.15` filters noise; `prefer_deck` boost; surfaces `best_below_threshold` when nothing clears |
 | `get_house_style()` | style aggregated across all decks (dominant fonts/sizes, common palette, all logos) |
 | `start_deck(deck)` | one-call kit: design_system + inferred_rules + logos (base64) + outline + reference slides |
-| `corpus_stats()` | coverage: deck/slide counts, decks-with-logos, counts by industry/content_area/slide_purpose |
+| `corpus_stats()` | coverage: deck/slide counts, decks-with-logos, counts by industry/content_area/slide_purpose/message_type/dominant_visual_element (where the corpus is thin) |
 
 `suggest_outline` and `match_slide` are read-only composites of the existing helpers
 (no new storage, no server writes). Together they power the
@@ -247,12 +271,18 @@ embeddings (OpenAI text / CLIP visual), and the production retrieval tools are p
 This is the scale-up path for when the corpus and traffic outgrow the in-memory PoC.
 
 ### 6.3 Deployment **[built — PoC]**
-The PoC server ships as a [`Dockerfile`](../Dockerfile) bundling the `corpus/` snapshot,
-with config for **Render** ([`render.yaml`](../render.yaml)), **Railway**
-([`railway.json`](../railway.json)), **Cloud Run** ([`.gcloudignore`](../.gcloudignore)),
-and Fly.io — plus a Cloudflare/ngrok tunnel option for local exposure. Full steps +
-the claude.ai custom-connector flow (URL `https://…/mcp`, Auth: None) are in
-[`docs/POC.md`](POC.md). No-auth is a deliberate PoC choice (read-only public data).
+The PoC server ships as a [`Dockerfile`](../Dockerfile) bundling the `corpus/` snapshot
+— JSON + `corpus/assets/` (logos) + `corpus/source/*.pptx` + `corpus/source/manifest.json`
+(all three are load-bearing: the admission gate drops any deck whose `.pptx` is absent,
+so a JSON-only bundle deploys empty). Rebuild the manifest
+([`scripts/build_manifest.py`](../scripts/build_manifest.py)) when decks change, and
+preflight with [`scripts/check_corpus.py`](../scripts/check_corpus.py). Config for
+**Render** ([`render.yaml`](../render.yaml)), **Railway** ([`railway.json`](../railway.json)),
+**Cloud Run** ([`.gcloudignore`](../.gcloudignore)), and Fly.io — plus a Cloudflare/ngrok
+tunnel for local exposure. Full steps + the claude.ai custom-connector flow (URL
+`https://…/mcp`, Auth: None) are in [`docs/POC.md`](POC.md). No-auth is a deliberate PoC
+choice; for growth (auth, object-storage offload, pgvector cutover) see
+[`docs/SCALING.md`](SCALING.md).
 
 ---
 
@@ -266,20 +296,27 @@ the claude.ai custom-connector flow (URL `https://…/mcp`, Auth: None) are in
 | slide_tagging · enrichment via API (`bench`) + `merge`/`score`/`eval` | ✅ built |
 | slide_tagging · enrichment schema (`tagged.py`, enums) | ✅ built |
 | slide_tagging · PDF parsing, consistency_score, vector-logo extraction | ⛔ deferred |
-| mcp_slide_tagging · **lean PoC server + 14 MCP tools + logo serving** | ✅ built |
+| slide_tagging · **MCP handoff tooling (`validate` alignment guard, `manifest`, `bundle`)** | ✅ built |
+| mcp_slide_tagging · **lean PoC server + 15 MCP tools + logo serving** | ✅ built |
+| mcp_slide_tagging · **raw single-slide `.pptx` export (`get_slide_pptx`) + shape map** | ✅ built |
+| mcp_slide_tagging · **admission gate (`.pptx` aligned) + slide-count manifest + `check_corpus`** | ✅ built |
 | mcp_slide_tagging · **storyboard composites (`suggest_outline`, `match_slide`)** | ✅ built |
 | mcp_slide_tagging · deploy (Docker, Render/Railway/Cloud Run, connector) | ✅ built |
 | mcp_slide_tagging · production pgvector: schema/config/`/health` | ✅ skeleton |
 | mcp_slide_tagging · production pgvector: ingestion + embeddings + tools | ⛔ planned |
-| corpus-pptx-v2 skill (3-stage flow: collect → storyboard → generate) | ✅ built |
-| corpus-pptx (v1) skill (Stage-3-only, legacy) | ✅ built |
+| mcp_slide_tagging · auth, object-storage offload, pgvector cutover (scale path) | ⛔ deferred ([SCALING](SCALING.md)) |
+| corpus-pptx-v5 skill (clone raw `.pptx`, text-only, consistency-gated, cross-deck) | ✅ built |
+| corpus-pptx v1–v4 skills (Stage-3-only · storyboard · raw-clone · clone+gate) | ✅ built |
 
 ---
 
 ## 8. Known seams, risks, and open questions
 
-1. **Corpus size is 4 decks.** A proof-of-concept set; retrieval quality and the value
-   of vector search assume scale that doesn't exist yet (hence the in-memory PoC).
+1. **Corpus size is 4 tagged decks, of which only 2 currently pass the admission gate**
+   (§3.4) — electric-vehicle and ereadiness were tagged from PDF exports whose page
+   count differs from the `.pptx`, so they're dropped until re-tagged from the `.pptx`
+   (see [`HANDOFF-slide_tagging.md`](HANDOFF-slide_tagging.md)). A proof-of-concept set;
+   retrieval quality and the value of vector search assume scale that doesn't exist yet.
 2. **Logo coverage is partial.** Only raster branding on slides/masters is auto-extracted;
    vector/grouped logos (e.g. nigeria) yield no asset, so `get_deck_assets` returns `[]`
    for those decks — consumers fall back to the footer wordmark text.
@@ -288,9 +325,10 @@ the claude.ai custom-connector flow (URL `https://…/mcp`, Auth: None) are in
 4. **Production pgvector path is Gen-1-shaped.** Its migration predates Gen-2; ingestion
    must reconcile (map onto columns, add columns, or keep in `raw_json`) before it's used.
 5. **Deployed corpus is a snapshot.** `corpus/` is a point-in-time copy; re-bundle (copy
-   JSON + assets) and redeploy when labels change.
-6. **`CORPUS_PATH`/`ASSETS_PATH` defaults assume the sibling layout** under `slide_mcp/`;
-   set them explicitly off the dev machine / in the container.
+   JSON + assets + the source `.pptx` into `corpus/source/`, then rebuild `manifest.json`)
+   and redeploy when labels change. `slide-tagger bundle` does this per deck.
+6. **`CORPUS_PATH`/`ASSETS_PATH`/`SOURCE_PPTX_PATH` defaults assume the sibling layout**
+   under `slide_mcp/`; set them explicitly off the dev machine / in the container.
 
 ---
 
@@ -300,27 +338,28 @@ the claude.ai custom-connector flow (URL `https://…/mcp`, Auth: None) are in
 slide_mcp/                              # parent dir (not a git repo)
 ├── slide_tagging/                      # PRODUCER
 │   ├── src/slide_tagger/
-│   │   ├── cli.py                      # tag/deck-summary/template/validate/render/
-│   │   │                               #   extract-assets/merge/score/eval/bench
+│   │   ├── cli.py                      # tag/deck-summary/template/validate/render/extract-assets/
+│   │   │                               #   merge/score/eval/bench + manifest/bundle (MCP handoff)
 │   │   ├── schema/{models,tagged,enums}.py
 │   │   ├── enrich.py · merge.py        # API enrichment client · structural merge guard
 │   │   └── extractors/structural/      # Pipeline A + recurring_images.py (logos)
 │   ├── reference_data/hand_labels/*.tagged.json   # the corpus (ground truth)
 │   ├── reference_data/assets/<slug>/*.png         # extracted logo images
-│   ├── data/{source,renders,tagged,tagged/bench}/ # decks, renders, predictions
+│   ├── data/source/*.pptx              # source decks (the .pptx half of the contract)
 │   └── docs/{init,deck_tagging_prompt,manual_tagging,vlm_prompt_test}.md
 └── mcp_slide_tagging/                  # CONSUMER / SERVER
     ├── src/
     │   ├── poc_server.py · poc_corpus.py   # ← lean PoC server (built)
+    │   ├── pptx_split.py · slide_inspect.py · manifest.py  # raw-slide export · shape sigs · gate manifest
     │   ├── server.py · retrieval/db.py     # production pgvector server (skeleton)
-    │   └── config.py                       # CORPUS_PATH / ASSETS_PATH / …
-    ├── corpus/                          # bundled Gen-2 snapshot (JSON + assets/) for deploy
-    ├── scripts/poc_demo.py             # no-LLM tool smoke check
-    ├── skills/skill_v2.md              # corpus-pptx-v2 (3-stage flow: collect → storyboard → generate)
-    ├── skills/skill_v1.md              # corpus-pptx (Stage-3-only, legacy)
+    │   └── config.py                       # CORPUS_PATH / ASSETS_PATH / SOURCE_PPTX_PATH / …
+    ├── corpus/{*.tagged.json, assets/, source/*.pptx, source/manifest.json}  # bundled deploy snapshot
+    ├── scripts/{poc_demo, build_manifest, check_corpus, check_slide_consistency}.py
+    ├── skills/skill_v5.md              # corpus-pptx-v5 (clone raw .pptx, text-only, consistency-gated, cross-deck) ← latest
+    ├── skills/skill_v{1,2,3,4}.md      # earlier iterations (legacy reference)
     ├── migrations/001_initial.sql · docker-compose.yml
     ├── Dockerfile · render.yaml · railway.json · .gcloudignore · .railwayignore
-    └── docs/{ARCHITECTURE,POC}.md
+    └── docs/{ARCHITECTURE,POC,SCALING,HANDOFF-slide_tagging}.md
 ```
 
 ## Appendix B: key environment variables (`mcp_slide_tagging`)
@@ -331,6 +370,7 @@ See [`.env.example`](../.env.example). PoC server needs **none** of these to run
 |---|---|
 | `CORPUS_PATH` | Folder of tagged JSON (default: sibling `slide_tagging`; deploy: `corpus`). |
 | `ASSETS_PATH` | Resolves `recurring_elements[].image_path` to PNGs (default: `corpus/assets`). |
+| `SOURCE_PPTX_PATH` | Folder of source `.pptx` + `manifest.json` for `get_slide_pptx` and the admission gate (default: `corpus/source`; local dev: `../slide_tagging/data/source`). |
 | `MCP_SERVER_HOST` / `MCP_SERVER_PORT` / `$PORT` | Bind address (`$PORT` injected by Cloud Run/Render). |
 | `DATABASE_URL` / `OPENAI_API_KEY` | Production pgvector server only (not the PoC). |
 | `THUMBNAIL_BASE_PATH` / `EMBEDDING_MODEL` / `CLIP_MODEL` | Reserved for the production path. |

@@ -60,7 +60,10 @@ def main() -> None:
         print("\n# no --group given; nothing to assert. Pass --group i,j,k to gate a set.")
         return
 
-    groups = [[int(x) for x in g.split(",")] for g in args.group]
+    try:
+        groups = [[int(x) for x in g.split(",") if x.strip() != ""] for g in args.group]
+    except ValueError:
+        ap.error("--group must be comma-separated shape indices, e.g. --group 2,3,4,5")
     report = consistency_report(sigs, groups)
     print()
     for g in report["groups"]:

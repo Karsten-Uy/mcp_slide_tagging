@@ -147,6 +147,14 @@ def test_corpus_stats_counts():
     assert isinstance(stats["by_slide_purpose"], dict) and stats["by_slide_purpose"]
 
 
+def test_corpus_stats_reports_slide_kind_coverage():
+    # coverage by message_type + dominant_visual_element shows where the corpus is thin
+    # (which slide kinds the clone workflow can't yet find a precedent for).
+    stats = _corpus().corpus_stats()
+    assert isinstance(stats["by_message_type"], dict)
+    assert isinstance(stats["by_dominant_visual_element"], dict)
+
+
 # --- match_slide ----------------------------------------------------------
 
 

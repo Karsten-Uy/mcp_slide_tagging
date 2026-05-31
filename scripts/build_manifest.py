@@ -21,12 +21,18 @@ from src.manifest import write_manifest
 
 
 def main() -> None:
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # type: ignore[union-attr]
+    except Exception:
+        pass
     source = Path(sys.argv[1]) if len(sys.argv) > 1 else settings.source_pptx_path
     if not source.is_dir():
-        sys.exit(f"source .pptx folder not found: {source}")
+        sys.exit(f"source .pptx folder not found: {source.resolve()}")
     out = source / "manifest.json"
     n = write_manifest(source, out)
-    print(f"wrote {out} ({n} deck{'s' if n != 1 else ''})")
+    # Echo the resolved absolute path so a cwd-relative default can't silently target
+    # the wrong folder under `python -m scripts.build_manifest`.
+    print(f"wrote {out.resolve()} ({n} deck{'s' if n != 1 else ''})")
 
 
 if __name__ == "__main__":

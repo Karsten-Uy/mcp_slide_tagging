@@ -60,6 +60,16 @@ def test_returns_decodable_single_slide_pptx(tmp_path):
     assert _titles(pptx_bytes) == ["SLIDE_B"]
 
 
+def test_includes_shape_map_for_the_clone_editor(tmp_path):
+    # The clone editor needs to know which shape holds which text to overwrite it.
+    result = _corpus(tmp_path).get_slide_pptx("demo-deck", 1)
+    shapes = result["shapes"]
+    assert isinstance(shapes, list) and len(shapes) == 1
+    assert shapes[0]["text"] == "SLIDE_B"
+    # signature fields are present so the agent can also use it as a style target
+    assert "shape_idx" in shapes[0] and "font" in shapes[0] and "width" in shapes[0]
+
+
 def test_unknown_deck_is_none(tmp_path):
     assert _corpus(tmp_path).get_slide_pptx("nope", 0) is None
 
