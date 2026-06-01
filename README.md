@@ -139,7 +139,9 @@ locally.
 | Auth, object-storage offload, pgvector cutover (scale path) | ⛔ deferred — see [`docs/SCALING.md`](docs/SCALING.md) |
 
 The `corpus-pptx` skill that consumes these tools is **client-owned**; the latest is
-[`skills/skill_v5.md`](skills/skill_v5.md) (clone the bound reference slide's raw
-`.pptx`, overwrite only the text, three-axis consistency gate, plus cross-deck canvas
-handling). Earlier iterations (`skill_v1`–`skill_v4`) remain in `skills/` for reference.
-This server only makes the served data correct.
+[`skills/skill_v6.md`](skills/skill_v6.md) (clone the bound reference slide's raw
+`.pptx`, overwrite only the text, three-axis consistency gate, cross-deck canvas
+handling — and it uses the `get_slide_pptx` **shape map** to target edits plus
+`corpus_stats` **coverage** to pre-flight the storyboard). Earlier iterations
+(`skill_v1`–`skill_v5`) remain in `skills/` for reference. This server only makes the
+served data correct.

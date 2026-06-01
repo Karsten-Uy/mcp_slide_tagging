@@ -42,18 +42,19 @@ tags — so of the four tagged decks, two currently pass (nigeria + digital-auto
 Skills are client-owned and live in `skills/`; load **one** alongside the connector.
 The latest is:
 
-- **[`skills/skill_v5.md`](../skills/skill_v5.md)** (`corpus-pptx-v5`) — the 3-stage
+- **[`skills/skill_v6.md`](../skills/skill_v6.md)** (`corpus-pptx-v6`) — the 3-stage
   flow (brief → storyboard → generate), where Stage 3 **clones the bound reference
   slide's raw `.pptx`** via `get_slide_pptx` and overwrites only the visible text
   (never restyling), gated by a three-axis consistency check
   ([`scripts/check_slide_consistency.py`](../scripts/check_slide_consistency.py))
-  before render, plus cross-deck canvas handling. Cloning is the only generation path —
-  no from-scratch building — which is what keeps output firm-authentic instead of
-  generic-AI.
+  before render, plus cross-deck canvas handling. v6 adds the `get_slide_pptx`
+  **shape map** to target each edit and `corpus_stats` **coverage** to pre-flight the
+  storyboard. Cloning is the only generation path — no from-scratch building — which is
+  what keeps output firm-authentic instead of generic-AI.
 
-Earlier iterations remain for reference: `skill_v4.md` (clone + consistency gate),
-`skill_v3.md` (raw-clone, pre-gate), `skill_v2.md` (reconstruct-from-tags storyboard),
-`skill_v1.md` (Stage-3-only).
+Earlier iterations remain for reference: `skill_v5.md` (clone + cross-deck canvas),
+`skill_v4.md` (clone + consistency gate), `skill_v3.md` (raw-clone, pre-gate),
+`skill_v2.md` (reconstruct-from-tags storyboard), `skill_v1.md` (Stage-3-only).
 
 Both drive the same retrieval primitives — `list_decks` → `start_deck` (or
 `get_deck` / `get_deck_outline` / `get_deck_assets`) → `search_slides` /

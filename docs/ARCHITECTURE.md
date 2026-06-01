@@ -305,8 +305,8 @@ choice; for growth (auth, object-storage offload, pgvector cutover) see
 | mcp_slide_tagging · production pgvector: schema/config/`/health` | ✅ skeleton |
 | mcp_slide_tagging · production pgvector: ingestion + embeddings + tools | ⛔ planned |
 | mcp_slide_tagging · auth, object-storage offload, pgvector cutover (scale path) | ⛔ deferred ([SCALING](SCALING.md)) |
-| corpus-pptx-v5 skill (clone raw `.pptx`, text-only, consistency-gated, cross-deck) | ✅ built |
-| corpus-pptx v1–v4 skills (Stage-3-only · storyboard · raw-clone · clone+gate) | ✅ built |
+| corpus-pptx-v6 skill (clone raw `.pptx`, shape-map-targeted, consistency-gated, cross-deck) | ✅ built |
+| corpus-pptx v1–v5 skills (Stage-3-only · storyboard · raw-clone · clone+gate · cross-deck) | ✅ built |
 
 ---
 
@@ -355,8 +355,8 @@ slide_mcp/                              # parent dir (not a git repo)
     │   └── config.py                       # CORPUS_PATH / ASSETS_PATH / SOURCE_PPTX_PATH / …
     ├── corpus/{*.tagged.json, assets/, source/*.pptx, source/manifest.json}  # bundled deploy snapshot
     ├── scripts/{poc_demo, build_manifest, check_corpus, check_slide_consistency}.py
-    ├── skills/skill_v5.md              # corpus-pptx-v5 (clone raw .pptx, text-only, consistency-gated, cross-deck) ← latest
-    ├── skills/skill_v{1,2,3,4}.md      # earlier iterations (legacy reference)
+    ├── skills/skill_v6.md              # corpus-pptx-v6 (clone raw .pptx, shape-map-targeted, consistency-gated, cross-deck) ← latest
+    ├── skills/skill_v{1,2,3,4,5}.md    # earlier iterations (legacy reference)
     ├── migrations/001_initial.sql · docker-compose.yml
     ├── Dockerfile · render.yaml · railway.json · .gcloudignore · .railwayignore
     └── docs/{ARCHITECTURE,POC,SCALING,HANDOFF-slide_tagging}.md
